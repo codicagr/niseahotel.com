@@ -1,0 +1,61 @@
+{
+  "/home/dev3/codica/Packages/cms-core/resources/js/admin/tinymce/tinymce.content.css": {
+    "file": "css/admin/tinymce.content.css",
+    "src": "/home/dev3/codica/Packages/cms-core/resources/js/admin/tinymce/tinymce.content.css"
+  },
+  "__commonjsHelpers-CqkleIqs.js": {
+    "file": "assets/_commonjsHelpers-CqkleIqs.js",
+    "name": "_commonjsHelpers"
+  },
+  "resources/css/admin/app.css": {
+    "file": "css/admin/app.css",
+    "src": "resources/css/admin/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/admin/app.js": {
+    "file": "js/admin/app.min.js",
+    "name": "app.min",
+    "src": "resources/js/admin/app.js",
+    "isEntry": true,
+    "css": [
+      "css/admin/app.package.css"
+    ]
+  },
+  "resources/js/admin/calendar.js": {
+    "file": "js/admin/calendar.min.js",
+    "name": "calendar.min",
+    "src": "resources/js/admin/calendar.js",
+    "isEntry": true,
+    "css": [
+      "css/admin/calendar.package.css"
+    ]
+  },
+  "resources/js/admin/color.js": {
+    "file": "js/admin/color.min.js",
+    "name": "color.min",
+    "src": "resources/js/admin/color.js",
+    "isEntry": true,
+    "imports": [
+      "__commonjsHelpers-CqkleIqs.js"
+    ],
+    "css": [
+      "css/admin/color.package.css"
+    ]
+  },
+  "resources/js/admin/tinymce/tinymce.js": {
+    "file": "js/admin/editor.min.js",
+    "name": "editor.min",
+    "src": "resources/js/admin/tinymce/tinymce.js",
+    "isEntry": true,
+    "imports": [
+      "__commonjsHelpers-CqkleIqs.js"
+    ],
+    "assets": [
+      "css/admin/tinymce.content.css"
+    ]
+  }
+}
