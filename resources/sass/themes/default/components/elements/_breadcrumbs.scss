@@ -1,0 +1,71 @@
+#breadcrumbs {
+    /*background-color: #e4e4e4;*/
+    .breadcrumbsContainer {
+        float: left;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        .breadcrumbsList {
+            float: left;
+            margin: 0 0 0 -10px;
+            position: relative;
+            width: calc(100% + 20px);
+            .breadcrumbsListItem {
+                float: left;
+                font-size: 12px;
+                font-weight: 300;
+                padding: 0 10px;
+                position: relative;
+                a {
+                    &:hover {
+                        color: $primary;
+                    }
+                    &::before {
+                        content: attr(data-text);
+                        display: block;
+                        font-weight: 400;
+                        height: 0;
+                        overflow: hidden;
+                        pointer-events: none;
+                        user-select: none;
+                        visibility: hidden;
+                    }
+                }
+                &::after {
+                    color: #68696c;
+                    content: '/';
+                    line-height: $line-height-solid;
+                    position: absolute;
+                    right: -6px;
+                    top: 50%;
+                    -webkit-transform: translate(-50%,-50%);
+                    -moz-transform: translate(-50%,-50%);
+                    transform: translate(-50%,-50%);
+                }
+                a,
+                span {
+                    color: #68696c;
+                    text-decoration: none;
+                }
+                &:last-child{
+                    a,
+                    span {
+                        font-weight: 400;
+                    }
+                    &::after {
+
+                        display: none;
+                    }
+                }
+                /*@media (max-width: 420px) {
+                    font-size: 13px;
+                    padding: 0 10px;
+                }*/
+            }
+            @media (max-width: 420px) {
+                margin: 0 0 0 -10px;
+                width: calc(100% + 20px);
+            }
+        }
+    }
+}

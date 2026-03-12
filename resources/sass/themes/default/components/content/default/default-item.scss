@@ -1,0 +1,137 @@
+.itemViewContainer {
+    float: left;
+    position: relative;
+    width: 100%;
+
+    .itemHeaderContainer {
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+
+        .itemHeaderImage {
+            float: left;
+            height: 100%;
+            position: relative;
+            transform: scale(1.05);
+            width: 100%;
+            will-change: filter;
+
+            img {
+                float: left;
+                height: 100%;
+                object-fit: cover;
+                position: relative;
+                width: 100%;
+            }
+        }
+
+        .itemHeaderOverlay {
+            background-color: #000000;
+            opacity: 0.2;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            will-change: opacity;
+            z-index: 1;
+        }
+
+        .itemHeaderWrapper {
+            left: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            will-change: transform;
+            z-index: 2;
+
+            .itemHeader {
+                float: left;
+                position: relative;
+                width: 100%;
+
+                .itemHeaderInner {
+                    float: left;
+                    position: relative;
+                    width: 100%;
+
+                    .itemHeaderTitle {
+                        color: $text-inverse;
+                        font-family: $font-family-serif;
+                        float: left;
+                        font-size: clamp-size(32,60,320,2000);
+                        font-weight: $weight-light;
+                        line-height: $line-height-heading;
+                        text-shadow:
+                            0 2px 4px rgba(0, 0, 0, 0.50),
+                            0 8px 16px rgba(0, 0, 0, 0.40);
+                        position: relative;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .itemLeadWrapper {
+        float: left;
+        position: relative;
+        width: 100%;
+
+        .itemLead {
+            float: left;
+            position: relative;
+            width: 100%;
+
+            .itemLeadTitleContainer {
+                float: left;
+                position: relative;
+                width: 100%;
+
+                .itemLeadTitle {
+                    float: left;
+                    font-family: $font-family-serif;
+                    font-size: clamp-size(30,42,320,2000);
+                    font-weight: $weight-light;
+                    line-height: $line-height-heading;
+                    max-width: 900px;
+                    position: relative;
+                    text-align: center;
+                    width: 100%;
+
+                    p:first-child {
+                        margin-top: 0;
+                    }
+
+                    p:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .itemLeadTextContainer {
+                float: left;
+                position: relative;
+                width: 100%;
+
+                .itemLeadText {
+                    float: left;
+                    font-size: 18px;
+                    font-weight: 300;
+                    max-width: 1100px;
+                    position: relative;
+                    width: 100%;
+
+                    p:first-child {
+                        margin-top: 0;
+                    }
+
+                    p:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

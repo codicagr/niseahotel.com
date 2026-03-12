@@ -1,0 +1,279 @@
+.mobileMenuWrapper {
+    float: left;
+    position: relative;
+
+    .mobileMenuSwitcher {
+        cursor: pointer;
+        float: left;
+        position: relative;
+        z-index: 20;
+
+        .mobileMenuIcon {
+            position: relative;
+            transition: $trans-slow;
+            width: 40px;
+
+            @media (max-width: 400px) {
+                width: 30px;
+            }
+
+            .mobileMenuLines {
+                float: left;
+                height: 22px;
+                position: relative;
+                text-align: center;
+                transition: $trans-slow;
+                width: 40px;
+
+                @media (max-width: 400px) {
+                    height: 18px;
+                    width: 30px;
+                }
+            }
+
+            .mobileMenuLine {
+                background: $text-main;
+                display: inline-block;
+                height: 2px;
+                position: absolute;
+                transition: $trans-slow;
+
+                &.line1 {
+                    left: 25%;
+                    top: 0;
+                    width: 50%;
+                }
+
+                &.line2 {
+                    left: 0;
+                    top: 50%;
+                    width: 100%;
+                }
+
+                &.line3 {
+                    left: 25%;
+                    top: 100%;
+                    width: 50%;
+                }
+            }
+        }
+
+        .mobileMenuText {
+            color: $text-main;
+            float: left;
+            font-size: 16px;
+            margin: 1px 0 0 15px;
+            position: relative;
+            transition: $trans-slow;
+
+            @media (max-width: 780px) {
+                display: none;
+            }
+
+            span {
+                line-height: $line-height-solid;
+            }
+        }
+
+        &.active {
+            .mobileMenuIcon {
+                .mobileMenuLine {
+                    background: $text-inverse;
+
+                    &.line1 {
+                        left: 0;
+                        top: 50%;
+                        transform: rotate(33.33deg);
+                        width: 100%;
+                    }
+
+                    &.line2 {
+                        opacity: 0;
+                    }
+
+                    &.line3 {
+                        left: 0;
+                        top: 50%;
+                        transform: rotate(-33.33deg);
+                        width: 100%;
+                    }
+                }
+
+                &:hover {
+                    transform: scale(1.12);
+                }
+            }
+
+            .mobileMenuText {
+                color: $text-inverse;
+            }
+        }
+
+        &:hover {
+            .mobileMenuIcon {
+                .mobileMenuLine {
+                    &.line1 {
+                        left: 0;
+                        width: 100%;
+                    }
+
+                    &.line2 {
+                        left: 10%;
+                        width: 80%;
+                    }
+
+                    &.line3 {
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .mobileMenuBox {
+        background-color: $secondary;
+        box-sizing: border-box;
+        float: left;
+        height: 100vh;
+        left: 0;
+        max-width: 50vw;
+        min-width: 300px;
+        opacity: 0;
+        overflow: hidden;
+        padding: 130px 0 80px 0;
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        transition: $trans-slow;
+        /*transform: translateX(-250%);*/
+        visibility: visible;
+        width: 90vw;
+        z-index: 15;
+        @media (max-width: 800px) {
+            max-width: 400px;
+        }
+        @media (max-width: 400px) {
+            padding: 100px 0 80px 0;
+        }
+
+        &.active {
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+            transform: translateX(0);
+
+            .menuItem {
+                opacity: 1;
+                transform: translateY(0);
+                transition: opacity 0.7s ease, transform 0.7s ease;
+                transition-delay: var(--item-delay);
+            }
+        }
+
+        .mobileMenuList {
+            box-sizing: border-box;
+            float: left;
+            gap: 5px;
+            max-height: calc(100svh - 140px);
+            overflow-y: auto;
+            padding: 0 clamp-size(20, 50, 320, 2000) 50px;
+            position: relative;
+            width: 100%;
+        }
+
+        .menuItem {
+            float: left;
+            font-family: $font-family-serif;
+            font-size: clamp-size(22, 40, 320, 2000);
+            font-weight: $weight-light;
+            opacity: 0;
+            position: relative;
+            transform: translateY(40px);
+            transition: opacity 0s ease 0.15s, transform 0s ease 0.15s;
+            width: 100%;
+
+            &.level1 {
+                font-weight: $weight-medium;
+            }
+
+            a {
+                box-sizing: border-box;
+                color: $text-main;
+                font-family: $font-family-serif;
+                float: left;
+                font-weight: $weight-light;
+                padding: 5px 0;
+                position: relative;
+                transition: $trans-fast;
+
+                &:hover {
+                    color: $text-inverse;
+                }
+            }
+
+            .mobileMenuItemSwitch {
+                cursor: pointer;
+                font-size: 20px;
+                height: 100%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 60px;
+                z-index: 5;
+
+                .mobileMenuItemSwitchDown {
+                    display: block;
+                }
+
+                .mobileMenuItemSwitchUp {
+                    display: none;
+                }
+
+                &.open {
+                    .mobileMenuItemSwitchDown {
+                        display: none;
+                    }
+
+                    .mobileMenuItemSwitchUp {
+                        display: block;
+                    }
+                }
+            }
+
+            &.active > a {
+                color: $text-inverse;
+            }
+        }
+
+        .submenu {
+            box-sizing: border-box;
+            float: left;
+            gap: 5px;
+            padding: 0 0 10px 25px;
+            position: relative;
+            width: 100%;
+        }
+    }
+
+    .mobileMenuOverlay {
+        /*background-color: rgba(0, 0, 0, 0.25);*/
+        /*backdrop-filter: blur(6px) contrast(60%);*/
+        backdrop-filter: blur(6px);
+        height: 100vh;
+        left: 0;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        transition: $trans-fast;
+        visibility: hidden;
+        width: 100vw;
+        z-index: 10;
+    }
+
+    &.active .mobileMenuOverlay {
+        pointer-events: auto;
+        opacity: 1;
+        visibility: visible;
+    }
+}

@@ -1,0 +1,830 @@
+.generalForm {
+    float: left;
+    position: relative;
+    width: 100%;
+    .generalFormFieldsContainer {
+        float: left;
+        position: relative;
+        width: 100%;
+    }
+}
+.generalFormField.checkbox:has(input:disabled),
+.generalFormField.checkbox:has(input[readonly]) {
+    pointer-events: none;
+}
+.generalFormFieldRadioContainer:has(input[readonly]),
+.generalFormFieldRadioContainer:has(input:disabled) {
+    background-color: rgba(239, 239, 239, 0.3) !important;
+    pointer-events: none;
+}
+.generalFormField.checkbox:has(input:disabled) label,
+.generalFormField.checkbox:has(input[readonly]) label,
+.generalFormFieldRadioContainer:has(input[readonly]) label,
+.generalFormFieldRadioContainer:has(input:disabled) label {
+    color: rgb(84, 84, 84) !important;
+}
+.generalFormField.checkbox:has(input:disabled) label::after,
+.generalFormField.checkbox:has(input[readonly]) label::after,
+.generalFormFieldRadioContainer:has(input[readonly]) label::after,
+.generalFormFieldRadioContainer:has(input:disabled) label::after {
+    filter: grayscale(0.2);
+}
+.generalFormFields {
+    float: left;
+    margin-left: -14px;
+    position: relative;
+    width: calc(100% + 28px);
+    .generalFormSectionTitle {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        float: left;
+        font-size: clamp-size(16,18,320,2000);
+        font-weight: 500;
+        padding: 0 14px;
+        position: relative;
+        width: 100%;
+    }
+    .generalFormSectionTitleNote {
+        color: #68696c;
+        font-size: 13px;
+        font-weight: 500;
+        position: relative;
+    }
+    .generalFormField {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        float: left;
+        font-size: 14px;
+        padding: 0 14px 25px;
+        position: relative;
+        width: 50%;
+        @media (max-width: 760px) {
+            width: 100%;
+        }
+        @media (max-width: 420px) {
+            font-size: 13px;
+        }
+        &.width15percent {
+            width: 15%;
+        }
+        &.width25percent {
+            width: 25%;
+            @media (max-width: 760px) {
+                width: 50%;
+            }
+            @media (max-width: 380px) {
+                width: 100%;
+            }
+        }
+        &.width35percent {
+            width: 35%;
+        }
+        &.width75percent {
+            width: 75%;
+            @media (max-width: 760px) {
+                width: 100%;
+            }
+        }
+        &.fullWidth {
+            width: 100%;
+            .separator .generalFormFieldInner {
+                width: calc(50% - 14px);
+                @media (max-width: 760px) {
+                    width: 100%;
+                }
+            }
+        }
+        &.link {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: flex-end;
+            justify-content: flex-end;
+            @media (max-width: 1300px) {
+                -webkit-justify-content: flex-start;
+                justify-content: flex-start;
+                width: 100%;
+            }
+        }
+        &.smallLabel {
+            label,
+            a {
+                font-size: 13px;
+            }
+        }
+        &.grayLabel label {
+            color: #b7b7b7;
+        }
+        .generalFormFieldTitle {
+            float: left;
+            margin: 0 0 10px;
+            position: relative;
+            width: 100%;
+        }
+        label {
+            float: left;
+            font-size: 15px;
+            font-weight: 500;
+            margin: 0 0 5px;
+            position: relative;
+            width: 100%;
+            @media (max-width: 580px) {
+                font-size: 16px;
+            }
+            @media (max-width: 420px) {
+                font-size: 13px;
+            }
+        }
+        .tagsWrapper {
+            float: left;
+            position: relative;
+            width: 100%;
+            .tagsList {
+                border: 1px solid #e6e6e6;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                float: left;
+                padding: 15px 10px;
+                position: relative;
+                width: 100%;
+                .tagsListItem {
+                    background-color: #e6e6e6;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    float: left;
+                    margin: 5px;
+                    padding: 8px 20px;
+                    position: relative;
+                    -webkit-transition: all 0.3s ease 0s;
+                    -moz-transition: all 0.3s ease 0s;
+                    transition: all 0.3s ease 0s;
+                    &.selected {
+                        background-color: $text-main;
+                        color: #fff;
+                    }
+                    &.removed {
+                        display: none;
+                    }
+                    .text {
+                        float: left;
+                        position: relative;
+                    }
+                    .icon {
+                        color: $primary;
+                        cursor: pointer;
+                        float: left;
+                        margin-left: 10px;
+                        position: relative;
+                    }
+                }
+            }
+        }
+        .tagsButtonsWrapper {
+            float: left;
+            position: relative;
+            width: 100%;
+            button {
+                margin: 0 0 10px 20px;
+            }
+        }
+        input,
+        textarea {
+            -webkit-appearance: none;
+            border: 1px solid #e4e4e4;
+            border-radius: 3px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            float: left;
+            font-size: 15px;
+            font-weight: 500;
+            outline: none !important;
+            padding: 15px;
+            position: relative;
+            width: 100%;
+            @media (max-width: 680px) {
+                font-size: 14px;
+            }
+            @media (max-width: 420px) {
+                font-size: 13px;
+            }
+            &:disabled,
+            &[readonly] {
+                background-color: rgba(239, 239, 239, 0.3);
+                color: rgb(84, 84, 84);
+                pointer-events: none;
+            }
+        }
+        textarea {
+            height: 150px;
+            max-height: 300px;
+            min-height: 150px;
+            resize: vertical;
+        }
+        .dobWrapper {
+            float: left;
+            position: relative;
+            width: 100%;
+            z-index: 2;
+        }
+        .dobSelectContainer {
+            float: left;
+            position: relative;
+            width: calc(33.33% - 20px);
+            @media (max-width: 580px) {
+                margin: 0 0 10px;
+                width: 100%;
+            }
+            &:last-child {
+                @media (max-width: 580px) {
+                    margin: 0;
+                }
+            }
+        }
+        .countrySelectContainer,
+        .tagsSelectContainer  {
+            float: left;
+            position: relative;
+            width: 100%;
+        }
+        .dobSelectContainer,
+        .countrySelectContainer,
+        .tagsSelectContainer {
+            .select2-container {
+                float: left;
+                position: relative;
+                width: 100% !important;
+                .selection,
+                .select2-selection {
+                    float: left;
+                    position: relative;
+                    width: 100%;
+                }
+            }
+            .select2-container--default {
+                .select2-selection--single {
+                    border: 1px solid #e4e4e4;
+                    border-radius: 0;
+                    float: left;
+                    height: auto;
+                    padding: 15px 0;
+                    position: relative;
+                    width: 100%;
+                    .select2-selection__arrow  {
+                        top: 50%;
+                        -webkit-transform: translateY(-50%);
+                        -moz-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        b {
+                            border-color: $text-main transparent transparent transparent;
+                            border-width: 9px 7px 0 7px;
+                            margin-left: -10px;
+                            margin-top: -4px;
+                        }
+                    }
+                    .select2-selection__clear {
+                        margin-right: 28px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.generalFormFieldRadioGroup {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.generalFormFieldRadioContainer {
+    float: left;
+    margin: 5px 0 0;
+    position: relative;
+    width: 100%;
+}
+.generalFormField.radio.box .generalFormFieldRadioContainer {
+    border: 1px solid #e4e4e4;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    font-size: 14px;
+    outline: none !important;
+    padding: 15px;
+    position: relative;
+    width: auto;
+}
+.generalFormFieldRadioContainer input {
+    -webkit-appearance: radio;
+    left: 0;
+    opacity: 0;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+}
+.generalFormField.checkbox input,
+.generalFormField.radio input {
+    left: 15px;
+    opacity: 0;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    //visibility: hidden;
+    width: 30px;
+}
+.generalFormField.checkbox label,
+.generalFormField.radio label,
+.generalFormFieldRadioContainer label {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 30px;
+    position: relative;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: auto;
+    @media (max-width: 420px) {
+        font-size: 13px;
+    }
+}
+.generalFormField.radio.box .generalFormFieldRadioContainer label {
+    margin: 0 0 2px;
+}
+.generalFormField.checkbox label:hover,
+.generalFormField.radio label:hover,
+.generalFormFieldRadioContainer label:hover {
+    color: $primary;
+}
+.generalFormField.checkbox label::before,
+.generalFormField.radio label::before,
+.generalFormFieldRadioContainer label::before {
+    border: 1px solid #e6e6e6;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    content: '';
+    height: 18px;
+    left: 0;
+    position: absolute;
+    top: 2px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: 18px;
+}
+.generalFormField.radio label::before,
+.generalFormFieldRadioContainer label::before {
+    border-radius: 50%;
+}
+.generalFormField.smallLabel.checkbox label::before {
+    top: 1px;
+}
+.generalFormField.checkbox label::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: $primary;
+    content: '\f00c';
+    font-family: "Font Awesome 6 Sharp" !important;
+    font-size: 20px;
+    font-weight: 700;
+    left: 1px;
+    opacity: 0;
+    position: absolute;
+    top: -4px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    visibility: hidden;
+}
+.generalFormField.radio label::after,
+.generalFormFieldRadioContainer label::after {
+    background-color: $primary;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    content: '';
+    height: 12px;
+    left: 3px;
+    opacity: 0;
+    position: absolute;
+    top: 5px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    visibility: hidden;
+    width: 12px;
+}
+.generalFormField.radio label::after,
+.generalFormFieldRadioContainer label::after {
+    border-radius: 50%;
+}
+.generalFormField.smallLabel.checkbox label::after {
+    top: 7px;
+}
+.generalFormField.checkbox > input:checked + label,
+.generalFormField.radio > input:checked + label,
+.generalFormFieldRadioContainer > input:checked + label {
+    color: $text-main;
+}
+.generalFormField.checkbox > input:checked + label::before,
+.generalFormField.radio > input:checked + label::before,
+.generalFormFieldRadioContainer > input:checked + label::before {
+    background-color: #e6e6e6;
+}
+.generalFormField.checkbox > input:checked + label::after {
+    opacity: 1;
+    visibility: visible;
+}
+.generalFormField.radio > input:checked + label::after,
+.generalFormFieldRadioContainer > input:checked + label::after {
+    opacity: 1;
+    visibility: visible;
+}
+.infoPrompt,
+.methodDescription {
+    background-color: $bg-alt;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    float: left;
+    gap: 15px;
+    padding: 12px; // 12px 12px 45px
+    position: relative;
+    width: 100%;
+    .icon {
+        align-items: center;
+        display: flex;
+        font-size: 20px;
+        max-height: 28px;
+        //left: 13px;
+        //position: absolute;
+        //top: 9px;
+    }
+    .infoPromptBody,
+    .methodDescriptionBody {
+        //align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.infoPrompt {
+    font-size: 13px;
+
+    &.success {
+        background-color: #ddf8ed;
+        //border: 1px solid #a3cfbf;
+        //color: #0b714c;
+        color: #479f7f;
+    }
+    &.error {
+        background-color: #fbe9e9;
+        //border: 1px solid #f5c6cb;
+        //color: #721c24;
+        color: #e14646;
+    }
+}
+.methodDescription {
+    display: none;
+    font-size: 12px;
+    margin: 15px 0 -15px -15px;
+    width: calc(100% + 30px);
+
+    p {
+        margin: 0;
+    }
+}
+.methodInstallmentsWrapper {
+    float: left;
+    margin: 15px 0 0;
+    position: relative;
+    width: 100%;
+}
+.methodInstallments {
+    display: none;
+    float: left;
+    position: relative;
+    .methodInstallmentsLabel {
+        float: left;
+        font-size: 13px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+}
+.generalFormField.radio:has(input:checked) {
+    .methodDescription {
+        //display: block;
+        display: flex;
+    }
+    .methodInstallments {
+        display: block;
+        min-width: 240px;
+    }
+}
+//.generalFormField.radio input:checked + label + .methodDescription {
+//    display: block;
+//}
+.generalFormField .selectContainer {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.selectContainer .selectText {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.selectContainer .selectedOption {
+    -webkit-appearance: none;
+    border: 1px solid #e6e6e6;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    outline: none !important;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+}
+.selectContainer .selectPlaceholderContainer {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.selectContainer .selectPlaceholderContainer .selectedText {
+    float: left;
+    font-size: 14px;
+    max-width: calc(100% - 40px);
+    position: relative;
+    width: 100%;
+}
+.selectContainer .selectPlaceholderContainer .selectedArrowContainer {
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.selectContainer .selectPlaceholderContainer .selectedArrow {
+    color: $primary;
+    float: left;
+    font-size: 20px;
+    position: relative;
+    -webkit-transition: all 0.3s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+    -moz-transition: all 0.3s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+    transition: all 0.3s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+}
+.selectContainer .selectPlaceholderContainer.open .selectedArrow.open,
+.selectContainer .selectPlaceholderContainer .selectedArrow.close {
+    display: none;
+}
+.selectContainer .selectPlaceholderContainer .selectedArrow.open,
+.selectContainer .selectPlaceholderContainer.open .selectedArrow.close {
+    display: block;
+}
+.selectContainer .selectedOptionsContainer {
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    bottom: 2px;
+    left: 0;
+    padding: 10px;
+    position: absolute;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    transform: translateY(100%);
+    width: 100%;
+    z-index: 100;
+}
+.selectContainer .selectOptions {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.selectContainer .selectOption {
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    padding: 10px 5px;
+    position: relative;
+    -webkit-transition: all 0.3s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+    -moz-transition: all 0.3s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+    transition: all 0.3s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+    width: 100%;
+}
+.selectContainer .selectOption:hover {
+    color: $primary;
+}
+.selectContainer .selectOption.active {
+    background-color: $primary;
+    color: #fff;
+}
+.selectContainer .selectOption.disabled {
+    cursor: default;
+    color: #bfbfbf;
+}
+.generalFormFieldNote {
+    color: #68696c !important;
+    float: left;
+    font-size: 14px;
+    margin: 10px 0 0;
+    position: relative;
+    width: 100%;
+    @media (max-width: 420px) {
+        font-size: 13px;
+    }
+
+    a, strong {
+        color: #2d2d2d;
+        font-weight: 500;
+    }
+}
+.generalFormNote {
+    color: #b7b7b7;
+    float: left;
+    font-size: 14px;
+    position: relative;
+    width: 100%;
+}
+.generalFormNote input {
+    border: 2px solid #eaebeb;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    outline: none !important;
+    position: relative;
+}
+.generalFormError {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #e14646;
+    float: left;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 5px 0;
+    position: relative;
+    width: 100%;
+
+    &:empty {
+        display: none;
+        margin: 0;
+    }
+}
+.generalFormSuccess {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #32c682;
+    float: left;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 5px 0;
+    position: relative;
+    width: 100%;
+
+    &:empty {
+        display: none;
+        margin: 0;
+    }
+}
+.generalFormMessage {
+    float: left;
+    font-weight: 700;
+    position: relative;
+    width: 100%;
+}
+.generalFormSuccessMessage {
+    float: left;
+    font-weight: 700;
+    margin: 15px 0 0;
+    position: relative;
+    width: 100%;
+}
+.generalFormButtons {
+    float: left;
+    gap: 20px 40px;
+    line-height: $line-height-heading;
+    position: relative;
+    width: 100%;
+    @media (max-width: 580px) {
+        font-size: 14px;
+    }
+}
+.generalFormButtons .text strong {
+    font-weight: 700;
+}
+.generalFormButtons .text {
+    text-align: center;
+}
+.generalFormButtons.multiple .generalFormButton {
+    margin: 5px 30px 5px 0;
+}
+.generalFormButtons.multiple .generalFormButton:last-child {
+    margin-right: 0;
+}
+.pseudoGeneralButton {
+    float: left;
+    box-sizing: border-box;
+    height: clamp-size(40,60,320,2000);
+    min-width: 180px;
+    padding: 0 20px;
+    position: relative;
+}
+.generalFormButton {
+    -webkit-appearance: none;
+    -webkit-align-items: center;
+    align-items: center;
+    background-image: none !important;
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    display: -webkit-flex;
+    display: flex;
+    float: left;
+    font-size: 18px;
+    font-weight: 400;
+    height: clamp-size(40,60,320,2000);
+    -webkit-justify-content: center;
+    justify-content: center;
+    min-width: 180px;
+    outline: none !important;
+    padding: 0 20px;
+    position: relative;
+    text-align: center;
+    text-shadow: none;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    @media (max-width: 580px) {
+        font-size: 16px;
+    }
+    @media (max-width: 420px) {
+        font-size: 13px;
+        min-width: 120px;
+    }
+}
+.generalFormButton.small {
+    font-size: 15px;
+    height: clamp-size(30,40,320,2000);
+    min-width: 160px;
+    padding: 0 15px;
+}
+.generalFormButton.large {
+    min-width: 280px;
+    padding: 0 50px;
+}
+.generalFormButton:hover {
+    background-color: #000;
+    color: #fff;
+    text-shadow: none;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.generalFormButtons .formRegisterButton,
+.generalFormButtons .formLoginButton {
+    text-decoration: underline;
+}
+
+@media (max-width: 580px) {
+    .generalFormButtons.multiple {
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+    }
+    .generalFormButtons.multiple .generalButton {
+        margin: 5px 30px 5px 0;
+    }
+}

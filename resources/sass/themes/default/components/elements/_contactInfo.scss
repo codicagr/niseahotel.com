@@ -1,0 +1,62 @@
+.modContactInfo {
+    .contactInfoWrapper {
+        float: left;
+        position: relative;
+        width: 100%;
+        .contactInfoBox {
+            float: left;
+            position: relative;
+            width: calc(50% - 25px);
+        }
+    }
+    &.top {
+        float: left;
+        position: relative;
+        width: 100%;
+        .contactInfoMainContainer {
+            float: left;
+            position: relative;
+        }
+        .contactInfoList {
+            float: left;
+            position: relative;
+            .contactInfoListItem {
+                float: left;
+                font-size: 12px;
+                margin-right: 20px;
+                position: relative;
+                &:last-child {
+                    margin: 0;
+                }
+                a {
+                    color: #fff;
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+                .contactInfoIcon {
+                    float: left;
+                    margin-right: 7px;
+                    position: relative;
+                }
+                .contactInfoValue {
+                    float: left;
+                    position: relative;
+                }
+                &.contactInfoEmail {
+                    @media (max-width: 580px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+#mobileInfo {
+    .modContactInfo {
+        font-size: 26px;
+        @media (max-width: 380px) {
+            font-size: 20px;
+        }
+    }
+}

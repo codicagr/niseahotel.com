@@ -1,0 +1,279 @@
+@-webkit-keyframes animatedLabelsFormFadeIn {
+    0% { color: transparent }
+    100% { color: $text-main }
+}
+@keyframes animatedLabelsFormFadeIn {
+    0% { color: transparent }
+    100% { color: $text-main }
+}
+
+@-webkit-keyframes animatedLabelsFormFadeOut {
+    0% { color: $text-main }
+    100% { color: transparent }
+}
+@keyframes animatedLabelsFormFadeOut {
+    0% { color: $text-main }
+    100% { color: transparent }
+}
+
+@-webkit-keyframes animatedLabelsWhiteFormFadeIn {
+    0% { color: transparent }
+    100% { color: #fff }
+}
+@keyframes animatedLabelsWhiteFormFadeIn {
+    0% { color: transparent }
+    100% { color: #fff }
+}
+
+@-webkit-keyframes animatedLabelsWhiteFormFadeOut {
+    0% { color: #fff }
+    100% { color: transparent }
+}
+@keyframes animatedLabelsWhiteFormFadeOut {
+    0% { color: #fff }
+    100% { color: transparent }
+}
+
+.animatedLabelsForm {
+    .generalFormFieldsContainer {
+        .generalFormFields {
+            .generalFormField {
+                input {
+                    height: 56px;
+                    padding: 20px 20px 5px 20px;
+                }
+                textarea {
+                    padding: 30px 20px 0 20px;
+                }
+                input,
+                textarea {
+                    &::-webkit-input-placeholder {
+                        opacity: 0;
+                        -webkit-transition: opacity .1s linear .1s;
+                        -moz-transition: opacity .1s linear .1s;
+                        transition: opacity .1s linear .1s;
+                    }
+                    &:placeholder-shown:focus {
+                        animation: animatedLabelsFormFadeIn .1s linear .1s forwards;
+                        color: transparent;
+                    }
+                    &:placeholder-shown:not(:focus) {
+                        animation: animatedLabelsFormFadeOut .1s linear .1s forwards;
+                        color: $text-main;
+                    }
+                    &:focus {
+                        outline: none;
+                        &::-webkit-input-placeholder {
+                            opacity: 1;
+                        }
+                    }
+                    &:focus + .placeholderLabel,
+                    &:-webkit-autofill + .placeholderLabel,
+                    &:not(:placeholder-shown) + .placeholderLabel {
+                        color: #68696c;
+                        font-size: 12px;
+                        font-weight: 400;
+                        -webkit-transform: translateY(-10px);
+                        -moz-transform: translateY(-10px);
+                        transform: translateY(-10px);
+                        transition-delay: 0s;
+
+                    }
+                }
+                .placeholderLabel {
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    color: #68696c;
+                    display: block;
+                    font-size: 15px;
+                    font-weight: 400;
+                    margin: 0;
+                    overflow: hidden;
+                    padding: 0 20px;
+                    pointer-events: none;
+                    position: absolute;
+                    text-overflow: ellipsis;
+                    top: 18px;
+                    -webkit-transition: all .1s ease-in-out;
+                    -moz-transition: all .1s ease-in-out;
+                    transition: all .1s ease-in-out;
+                    transition-delay: 0.2s;
+                    white-space: nowrap;
+                    width: calc(100% - 30px);
+                    @media (max-width: 400px) {
+                        font-size: 13px;
+                    }
+                }
+                &.select label {
+                    display: none;
+                }
+                &.whiteForm {
+                    .generalFormField {
+                        input,
+                        textarea {
+                            &:placeholder-shown:focus {
+                                animation: animatedLabelsWhiteFormFadeIn .1s linear .1s forwards;
+                                color: transparent;
+                            }
+                            &:placeholder-shown:not(:focus) {
+                                animation: animatedLabelsWhiteFormFadeOut .1s linear .1s forwards;
+                                color: #fff;
+                            }
+                        }
+                        .placeholderLabel {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            .generalFormField.hiddenPlaceholderPrefix {
+                input {
+                    padding-left: 45px;
+                }
+                &:has(.hiddenPrefix:empty) input {
+                    padding-left: 20px;
+                }
+                &:has(input::-webkit-input-placeholder) {
+                    opacity: 0;
+                    -webkit-transition: opacity .1s linear .1s;
+                    -moz-transition: opacity .1s linear .1s;
+                    transition: opacity .1s linear .1s;
+                }
+
+                &:focus-within:has(input:placeholder-shown) {
+                    animation: animatedLabelsFormFadeIn .1s linear .1s forwards;
+                    color: transparent;
+                }
+
+                &:not(:focus-within):has(input:placeholder-shown) {
+                    animation: animatedLabelsFormFadeOut .1s linear .1s forwards;
+                    color: $text-main;
+                }
+
+                &:focus-within:has(input) {
+                    outline: none;
+                }
+
+                &:focus-within:has(input::-webkit-input-placeholder) {
+                    opacity: 1;
+                }
+
+                &:focus-within:has(input) .placeholderLabel,
+                &:has(input:-webkit-autofill) .placeholderLabel,
+                &:has(input:not(:placeholder-shown)) .placeholderLabel {
+                    color: #68696c;
+                    font-size: 12px;
+                    font-weight: 400;
+                    -webkit-transform: translateY(-10px);
+                    -moz-transform: translateY(-10px);
+                    transform: translateY(-10px);
+                    transition-delay: 0s;
+                }
+
+                &:focus-within:has(input) .hiddenPrefix,
+                &:has(input:-webkit-autofill) .hiddenPrefix,
+                &:has(input:not(:placeholder-shown)) .hiddenPrefix {
+                    opacity: 1;
+                    pointer-events: all;
+                }
+
+                &:has(input:disabled) .hiddenPrefix,
+                &:has(input[readonly]) .hiddenPrefix, {
+                    color: rgb(84, 84, 84);
+                }
+
+                .hiddenPrefix {
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    color: $text-main;
+                    display: block;
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin: 0;
+                    opacity: 0;
+                    padding: 0 20px;
+                    pointer-events: none;
+                    position: absolute;
+                    top: 24px;
+                    -webkit-transition: opacity .1s linear .1s;
+                    -moz-transition: opacity .1s linear .1s;
+                    transition: opacity .1s linear .1s;
+                }
+            }
+            .generalFormFieldInfoPopup {
+                background: #fffeee;
+                border: 1px solid #e4e4e4;
+                border-radius: 3px;
+                box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.1);
+                color: #68696c;
+                font-size: 13px;
+                float: left;
+                padding: 8px 15px;
+                pointer-events: none;
+                width: calc(100% - 60px);
+                z-index: 100;
+            }
+        }
+    }
+}
+
+.ts-wrapper.single .ts-control {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.animatedLabelsForm .ts-wrapper.single .ts-control {
+    border: 1px solid #e4e4e4;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0;
+}
+
+.animatedLabelsForm .ts-wrapper.single .ts-control .item {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: 500;
+    height: 54px;
+    padding: 18px 20px;
+}
+
+@media (max-width: 680px) {
+    .animatedLabelsForm .ts-wrapper.single .ts-control .item {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 420px) {
+    .animatedLabelsForm .ts-wrapper.single .ts-control .item {
+        font-size: 13px;
+    }
+}
+
+.animatedLabelsForm .ts-wrapper.single .ts-control .item {
+    padding: 25px 19px 10px;
+}
+
+.animatedLabelsForm .ts-wrapper.single .ts-control .item .ts-selectPlaceholderLabel {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #68696c;
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 18px;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    transition-delay: 0.2s;
+    padding: 5px 0;
+    transform: translateY(-18px);
+}

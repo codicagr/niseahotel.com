@@ -1,0 +1,96 @@
+.paginationWrapper {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.paginationBar {
+    float: left;
+    position: relative;
+    width: 100%;
+    .paginationPages {
+        float: left;
+        position: relative;
+        @media (max-width: 480px) {
+            order: 1;
+            width: 100%;
+        }
+    }
+    .paginationItem {
+        -webkit-align-items: center;
+        align-items: center;
+        color: #68696c;
+        cursor: pointer;
+        display: -webkit-flex;
+        display: flex;
+        float: left;
+        font-size: 16px;
+        font-weight: 400;
+        -webkit-justify-content: center;
+        justify-content: center;
+        margin: 5px 10px;
+        padding: 4px;
+        position: relative;
+        -webkit-transition: all 0.5s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+        -moz-transition: all 0.5s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+        transition: all 0.5s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+        &.activePage,
+        &:hover {
+            color: $text-main;
+            -moz-text-shadow: 0 0 1px $text-main;
+            text-shadow: 0 0 1px $text-main;
+        }
+        &.breakpoint {
+            pointer-events: none;
+        }
+        &.previous,
+        &.next {
+            border: 2px solid #68696c;
+            border-radius: 50%;
+            opacity: 1;
+            height: 30px;
+            -webkit-transition: all 0.5s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+            -moz-transition: all 0.5s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+            transition: all 0.5s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+            width: 30px;
+            &:hover {
+                border-color: $text-main;
+                .icon {
+                    color: $text-main;
+                }
+            }
+            .icon {
+                color: #68696c;
+                float: left;
+                font-size: 26px;
+                line-height: 0;
+                -webkit-transition: all 0.5s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+                -moz-transition: all 0.5s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+                transition: all 0.5s cubic-bezier(0.29, 0, 0.2, 1) 0s;
+            }
+            @media (max-width: 580px) {
+                height: 34px;
+                width: 34px;
+            }
+            @media (max-width: 480px) {
+                margin: 7px;
+                order: 2;
+            }
+        }
+        &.previous {
+            margin-right: 25px;
+        }
+        &.next {
+            margin-left: 25px;
+        }
+        &.disabled,
+        &.previous.disable
+        &.next.disabled {
+            cursor: default;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        @media (max-width: 480px) {
+            margin: 3px;
+        }
+    }
+}

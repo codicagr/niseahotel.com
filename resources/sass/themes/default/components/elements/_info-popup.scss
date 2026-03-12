@@ -1,0 +1,22 @@
+.infoPopup {
+  display: inline;
+
+  .infoPopupButton {
+    color: #cecece;
+    cursor: pointer;
+    padding: 4px;
+    margin-top: 2px;
+  }
+}
+
+.infoPopupBox {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);
+  color: #404040;
+  font-size: 13px;
+  padding: 12px 15px;
+  text-align: start;
+  max-width: min(95%, 450px);
+  z-index: 100;
+}

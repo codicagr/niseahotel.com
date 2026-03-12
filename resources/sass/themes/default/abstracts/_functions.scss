@@ -1,0 +1,70 @@
+@use "sass:math";
+@use "sass:string"; // Προσθήκη για το string.unquote
+
+@function dynamic-size($value, $min-value: null, $max-value: null, $scaler: null) {
+    $target-window-width: 1920;
+
+    // Χρήση κλασικού @if για αποφυγή των warnings της συνάρτησης if()
+    $scale-modifier: 0.2;
+    @if ($scaler != null) {
+        $scale-modifier: $scaler;
+    }
+
+    $modifier: calc($value / $target-window-width * $scale-modifier);
+    $vw: calc(100vw * $modifier);
+
+    $value-as-px: calc($value * 1px);
+    $offset-px: calc($value-as-px - $value-as-px * $scale-modifier);
+
+    $result: calc($offset-px + $vw);
+
+    @if ($min-value != null and $max-value != null) {
+        @return clamp($min-value, $result, $max-value);
+    }
+
+    @if ($min-value != null and $max-value == null) {
+        @return max($result, $min-value);
+    }
+
+    @if ($min-value == null and $max-value != null) {
+        @return min($result, $max-value);
+    }
+
+    @else {
+        @return $result;
+    }
+}
+
+/// Fluid clamp μεταξύ δύο τιμών ανάλογα με το πλάτος της οθόνης
+@function clamp-size($min-value: null, $max-value: null, $min-window: 320, $max-window: 2000) {
+    @if $min-value == null or $max-value == null {
+        @error "clamp-size: Πρέπει να ορίσεις $min-value και $max-value.";
+    }
+
+    $min-value-num: $min-value;
+    $max-value-num: $max-value;
+    $min-window-num: $min-window;
+    $max-window-num: $max-window;
+
+    // Μετατροπή σε px αν είναι unitless
+    @if math.unit($min-value) == "" { $min-value: $min-value * 1px; }
+    @if math.unit($max-value) == "" { $max-value: $max-value * 1px; }
+    @if math.unit($min-window) == "" { $min-window: $min-window * 1px; }
+    @if math.unit($max-window) == "" { $max-window: $max-window * 1px; }
+
+    // Υπολογισμός ορίων για το clamp
+    $clamp-min: $min-value;
+    $clamp-max: $max-value;
+    @if ($min-value > $max-value) {
+        $clamp-min: $max-value;
+        $clamp-max: $min-value;
+    }
+
+    // Χρήση string.unquote για αποφυγή deprecation warning
+    $calc: string.unquote(
+            "calc(#{$min-value} + (#{$max-value-num} - #{$min-value-num}) * ((100vw - #{$min-window}) / (#{$max-window-num} - #{$min-window-num})))"
+    );
+
+    @return clamp(#{$clamp-min}, #{$calc}, #{$clamp-max});
+}
+

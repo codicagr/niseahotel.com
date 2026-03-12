@@ -1,0 +1,100 @@
+.headroom {
+    #header {
+        top: 0;
+    }
+}
+body.headroom--not-top {
+    #header {
+        background-color: $bg-main;
+        box-shadow: #0000001a 0px 0px 5px 2px;
+        #headerMain {
+            padding: 10px 0;
+            .headerMainInner {
+                height: 55px;
+            }
+        }
+        &:before {
+            display: none;
+        }
+    }
+
+    .mobileMenuWrapper {
+        .mobileMenuSwitcher {
+            .mobileMenuIcon {
+                .mobileMenuLine {
+                    background: $text-main;
+                }
+            }
+
+            .mobileMenuText {
+                color: $text-main;
+            }
+        }
+    }
+
+    #lang {
+        .langContainer {
+            .modLanguagesListItem {
+                &.active {
+                    color: $text-main;
+                }
+                a {
+                    color: $text-main;
+                }
+            }
+        }
+        &:after {
+            background-color: $text-main;
+        }
+    }
+
+    #headerLogo {
+        width: 44px;
+        .logo {
+            svg {
+                filter: none;
+                polygon,
+                rect,
+                path {
+                    fill: $text-main;
+                }
+            }
+        }
+    }
+
+    #headerRight {
+        .modBookingWidget .bookingPopupTriggers {
+            a {
+                border-color: $text-main;
+                color: $text-main;
+
+                &:hover {
+                    background-color: $secondary;
+                    border-color: $secondary;
+                    color: $text-inverse;
+                }
+            }
+
+            .mobile {
+                svg {
+                    path {
+                        fill: $text-main;
+                    }
+                }
+            }
+        }
+    }
+
+    &.headroom--unpinned {
+        #header:not(:has(.combinedMenu .plainMenu .menuItem:hover)) {
+            /*top: -150px;*/
+            @media (max-width: 980px) {
+                top: 0;
+            }
+        }
+        .modCartModal,
+        .modAccountStaticWrapper {
+            top: 160px;
+        }
+    }
+}

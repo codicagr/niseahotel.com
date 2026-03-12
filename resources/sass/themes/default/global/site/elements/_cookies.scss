@@ -1,0 +1,574 @@
+.lcc-modal.cookiesModal {
+    padding: 0;
+    width: 730px;
+
+    &.fullPage {
+        height: 100vh;
+        max-height: 100vh;
+        max-width: 100vw;
+        width: 100vw;
+    }
+
+    &.lcc-modal--alert {
+        border-radius: 0.5rem;
+        bottom: 20px;
+        left: auto;
+        max-width: 440px;
+        right: 20px;
+        top: auto;
+        transform: none;
+        width: calc(100vw - 40px);
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    .cookiesModalAlertBodyContainer {
+        box-sizing: border-box;
+        float: left;
+        padding: 30px;
+        position: relative;
+        width: 100%;
+
+        .cookiesModalAlertBodyContainerInner {
+            float: left;
+            position: relative;
+            width: 100%;
+
+            .cookiesModalAlertBody {
+                width: 100%;
+
+                .cookiesModalHeader {
+                    float: left;
+                    margin: 0 0 15px;
+                    position: relative;
+                    width: 100%;
+
+                    .cookiesModalTitle {
+                        -webkit-box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        box-sizing: border-box;
+                        float: left;
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                    }
+                }
+
+                .cookiesModalContent {
+                    float: left;
+                    position: relative;
+                    width: 100%;
+
+                    .cookiesModalContentText {
+                        box-sizing: border-box;
+                        color: $text-muted;
+                        float: left;
+                        font-size: 14px;
+                        position: relative;
+                        width: 100%;
+
+                        p:first-child {
+                            margin-top: 0;
+                        }
+
+                        p:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .cookiesModalAlertButtons {
+        float: left;
+        position: relative;
+        width: 100%;
+
+        .cookiesModalAlertActions {
+            display: flex;
+            flex-direction: column;
+            float: left;
+            gap: 5px;
+            margin: 25px 0 0;
+            position: relative;
+            width: 100%;
+        }
+    }
+
+    .cookiesModalAlertButtons .lcc-button,
+    .cookiesModalActions .lcc-button,
+    .cookiesModalDetailsActions .lcc-button {
+        appearance: none;
+        align-items: center;
+        background-color: #eaeff2;
+        border-radius: $radius-md;
+        border: 2px solid transparent;
+        box-sizing: border-box;
+        color: $text-main;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: $font-family-sans !important;
+        font-weight: $weight-medium;
+        font-size: 13px;
+        justify-content: center;
+        letter-spacing: 0.02em;
+        margin: 0;
+        padding: 8px 20px;
+        transition: $btn-transition;
+        text-decoration: none;
+        width: 100%;
+
+        &:focus,
+        &:hover {
+            background: #d4dae0;
+        }
+
+        &.js-lcc-accept {
+            background-color: $secondary;
+            color: $text-inverse;
+
+            &:hover {
+                background-color: $secondary-hover;
+                transform: none;
+            }
+        }
+    }
+}
+
+.lcc-modal.cookiesModal .cookiesModalHeaderContainer {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    padding: 10px 10px;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .lcc-modal__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: $line-height-solid;
+    position: absolute;
+    right: 7px;
+    top: 15px;
+    -webkit-transition: color 0.3s ease 0s;
+    -moz-transition: color 0.3s ease 0s;
+    transition: color 0.3s ease 0s;
+    width: 30px;
+    z-index: 2;
+}
+.lcc-button.lcc-u-sr-only {
+    font-size: 0;
+}
+.lcc-modal.cookiesModal .cookiesLogo {
+    float: left;
+    position: relative;
+    width: 80px;
+}
+.lcc-modal.cookiesModal.lcc-modal--alert .cookiesLogo {
+    width: 80px;
+}
+.lcc-modal.cookiesModal .cookiesModalMainContainer {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeTabs {
+    float: left;
+    position: relative;
+    width: 220px;
+    @media (max-width: 680px) {
+        display: none;
+    }
+}
+.lcc-modal.cookiesModal .cookiesModalTypeTab {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #d7d7d7;
+    border-left: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 15px;
+    position: relative;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeTab.active {
+    background-color: #fff;
+    border-left: 10px solid $primary;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCards {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    padding: 0 10px 0 30px;
+    position: relative;
+    width: calc(100% - 220px);
+    @media (max-width: 680px) {
+        padding: 0 15px;
+        width: 100%;
+    }
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCard {
+    float: left;
+    position: relative;
+    width: 100%;
+    @media (max-width: 680px) {
+        margin: 20px 0;
+    }
+}
+.lcc-modal.cookiesModal .cookiesModalTypeMobileTab {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #d7d7d7;
+    border-left: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: none;
+    float: left;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 15px;
+    position: relative;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+    @media (max-width: 680px) {
+        display: block;
+    }
+}
+.lcc-modal.cookiesModal .cookiesModalTypeMobileTab.active {
+    background-color: #fff;
+    border-left: 10px solid $primary;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardHeader {
+    float: left;
+    position: relative;
+    width: 100%;
+    @media (max-width: 680px) {
+        display: none;
+    }
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardContent {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardContent p {
+    margin: 10px 0;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardTitle {
+    float: left;
+    font-size: 17px;
+    font-weight: 700;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardToggle {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardToggle * {
+    backface-visibility: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s ease-in-out 0.1s;
+    -moz-transition: all 0.3s ease-in-out 0.1s;
+    transition: all 0.3s ease-in-out 0.1s;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardToggle input[type="checkbox"] {
+    display: none;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardToggle div {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardToggle label {
+    background: #999;
+    border-radius: 55px;
+    cursor: pointer;
+    display: block;
+    height: 24px;
+    position: relative;
+    width: 45px;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardToggle label::before {
+    background: #eee;
+    border: 2px solid #d7d7d7;
+    border-radius: 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    content: '';
+    height: 20px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    -webkit-transition: all 0.3s ease-in-out 0.1s;
+    -moz-transition: all 0.3s ease-in-out 0.1s;
+    transition: all 0.3s ease-in-out 0.1s;
+    width: 20px;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardToggle input[disabled] ~ div label {
+    cursor: default;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardToggle input[type="checkbox"]:checked ~ div label {
+    background: #49a844;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardToggle input[type="checkbox"]:checked ~ div label::before {
+    left: 23px;
+}
+.lcc-modal.cookiesModal .cookiesModalTypeCardContent {
+    float: left;
+    font-size: 14px;
+    line-height: $line-height-heading;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalSettingsTitle {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: $line-height-heading;
+    padding: 15px 15px 0;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalSettingsText,
+.lcc-modal.cookiesModal .cookiesModalSettingsDescription {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    font-size: 14px;
+    line-height: $line-height-heading;
+    padding: 0 15px;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalSettingsTitle p,
+.lcc-modal.cookiesModal .cookiesModalSettingsText p,
+.lcc-modal.cookiesModal .cookiesModalSettingsDescription p {
+    margin: 5px 0;
+}
+.lcc-modal.cookiesModal .cookiesModalSettingsText p .link,
+.lcc-modal.cookiesModal .cookiesModalSettingsDescription p .link {
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: underline;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.lcc-modal.cookiesModal .cookiesModalSettingsText p .link:hover,
+.lcc-modal.cookiesModal .cookiesModalSettingsDescription p .link:hover {
+    color: $primary;
+}
+.lcc-modal.cookiesModal .cookiesModalSettingsButtonContainer {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    font-size: 14px;
+    line-height: $line-height-heading;
+    padding: 5px 15px;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalSettingsButton {
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: underline;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.lcc-modal.cookiesModal .cookiesModalSettingsButton:hover {
+    color: $primary;
+}
+.lcc-modal.cookiesModal .cookiesModalActions,
+.lcc-modal.cookiesModal .cookiesModalDetailsActions {
+    border-top: 1px solid #d7d7d7;
+    box-sizing: border-box;
+    float: left;
+    gap: 15px;
+    margin: 15px 0 0;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+}
+
+
+.lcc-modal.cookiesModal .cookiesModalDetails {
+    float: left;
+    padding: 50px 0;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsContainer {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    padding: 0 15px;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsMainContainer {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsMainTitle {
+    float: left;
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsMainText {
+    float: left;
+    font-size: 14px;
+    line-height: $line-height-heading;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsMainText p {
+    margin: 5px 0;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsList {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItem {
+    border-top: 1px solid #d7d7d7;
+    float: left;
+    padding: 15px 0;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItem:first-child {
+    border: none;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItemTitleContainer {
+    cursor: pointer;
+    float: left;
+    font-weight: 700;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItemTitle {
+    float: left;
+    font-size: 16px;
+    font-weight: 700;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItemToggle {
+    float: left;
+    font-size: 18px;
+    line-height: $line-height-solid;
+    margin: 3px 10px 0 0;
+    position: relative;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItem .cookiesModalDetailsListItemToggle .close{
+    display: none;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItem .cookiesModalDetailsListItemToggle .open{
+    display: block;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItem.opened .cookiesModalDetailsListItemToggle .close{
+    display: block;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItem.opened .cookiesModalDetailsListItemToggle .open{
+    display: none;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItemText {
+    float: left;
+    font-size: 14px;
+    line-height: $line-height-heading;
+    position: relative;
+    width: 100%;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItemText p {
+    margin: 5px 0;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItemText table {
+    margin: 20px 0;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItemText a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItemText a:hover {
+    color: $primary;
+}
+.lcc-modal.cookiesModal .cookiesModalDetailsListItemText table {
+    display: block!important;
+    -webkit-overflow-scrolling:touch;
+    max-width: 100% !important;
+    overflow: auto;
+}
+
+.lcc-modal.cookiesModal .cookiesModalDetailsListItemText table tbody,
+.lcc-modal.cookiesModal .cookiesModalDetailsListItemText table thead,
+.lcc-modal.cookiesModal .cookiesModalDetailsListItemText table tfoot {
+    @media (max-width: 680px) {
+        display: table;
+        width: 680px!important;
+    }
+}
+
+.lcc-modal.cookiesModal .cookiesModalActions,
+.lcc-modal.cookiesModal .cookiesModalDetailsActions {
+    gap: 15px;
+    @media (max-width: 980px) {
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+    @media (max-width: 680px) {
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
+.lcc-modal.cookiesModal .cookiesModalActions .lcc-button,
+.lcc-modal.cookiesModal .cookiesModalActions .lcc-button:first-child,
+.lcc-modal.cookiesModal .cookiesModalActions .lcc-button:last-child,
+.lcc-modal.cookiesModal .cookiesModalDetailsActions .lcc-button,
+.lcc-modal.cookiesModal .cookiesModalDetailsActions .lcc-button:first-child,
+.lcc-modal.cookiesModal .cookiesModalDetailsActions .lcc-button:last-child {
+    @media (max-width: 680px) {
+        min-width: 250px;
+    }
+    @media (max-width: 400px) {
+        min-width: 220px;
+    }
+}

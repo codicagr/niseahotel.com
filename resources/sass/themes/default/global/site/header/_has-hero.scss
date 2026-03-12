@@ -1,0 +1,124 @@
+body.hasHero {
+    #header {
+        background-color: transparent;
+        &:before {
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0)));
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+            content: '';
+            height: 160px;
+            left: 0;
+            position: absolute;
+            transition: background 200ms ease;
+            top: 0;
+            width: 100%;
+        }
+    }
+
+    #pageContent {
+        margin-top: 0;
+    }
+
+    .mobileMenuWrapper {
+        .mobileMenuSwitcher {
+            .mobileMenuIcon {
+                .mobileMenuLine {
+                    background: $text-inverse;
+                }
+            }
+
+            .mobileMenuText {
+                color: $text-inverse;
+            }
+        }
+    }
+
+    #lang {
+        .langContainer {
+            .modLanguagesListItem {
+                &.active {
+                    color: $text-inverse;
+                }
+                a {
+                    color: $text-inverse;
+                }
+            }
+        }
+        &:after {
+            background-color: $text-inverse;
+        }
+    }
+
+    #headerLogo {
+        .logo {
+            svg {
+                filter:
+                    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5))
+                    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+                polygon,
+                rect,
+                path {
+                    fill: $text-inverse;
+                }
+            }
+        }
+    }
+
+    #headerRight {
+        .modBookingWidget .bookingPopupTriggers {
+            a {
+                border-color: $text-inverse;
+                color: $text-inverse;
+
+                &:hover {
+                    background-color: $secondary;
+                    border-color: $secondary;
+                    color: $text-inverse;
+                }
+            }
+
+            .mobile {
+                svg {
+                    path {
+                        fill: $text-inverse;
+                    }
+                }
+            }
+        }
+    }
+}
+
+body.burgerMenuOpen {
+    overflow: hidden;
+    scrollbar-gutter: stable;
+    touch-action: none;
+
+    .mobileMenuWrapper {
+        .mobileMenuSwitcher {
+            .mobileMenuIcon {
+                .mobileMenuLine {
+                    background: $text-main;
+                }
+            }
+
+            .mobileMenuText {
+                color: $text-main;
+            }
+        }
+    }
+
+    #lang {
+        .langContainer {
+            .modLanguagesListItem {
+                &.active {
+                    color: $text-main;
+                }
+                a {
+                    color: $text-main;
+                }
+            }
+        }
+        &:after {
+            background-color: $text-main;
+        }
+    }
+}

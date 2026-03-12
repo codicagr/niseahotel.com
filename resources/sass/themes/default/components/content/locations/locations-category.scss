@@ -1,0 +1,27 @@
+.categoryViewContainer.locations {
+
+    .categoryAreaImageWrapper {
+        float: left;
+        position: relative;
+        width: 100%;
+
+        .categoryAreaImageContainer {
+            float: left;
+            position: relative;
+            width: 100%;
+
+            .categoryAreaImage {
+                float: left;
+                max-width: 800px;
+                position: relative;
+                width: 100%;
+
+                img {
+                    float: left;
+                    position: relative;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

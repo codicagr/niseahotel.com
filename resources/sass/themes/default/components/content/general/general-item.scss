@@ -1,0 +1,24 @@
+.itemViewContainer.general {
+    .itemMainContainerInner {
+        max-width: 700px;
+    }
+    .itemText {
+        table {
+            border-style: solid;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        tbody tr td {
+            border-bottom: 1px solid #e5e5e5;
+            padding: 10px;
+        }
+    }
+    table {
+        border-style: solid;
+        display: block!important;
+        -webkit-overflow-scrolling:touch;
+        margin-bottom: 20px;
+        max-width: 100% !important;
+        overflow: auto;
+    }
+}

@@ -1,0 +1,38 @@
+@mixin iterate($className, $propertyName) {
+    $start: 0;
+    $max: 200;
+    $offset: 5;
+    $unit: 'px';
+
+    $i: $start;
+    @while $i <= $max {
+        #{$className + $i} {
+            #{$propertyName}: #{$i + $unit} !important;
+            @if $i > 10 {
+                @include media1400 {
+                    #{$propertyName}: clamp(#{calc($i / 2) + $unit}, calc(#{calc($i / 2) + $unit} + (#{$i} - #{calc($i / 2)}) * ((100vw - 320px) / (1400 - 320))),#{$i + $unit}) !important;
+                }
+            }
+        }
+        $i: $i + $offset;
+    }
+}
+
+@mixin media1400 {
+    @media (max-width: 1400px) { @content; }
+}
+
+@mixin iterateGap($className, $propertyName) {
+    $start: 5;
+    $max: 100;
+    $offset: 5;
+    $unit: 'px';
+
+    $i: $start;
+    @while $i <= $max {
+        #{$className + $i} {
+            #{$propertyName}: #{$i + $unit} !important;
+        }
+        $i: $i + $offset;
+    }
+}

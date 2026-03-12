@@ -1,0 +1,480 @@
+html,
+body,
+a,
+div,
+span,
+body button,
+body input,
+body select,
+body textarea,
+h1,h2,h3,h4,h5,h6 {
+    font-family: $font-family-sans;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+html {
+    background: $bg-main;
+    min-height: 100vh;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+body {
+    background-color: $bg-main;
+    box-sizing: border-box;
+    color: $text-main;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0 auto;
+    max-width: 2000px;
+    min-height: 100%;
+    overflow-x: hidden;
+    padding: 0;
+    word-wrap: break-word;
+    width: 100%;
+
+    &.mobileMenuOpen,
+    &.cookiesOpen {
+        overflow-y: hidden;
+    }
+
+    &.lock {
+        float: left;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+}
+
+a,
+.generalLink {
+    -webkit-appearance: none;
+    color: $link-color;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    transition: $link-transition;
+    text-decoration: none;
+
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $text-main;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-size: clamp-size(32,44,320,2000);
+}
+h2 {
+    font-size: clamp-size(28,36,320,2000);
+}
+h3 {
+    font-size: clamp-size(22,30,320,2000);
+}
+h4 {
+    font-size: clamp-size(16,18,320,2000);
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 14px;
+}
+ul {
+    margin: 0;
+}
+p {
+    margin: 15px 0;
+}
+iframe {
+    max-width: 100%!important;
+}
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+.mainWrapper {
+    float: left;
+    margin: 0 0 120px;
+    position: relative;
+    width: 100%;
+    &.noMargin {
+        margin: 0;
+    }
+    @media (max-width: 1400px) {
+    margin: 0 0 clamp-size(80,120,320,1400);
+    }
+}
+.ccPage {
+    box-sizing: border-box;
+    display: flex;
+    float: left;
+    justify-content: center;
+    padding: 0 50px;
+    position: relative;
+    width: 100%;
+    @media (max-width: 1500px) {
+        padding: 0 25px;
+    }
+    @media (max-width: 1100px) {
+        padding: 0 20px;
+    }
+    @media (max-width: 780px) {
+        padding: 0 15px;
+    }
+}
+.ccPageInner {
+    float: left;
+    max-width: $container-lg;
+    position: relative;
+    width: 100%;
+    &.fullWidth {
+        max-width: 100%;
+    }
+    &.xx-large {
+        max-width: $container-xxl;
+    }
+    &.x-large {
+        max-width: $container-xl;
+    }
+    &.medium {
+        max-width: $container-md;
+    }
+    &.small {
+        max-width: $container-sm;
+    }
+    &.x-small {
+        max-width: $container-xsm;
+    }
+    &.width980 {
+        max-width: 980px;
+    }
+    &.width740 {
+        max-width: 740px;
+    }
+    &.width700 {
+        max-width: 700px;
+    }
+    &.width480 {
+        max-width: 480px;
+    }
+}
+.hidden {
+    display: none !important;
+}
+.invisible {
+    pointer-events: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+.textLeft {
+    text-align: left;
+}
+.textRight {
+    text-align: right;
+}
+.textCenter {
+    text-align: center;
+}
+.floatBox {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.flex {
+    display: flex;
+}
+.flexColumn {
+    flex-direction: column;
+}
+.flexRow {
+    flex-direction: row;
+}
+.flexWrap {
+    flex-wrap: wrap;
+}
+.flexNoWrap {
+    flex-wrap: nowrap;
+}
+.itemsStart {
+    align-items: flex-start;
+}
+.itemsEnd {
+    align-items: flex-end;
+}
+.itemsCenter {
+    align-items: center;
+}
+.justifyStart {
+    justify-content: flex-start;
+}
+.justifyEnd {
+    justify-content: flex-end;
+}
+.justifyCenter {
+    justify-content: center;
+}
+.justifySpaceBetween {
+    justify-content: space-between;
+}
+.justifySpaceAround {
+    justify-content: space-around;
+}
+.justifySpaceEvenly {
+    justify-content: space-evenly;
+}
+.generalButton {
+    appearance: none;
+    align-items: center;
+    background-color: $secondary;
+    /*border-radius: 30px;*/
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    color: $text-inverse;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: $font-family-sans !important;
+    font-weight: $weight-regular;
+    font-size: 0.95rem;
+    justify-content: center;
+    letter-spacing: 0.02em;
+    line-height: $line-height-solid;
+    min-width: 200px;
+    padding: $btn-padding-y $btn-padding-x;
+    transition: $link-transition;
+    text-decoration: none;
+
+
+    &:hover {
+        background-color: $secondary-hover;
+        color: $text-inverse;
+        transform: none;
+    }
+    &.bigButton {
+        min-height: 50px;
+        min-width: 320px;
+        @media (max-width: 580px) {
+            height: 40px;
+            min-height: 40px;
+            min-width: 280px;
+            width: 280px;
+        }
+        @media (max-width: 400px) {
+            min-width: 240px;
+        }
+    }
+    &.smallButton {
+        font-size: 13px;
+        font-weight: $weight-medium;
+        height: 36px;
+        min-width: 100px;
+        padding: 0 clamp-size(15,20,320,2000);
+    }
+    &.outlineButton {
+        background-color: transparent;
+        border-color: $primary;
+        color: $primary;
+
+        &:hover {
+            background-color: $primary;
+            color: $text-inverse;
+        }
+    }
+    &.primary {
+        background-color: $primary;
+        border-color: $primary;
+        color: $text-inverse;
+
+        &:hover {
+            background-color: $text-main;
+            border-color: $text-main;
+            color: $text-inverse;
+        }
+    }
+}
+#pageContent,
+#top1,
+#top2,
+#top3,
+#top4,
+#top5,
+#top6,
+#top7,
+#top8,
+#top9,
+#top10,
+#bottom1,
+#bottom2,
+#bottom3,
+#bottom4,
+#bottom5,
+#bottom6,
+#bottom7,
+#bottom8,
+#bottom9,
+#bottom10,
+#breadcrumbs,
+#pageMainContent,
+#mainContentContainer,
+#mainContent,
+#footer {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+body.altBg #pageContent {
+    background-color: $bg-alt;
+}
+#pageContent {
+    margin-top: 160px;
+}
+.generalTitle {
+    float: left;
+    font-size: clamp-size(24,36,320,2000);
+    font-weight: $weight-medium;
+    line-height: $line-height-heading;
+    margin: 0 0 clamp-size(15,20,320,2000);
+    position: relative;
+    width: 100%;
+}
+.generalTextContainer {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.generalText {
+    float: left;
+    font-weight: $weight-regular;
+    line-height: $line-height-heading;
+    position: relative;
+    width: 100%;
+}
+.generalModuleHeader {
+    float: left;
+    margin: 0 0 clamp-size(30,60,320,2000);
+    position: relative;
+    width: 100%;
+    .generalText {
+        color: $text-muted;
+        font-size: clamp-size(16,20,320,2000);
+        max-width: 1000px;
+    }
+    .generalText p {
+        margin: 0;
+    }
+}
+
+.ellipsisText {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+[data-animation-group="scroll-trigger"][data-animation-group-child="scroll-trigger"],
+[data-animation-group="scroll-trigger"] [data-animation-group-child="scroll-trigger"],
+[data-stagger-child] {
+    opacity: 0;
+    transform: translateY(50px);
+}
+.anchorTarget {
+    left: 0;
+    position: absolute;
+    top: -200px;
+}
+.noItemsContainer {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.noItemsFound {
+    box-sizing: border-box;
+    float: left;
+    font-weight: $weight-regular;
+    position: relative;
+    width: 100%;
+}
+
+.noUserSelect {
+    user-select: none;
+}
+
+.noPadding {
+    padding: 0 !important;
+}
+
+.noPaddingTop {
+    padding-top: 0 !important;
+}
+
+.noPaddingBottom {
+    padding-bottom: 0 !important;
+}
+
+.noMargin {
+    margin: 0 !important;
+}
+
+.noMarginTop {
+    margin-top: 0 !important;
+}
+
+.noMarginBottom {
+    margin-bottom: 0 !important;
+}
+
+.noWrap {
+    white-space: nowrap;
+}
+
+.cookieConsentButtonWrapper {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.cookieConsentButton {
+    float: left;
+    position: relative;
+    width: 100%;
+
+    a,
+    button {
+        -webkit-align-items: center;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        color: $primary;
+        cursor: pointer;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+        float: left;
+        font-size: 13px;
+        font-weight: 400;
+        gap: 0 10px;
+        line-height: $line-height-solid;
+        padding: 7px;
+        -webkit-transition: color 0.3s ease 0s;
+        -moz-transition: color 0.3s ease 0s;
+        transition: color 0.3s ease 0s;
+
+        &:hover {
+            color: $text-main;
+        }
+
+        .icon {
+            font-size: 20px;
+        }
+    }
+}

@@ -1,0 +1,89 @@
+#notificationsPageContent {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.notificationsListContainer {
+    float: left;
+    position: relative;
+    width: 100%;
+    .notificationsList {
+        float: left;
+        position: relative;
+        width: 100%;
+    }
+    .notificationsListItem {
+        border-top: 1px solid #e6e6e6;
+        float: left;
+        padding: 20px 0;
+        position: relative;
+        width: 100%;
+        &:last-child {
+            border-bottom: 1px solid #e6e6e6;
+        }
+        .notificationsListItemBody {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            float: left;
+            position: relative;
+            width: calc(100% - 60px);
+            .notificationsListItemTitle {
+                float: left;
+                font-size: 20px;
+                font-weight: 500;
+                position: relative;
+                width: 100%;
+            }
+            .notificationsListItemText {
+                float: left;
+                font-size: 16px;
+                position: relative;
+                width: 100%;
+                p {
+                    margin: 0;
+                }
+            }
+            @media (max-width: 580px) {
+                width: calc(100vw - 30px);
+            }
+        }
+        &.read .notificationsListItemBody,
+        &.read .notificationsListItemTitle,
+        &.read .notificationsListItemText p {
+            color: #b7b7b7;
+        }
+        &.read .notificationsListItemText a {
+            color: #b7b7b7;
+            &:hover {
+                color: $text-main;
+            }
+        }
+    }
+}
+.notificationsListItemDeleteButtonContainer {
+    float: left;
+    position: relative;
+    width: 60px;
+    .notificationsListItemDeleteButton {
+        color: #b7b7b7;
+        cursor: pointer;
+        float: left;
+        font-size: 28px;
+        position: relative;
+        @media (max-width: 580px) {
+            font-size: 20px;
+        }
+    }
+    @media (max-width: 580px) {
+        width: 30px;
+    }
+}
+.notificationsListButtonsContainer {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.notificationsListButtonsContainer .plainButton {
+    margin: 5px 15px;
+}

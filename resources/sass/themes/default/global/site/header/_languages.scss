@@ -1,0 +1,94 @@
+#lang {
+    float: left;
+    margin-left: 20px;
+    padding-left: 20px;
+    position: relative;
+    transition: $trans-slow;
+    z-index: 20;
+
+    @media (max-width: 400px) {
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+
+    .langContainer {
+        position: relative;
+
+        .modLanguagesList {
+            display: inline-block;
+        }
+
+        .modLanguagesListItem {
+            cursor: pointer;
+            font-family: $font-family-sans;
+            font-weight: $weight-regular;
+            font-size: 16px;
+
+            &.active {
+                align-items: center;
+                color: $text-main;
+                display: flex;
+                font-weight: $weight-regular;
+                gap: 6px;
+                transition: $trans-slow;
+            }
+
+            a {
+                color: $text-main;
+                display: block;
+                text-decoration: none;
+                transition: $trans-slow;
+                width: 100%;
+            }
+            span {
+                font-weight: $weight-regular;
+            }
+        }
+
+        .modLanguagesSubmenu {
+            background: $bg-main;
+            box-shadow: $shadow-md;
+            left: -12px;
+            margin-top: 10px;
+            overflow: hidden;
+            padding: 5px 0;
+            position: absolute;
+            top: 100%;
+            z-index: 50;
+
+            .modLanguagesSubmenuInner {
+                float: left;
+                position: relative;
+
+                .modLanguagesListItem {
+                    font-weight: $weight-regular;
+                    padding: 0 12px;
+
+                    a {
+                        color: $text-main;
+
+                        &:hover {
+                            color: $secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .rotate180 {
+        transform: rotate(180deg);
+    }
+
+    &:after {
+        background-color: $text-main;
+        content: '';
+        height: 50px;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: $trans-slow;
+        width: 1px;
+    }
+}

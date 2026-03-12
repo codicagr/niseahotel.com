@@ -1,0 +1,169 @@
+.cmsForm {
+  @media (max-width: 420px) {
+    .ccPage {
+      padding: 0;
+    }
+  }
+
+  .cmsFormHeaderContainer {
+    border-bottom: 1px solid #d0d2d9
+  }
+
+  .cmsFormPage {
+    background-color: #fff;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    padding: 50px 40px 0;
+    position: relative;
+    width: 100%;
+    @media (max-width: 1100px) {
+      padding: 30px 20px 0;
+    }
+    @media (max-width: 980px) {
+      padding: 50px 40px 0;
+    }
+    @media (max-width: 680px) {
+      padding: 25px 15px 0;
+    }
+
+    .cmsFormPageRow {
+      -webkit-align-items: flex-start;
+      align-items: flex-start;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+
+      .cmsFormPaginationIndicator {
+        background-color: #e5e5e5;
+        border-radius: 2px;
+        flex: 1;
+        height: 4px;
+        width: 4px;
+        margin: 0 2px;
+
+        &.active {
+          background-color: $primary;
+        }
+      }
+    }
+
+    .cmsFormPageTitleWrapper {
+      .cmsFormPageTitle {
+        float: left;
+        font-size: clamp-size(20,28,320,2000);
+        font-weight: 500;
+        line-height: $line-height-heading;
+        position: relative;
+        width: 100%;
+      }
+
+      .cmsFormPageSubtitle {
+        float: left;
+        font-size: 17px;
+        position: relative;
+        width: 100%;
+      }
+    }
+
+    .cmsFormGroupsContainer {
+      .cmsFormGroup {
+        padding-bottom: 40px;
+
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+
+        .cmsFormGroupTitle {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          float: left;
+          font-size: clamp-size(16,18,320,2000);
+          font-weight: 500;
+          position: relative;
+          width: 100%;
+        }
+
+        .cmsFormGroupRowsContainer {
+          .cmsFormGroupRow {
+            -webkit-align-items: center;
+            align-items: center;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+
+            &:has(.infoPrompt) {
+              margin: 0;
+              width: 100%;
+            }
+
+            .infoPrompt {
+              background-color: $bg-alt;
+
+              a {
+                text-decoration: underline;
+              }
+            }
+
+            .checkbox label {
+              &:hover {
+                color: inherit;
+              }
+
+              a {
+                color: $text-main;
+                font-weight: 500;
+
+                &:hover {
+                  color: $primary;
+                }
+              }
+            }
+
+            .technicalCheckPackageTypeRadioGroup,
+            .fastRmaPackageTypeRadioGroup,
+            .rmaPackageTypeRadioGroup {
+              width: 100%;
+
+              .flex.flexWrap.gap15 {
+                gap: 15px 30px !important;
+                flex-wrap: nowrap !important;
+
+                @media (max-width: 760px) {
+                  flex-wrap: wrap !important;
+                }
+              }
+
+              .generalFormFieldRadioContainer {
+                flex: unset !important;
+                width: 50%;
+
+                @media (max-width: 760px) {
+                  width: 100%;
+                }
+              }
+            }
+
+            .technicalCheckFormGoBackButton,
+            .fastRmaFormGoBackButton,
+            .rmaFormGoBackButton,
+            .technicalCheckFormSubmitButton,
+            .fastRmaFormSubmitButton,
+            .rmaFormSubmitButton {
+              @media (max-width: 520px) {
+                display: flex;
+                justify-content: center;
+                width: 100% !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

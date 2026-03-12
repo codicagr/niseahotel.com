@@ -1,0 +1,101 @@
+/* --- TYPOGRAPHY & SPACING --- */
+$font-family-serif:     'Noto Serif Display', serif;
+$font-family-sans:      'Inter', sans-serif;
+
+$weight-thin:           100;
+$weight-light:          300;
+$weight-regular:        400;
+$weight-medium:         500;
+$weight-bold:           700;
+$weight-extra-bold:     800;
+$weight-black:          900;
+
+$line-height-base:      1.6;
+$line-height-heading:   1.2;
+$line-height-solid:     1;
+
+$space-xs:              0.2rem;
+$space-sm:              0.35rem;
+$space-md:              0.5rem;
+$space-lg:              1rem;
+$space-xl:              1.5rem;
+$space-2xl:             2rem;
+$space-3xl:             3rem;
+
+/* --- THEME COLORS --- */
+$bg-main:               #ffffff;
+$bg-alt:                #f9f6f2;
+$bg-inverse:            #25332f;
+
+$text-main:             #25332f;
+$text-muted:            #707572;
+$text-inverse:          #ffffff;
+
+$primary:               #38624a;
+$primary-hover:         #21422f;
+
+$secondary:             #ffc7a7;
+$secondary-hover:       #e5b095;
+
+/* --- UI ELEMENTS --- */
+$border-subtle:         rgba(26, 74, 62, 0.1);
+$border-default:        #dcdfdc;
+$border-strong:         #1a4a3e;
+
+$border-hover:          $secondary;
+$border-focus:          $primary;
+$ring-focus:            0 0 0 4px rgba(26, 74, 62, 0.25);
+
+$radius-sm:             0.25rem;
+$radius-md:             0.5rem;
+$radius-lg:             1rem;
+$radius-circle:         50%;
+
+$shadow-sm:             0 1px 2px 0 rgba(26, 74, 62, 0.05);
+$shadow-md:             0 4px 6px -1px rgba(26, 74, 62, 0.08);
+$shadow-lg:             0 10px 15px -3px rgba(26, 74, 62, 0.1);
+
+$opacity-disabled:      0.5;
+$opacity-muted:         0.7;
+$opacity-hover:         0.85;
+
+/* --- BREAKPOINTS --- */
+$bp-sm:                 576px;
+$bp-md:                 768px;
+$bp-lg:                 992px;
+$bp-xl:                 1200px;
+$bp-xxl:                1400px;
+
+/* --- LAYOUT --- */
+$container-xsm:         760px;
+$container-sm:          900px;
+$container-md:          1200px;
+$container-lg:          1420px;
+$container-xl:          1600px;
+$container-xxl:         1700px;
+
+/* --- COMPONENTS --- */
+$trans-fast:            150ms ease-in-out 0s;
+$trans-base:            300ms ease-in-out 0s;
+$trans-slow:            500ms ease-in-out 0s;
+
+$btn-padding-y:         0.875rem;
+$btn-padding-x:         2.5rem;
+$btn-font-family:       $font-family-sans;
+$btn-font-weight:       $weight-medium;
+$btn-transition:        all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+$link-color:            $secondary;
+$link-hover-color:      $secondary-hover;
+$link-transition:       color 0.5s ease-in-out 0s, background-color 0.5s ease-in-out 0s, border-color 0.5s ease-in-out 0s;
+
+/* --- STATUS COLORS --- */
+$state-success:         #065f46;
+$state-success-bg:      #ecfdf5;
+$state-error:           #be123c;
+$state-error-bg:        #fff1f2;
+$state-warning:         #b45309;
+$state-warning-bg:      #fffbeb;
+$state-info:            #0e7490;
+$state-info-bg:         #ecfeff;
+

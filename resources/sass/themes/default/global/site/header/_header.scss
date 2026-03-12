@@ -1,0 +1,76 @@
+#header {
+    background-color: $bg-main;
+    box-sizing: border-box;
+    float: left;
+    left: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    transition: transform 0.3s ease 0s;
+    width: 100%;
+    z-index: 1001;
+    #headerMain {
+        box-sizing: border-box;
+        float: left;
+        padding: 20px 0;
+        position: relative;
+        transition: $trans-slow;
+        width: 100%;
+        z-index: 4;
+        @media (max-width: 740px) {
+            padding: 10px 0;
+        }
+        .headerMainInner {
+            float: left;
+            height: 120px;
+            position: relative;
+            transition: $trans-slow;
+            width: 100%;
+
+            @media (max-width: 780px) {
+                height: 95px;
+            }
+
+            @media (max-width: 480px) {
+                height: 75px;
+            }
+        }
+    }
+}
+#headerLogo {
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    transition: width $trans-slow;
+    width: 90px;
+    z-index: 5;
+
+    @media (max-width: 780px) {
+        width: 70px;
+    }
+
+    @media (max-width: 480px) {
+        width: 55px;
+    }
+
+    .logo {
+        float: left;
+        position: relative;
+        transition: all 0.3s ease 0s;
+        width: 100%;
+        img,
+        svg {
+            display: block;
+            margin: 0;
+            height: auto;
+            transition: all 0.3s ease 0s;
+            width: 100%;
+        }
+    }
+}
+#headerRight {
+    float: left;
+    margin-left: auto;
+    position: relative;
+}

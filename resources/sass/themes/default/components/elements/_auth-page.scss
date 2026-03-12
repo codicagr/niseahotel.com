@@ -1,0 +1,98 @@
+/* Auth */
+.authPage {
+    float: left;
+    position: relative;
+    width: 100%;
+
+    .authBackgroundImage {
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .authBackgroundOverlay {
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .authMainWrapper {
+        float: left;
+        position: relative;
+        width: 100%;
+        z-index: 3;
+
+        .authContainer {
+            float: left;
+            position: relative;
+            width: 100%;
+        }
+    }
+
+    .authMainContainer {
+        background-color: #fff;
+        float: left;
+        max-width: 680px;
+        position: relative;
+        width: 100%;
+
+        @media (max-width: 980px) {
+            max-width: 650px;
+            width: 100%;
+        }
+    }
+
+    .authBody {
+        box-sizing: border-box;
+        float: left;
+        position: relative;
+        padding: 50px;
+        width: 100%;
+
+        @media (max-width: 580px) {
+            padding: 40px 20px;
+        }
+    }
+
+    .authFormContainer {
+        float: left;
+        position: relative;
+        width: 100%;
+
+        .authFormTitle {
+            font-family: $font-family-serif;
+            float: left;
+            position: relative;
+            width: 100%;
+        }
+
+        .authFormText {
+            float: left;
+            font-size: 14px;
+            position: relative;
+            width: 100%;
+
+            strong {
+                color: #2d2d2d;
+                font-weight: 500;
+            }
+        }
+
+        .authForm {
+            float: left;
+            font-size: 14px;
+            position: relative;
+            width: 100%;
+        }
+    }
+}
