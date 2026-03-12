@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'title' => 'Παροχές Δωματίου',
+    'options' => [
+        'air_conditioning' => 'Κλιματισμός',
+        'individually_controlled_air_conditioning' => 'Αυτόνομος κλιματισμός',
+        'bath_amenities' => 'Παροχές μπάνιου',
+        'bathroom_with_shower' => 'Μπάνιο με ντους',
+        'bathroom_with_bathtub_or_shower' => 'Μπάνιο με μπανιέρα ή ντους',
+        'cable_tv' => 'Καλωδιακή τηλεόραση',
+        'flat_screen_tv' => 'Τηλεόραση επίπεδης οθόνης',
+        'wifi_free' => 'Wi-Fi',
+        'closet' => 'Ντουλάπα',
+        'daily_maid_service' => 'Καθημερινή καθαριότητα',
+        'dining_table' => 'Τραπέζι φαγητού',
+        'fully_equipped_kitchenette' => 'Πλήρως εξοπλισμένο kitchenette',
+        'kitchen' => 'Κουζίνα',
+        'refrigerator' => 'Ψυγείο',
+        'guest_laundry_on_request_extra_charge' => 'Υπηρεσία πλυντηρίου επισκεπτών',
+        'modern_furnishing' => 'Μοντέρνα επίπλωση',
+        'smoke_free' => '100% Χώρος μη καπνιζόντων',
+        'pool_view' => 'Θέα πισίνα',
+        'sea_view' => 'Θέα θάλασσα',
+        'private_balcony' => 'Ιδιωτικό μπαλκόνι',
+        'sitting_area' => 'Καθιστικό / Χώρος καθιστικού',
+        'living_room' => 'Σαλόνι / Καθιστικό',
+        'sofa_bed' => 'Καναπές-κρεβάτι',
+        'safe_deposit_box' => 'Θυρίδα ασφαλείας',
+        'soundproof_windows' => 'Ηχομονωτικά παράθυρα',
+        'welcome_drink' => 'Welcome drink',
+    ],
+];

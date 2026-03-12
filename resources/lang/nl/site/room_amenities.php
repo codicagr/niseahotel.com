@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'title' => 'Kamerfaciliteiten',
+    'options' => [
+        'air_conditioning' => 'Airconditioning',
+        'individually_controlled_air_conditioning' => 'Individueel regelbare airconditioning',
+        'bath_amenities' => 'Badartikelen',
+        'bathroom_with_shower' => 'Badkamer met douche',
+        'bathroom_with_bathtub_or_shower' => 'Badkamer met bad of douche',
+        'cable_tv' => 'Kabel-tv',
+        'flat_screen_tv' => 'Flatscreen-tv',
+        'wifi_free' => 'Wi-Fi',
+        'closet' => 'Kledingkast',
+        'daily_maid_service' => 'Dagelijkse schoonmaak',
+        'dining_table' => 'Eettafel',
+        'fully_equipped_kitchenette' => 'Volledig uitgeruste kitchenette',
+        'kitchen' => 'Keuken',
+        'refrigerator' => 'Koelkast',
+        'guest_laundry_on_request_extra_charge' => 'Wasservice voor gasten',
+        'modern_furnishing' => 'Moderne inrichting',
+        'smoke_free' => '100% rookvrije ruimte',
+        'pool_view' => 'Zwembadzicht',
+        'sea_view' => 'Zeezicht',
+        'private_balcony' => 'Privébalkon',
+        'sitting_area' => 'Zithoek',
+        'living_room' => 'Woonkamer',
+        'sofa_bed' => 'Slaapbank',
+        'safe_deposit_box' => 'Kluis',
+        'soundproof_windows' => 'Geluiddichte ramen',
+        'welcome_drink' => 'Welkomstdrankje',
+    ],
+];

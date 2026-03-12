@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'title' => 'Zimmerausstattung',
+    'options' => [
+        'air_conditioning' => 'Klimaanlage',
+        'individually_controlled_air_conditioning' => 'Individuell regulierbare Klimaanlage',
+        'bath_amenities' => 'Badausstattung',
+        'bathroom_with_shower' => 'Badezimmer mit Dusche',
+        'bathroom_with_bathtub_or_shower' => 'Badezimmer mit Badewanne oder Dusche',
+        'cable_tv' => 'Kabel-TV',
+        'flat_screen_tv' => 'Flachbild-TV',
+        'wifi_free' => 'WLAN',
+        'closet' => 'Kleiderschrank',
+        'daily_maid_service' => 'Täglicher Reinigungsservice',
+        'dining_table' => 'Esstisch',
+        'fully_equipped_kitchenette' => 'Voll ausgestattete Kitchenette',
+        'kitchen' => 'Küche',
+        'refrigerator' => 'Kühlschrank',
+        'guest_laundry_on_request_extra_charge' => 'Wäscheservice für Gäste',
+        'modern_furnishing' => 'Moderne Einrichtung',
+        'smoke_free' => '100% rauchfreier Bereich',
+        'pool_view' => 'Poolblick',
+        'sea_view' => 'Meerblick',
+        'private_balcony' => 'Privater Balkon',
+        'sitting_area' => 'Sitzecke',
+        'living_room' => 'Wohnzimmer',
+        'sofa_bed' => 'Schlafsofa',
+        'safe_deposit_box' => 'Safe',
+        'soundproof_windows' => 'Schalldichte Fenster',
+        'welcome_drink' => 'Willkommensgetränk',
+    ],
+];

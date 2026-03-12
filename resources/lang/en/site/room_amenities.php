@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'title' => 'Room Amenities',
+    'options' => [
+        'air_conditioning' => 'Air Conditioning',
+        'individually_controlled_air_conditioning' => 'Individually Controlled Air Conditioning',
+        'bath_amenities' => 'Bath Amenities',
+        'bathroom_with_shower' => 'Bathroom with Shower',
+        'bathroom_with_bathtub_or_shower' => 'Bathroom with Bathtub or Shower',
+        'cable_tv' => 'Cable TV',
+        'flat_screen_tv' => 'Flat-Screen TV',
+        'wifi_free' => 'Wi-Fi',
+        'closet' => 'Closet',
+        'daily_maid_service' => 'Daily Maid Service',
+        'dining_table' => 'Dining Table',
+        'fully_equipped_kitchenette' => 'Fully Equipped Kitchenette',
+        'kitchen' => 'Kitchen',
+        'refrigerator' => 'Refrigerator',
+        'guest_laundry_on_request_extra_charge' => 'Guest Laundry',
+        'modern_furnishing' => 'Modern Furnishing',
+        'smoke_free' => '100% Smoke-free environment',
+        'pool_view' => 'Pool View',
+        'sea_view' => 'Sea View',
+        'private_balcony' => 'Private Balcony',
+        'sitting_area' => 'Sitting Area',
+        'living_room' => 'Living Room',
+        'sofa_bed' => 'Sofa Bed',
+        'safe_deposit_box' => 'Safe Deposit Box',
+        'soundproof_windows' => 'Soundproof Windows',
+        'welcome_drink' => 'Welcome Drink',
+    ],
+];
