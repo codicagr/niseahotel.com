@@ -5,12 +5,15 @@ return [
         'open' => 'ΑΝΟΙΓΜΑ ΜΕΝΟΥ',
         'close' => 'ΚΛΕΙΣΙΜΟ ΜΕΝΟΥ',
     ],
+    'close' => 'Κλείσιμο',
     'no_items_found' => 'Δεν βρέθηκαν άρθρα',
     'contact_info_title' => 'Στοιχεία Επικοινωνίας',
     'good_to_know' => 'Χρήσιμες Πληροφορίες',
     'book_now' => 'Κάντε Κράτηση',
     'ideal_for' => 'Ιδανικό για',
     'upgrade_your_stay' => 'Αναβαθμίστε τη Διαμονή σας',
+    'from_the_airport' => 'Από το Αεροδρόμιο',
+    'from_the_port' => 'Από το Λιμάνι',
     'labels' => [
         'address' => [
             'default' => 'Διεύθυνση',
@@ -32,6 +35,7 @@ return [
         ],
         'date_to' => 'έως'
     ],
+    'discover_more' => 'Ανακαλύψτε',
     'read_more' => 'Διαβάστε περισσότερα',
     'more' => 'Περισσότερα',
     'previous_slide' => 'Προηγούμενο',

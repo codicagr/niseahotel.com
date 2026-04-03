@@ -5,12 +5,15 @@ return [
         'open' => 'OPEN MENU',
         'close' => 'CLOSE MENU',
     ],
+    'close' => 'Close',
     'no_items_found' => 'No articles found',
     'contact_info_title' => 'Contact Information',
     'good_to_know' => 'Good to Know',
     'book_now' => 'Book Now',
     'ideal_for' => 'Ideal for',
     'upgrade_your_stay' => 'Upgrade Your Stay',
+    'from_the_airport' => 'From the Airport',
+    'from_the_port' => 'From the Port',
     'labels' => [
         'address' => [
             'default' => 'Address',
@@ -32,6 +35,7 @@ return [
         ],
         'date_to' => 'to'
     ],
+    'discover_more' => 'Discover More',
     'read_more' => 'Read more',
     'more' => 'More',
     'previous_slide' => 'Previous',

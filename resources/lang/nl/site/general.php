@@ -5,12 +5,15 @@ return [
         'open' => 'MENU OPENEN',
         'close' => 'MENU SLUITEN',
     ],
+    'close' => 'Sluiten',
     'no_items_found' => 'Geen artikelen gevonden',
     'contact_info_title' => 'Contactgegevens',
     'good_to_know' => 'Goed om te weten',
     'book_now' => 'Boek Nu',
     'ideal_for' => 'Ideaal voor',
     'upgrade_your_stay' => 'Upgrade uw verblijf',
+    'from_the_airport' => 'Vanaf de Luchthaven',
+    'from_the_port' => 'Vanaf de Haven',
     'labels' => [
         'address' => [
             'default' => 'Adres',
@@ -32,6 +35,7 @@ return [
         ],
         'date_to' => 't/m'
     ],
+    'discover_more' => 'Ontdek meer',
     'read_more' => 'Lees meer',
     'more' => 'Meer',
     'previous_slide' => 'Vorige',

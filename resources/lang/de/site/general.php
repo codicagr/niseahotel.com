@@ -5,12 +5,15 @@ return [
         'open' => 'MENÜ ÖFFNEN',
         'close' => 'MENÜ SCHLIESSEN',
     ],
+    'close' => 'Schließen',
     'no_items_found' => 'Keine Artikel gefunden',
     'contact_info_title' => 'Kontaktinformationen',
     'good_to_know' => 'Gut zu wissen',
     'book_now' => 'Jetzt Bucher',
     'ideal_for' => 'Ideal für',
     'upgrade_your_stay' => 'Werten Sie Ihren Aufenthalt auf',
+    'from_the_airport' => 'Vom Flughafen',
+    'from_the_port' => 'Vom Hafen',
     'labels' => [
         'address' => [
             'default' => 'Adresse',
@@ -32,6 +35,7 @@ return [
         ],
         'date_to' => 'bis'
     ],
+    'discover_more' => 'Mehr entdecken',
     'read_more' => 'Mehr lesen',
     'more' => 'Mehr',
     'previous_slide' => 'Zurück',
