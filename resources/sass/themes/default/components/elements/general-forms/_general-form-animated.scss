@@ -1,3 +1,5 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
 @-webkit-keyframes animatedLabelsFormFadeIn {
     0% { color: transparent }
     100% { color: $text-main }
@@ -206,7 +208,7 @@
                 background: #fffeee;
                 border: 1px solid #e4e4e4;
                 border-radius: 3px;
-                box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 1px 3px 0px rgba($bg-inverse, 0.1);
                 color: #68696c;
                 font-size: 13px;
                 float: left;

@@ -2,44 +2,196 @@
     float: left;
     position: relative;
 
-    .bookingPopupTriggers {
-        float: left;
-        position: relative;
+    &.inlineMode {
+        overflow: hidden;
+        width: 100%;
 
-        .desktop {
-            @media (max-width: 780px) {
-                display: none;
-            }
-        }
-
-        .mobile {
-            box-sizing: border-box;
-            display: none;
+        .bookingInlineContainer {
             float: left;
-            padding: 5px;
-            @media (max-width: 780px) {
-                display: block;
-            }
+            position: relative;
+            width: 100%;
 
-            svg {
-                float: left;
-                height: 34px;
-                width: 44px;
+            .bgImage {
+                background-color: $bg-inverse;
+                height: calc(100% + 20px);
+                left: -10px;
+                pointer-events: none;
+                position: absolute;
+                top: -10px;
+                width: calc(100% + 20px);
 
-                path {
-                    fill: $text-main;
+                img {
+                    filter: blur(15px);
+                    float: left;
+                    height: 100%;
+                    object-fit: cover;
+                    opacity: 0.7;
+                    position: relative;
+                    width: 100%;
                 }
             }
 
-            &:hover {
-                background-color: transparent !important;
+            .bookingInlineWrapper {
+                float: left;
+                padding: 120px 0;
+                position: relative;
+                width: 100%;
+
+                @media(max-width: 1400px) {
+                    padding: clamp-size(80,120,320,1400) 0;
+                }
+            }
+
+            .bookingInline {
+                background-color: rgba($bg-main,0.6);
+                box-sizing: border-box;
+                float: left;
+                padding: 60px 0;
+                position: relative;
+                width: 100%;
+
+                @media (max-width: 980px) {
+                    padding: 30px 0;
+                }
+
+                @media (max-width: 840px) {
+                    padding: 0;
+                }
+
+                .bookingContentContainer {
+                    border-right: 1px solid $text-main;
+                    box-sizing: border-box;
+                    float: left;
+                    padding: 10px 80px;
+                    position: relative;
+                    width: 50%;
+
+                    @media (max-width: 980px) {
+                        padding: 10px 40px;
+                    }
+
+                    @media (max-width: 840px) {
+                        border-right: none;
+                        padding: 40px 25px;
+                        width: 100%;
+                    }
+
+                    .bookingTitle {
+                        float: left;
+                        font-family: $font-family-serif;
+                        font-size: clamp-size(24,34,320,2000);
+                        font-weight: $weight-regular;
+                        line-height: $line-height-heading;
+                        position: relative;
+                        width: 100%;
+
+                        p:first-child {
+                            margin-top: 0;
+                        }
+
+                        p:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    .bookingText {
+                        float: left;
+                        font-size: 18px;
+                        position: relative;
+                        width: 100%;
+
+                        p:first-child {
+                            margin-top: 0;
+                        }
+
+                        p:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                .bookingFormContainer {
+                    float: left;
+                    padding: 10px 80px;
+                    position: relative;
+                    width: 50%;
+
+                    @media (max-width: 980px) {
+                        padding: 10px 40px;
+                    }
+
+                    @media (max-width: 840px) {
+                        padding: 40px 25px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .widgetForm {
+            .formGroup {
+                label {
+                    color: $text-main;
+
+                    .note {
+                        color: $primary;
+                        font-size: 11px;
+                    }
+                }
+
+                input, select {
+                    border-bottom: 1px solid $text-main;
+
+                    &:focus {
+                        border-bottom-color: $text-inverse;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &.popupMode {
+
+        .bookingPopupTriggers {
+            float: left;
+            position: relative;
+
+            .desktop {
+                @media (max-width: 780px) {
+                    display: none;
+                }
+            }
+
+            .mobile {
+                box-sizing: border-box;
+                display: none;
+                float: left;
+                padding: 5px;
+                @media (max-width: 780px) {
+                    display: block;
+                }
+
+                svg {
+                    float: left;
+                    height: 34px;
+                    width: 44px;
+
+                    path {
+                        fill: $text-main;
+                    }
+                }
+
+                &:hover {
+                    background-color: transparent !important;
+                }
             }
         }
     }
 }
 .bookingPopupOverlay {
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba($bg-inverse, 0.6);
     backdrop-filter: blur(5px);
     display: flex;
     height: 100vh;
@@ -53,8 +205,7 @@
 }
 .bookingPopupBox {
     background-color: $bg-main;
-    /*border-radius: 12px;*/
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 25px 50px rgba($bg-inverse, 0.3);
     max-width: 480px;
     padding: 35px 30px;
     position: relative;
@@ -87,93 +238,94 @@
         color: $text-main;
         font-family: $font-family-serif;
         font-size: clamp-size(22, 28, 320, 2000);
-        font-weight: $weight-light;
+        font-weight: $weight-regular;
+        line-height: $line-height-heading;
         margin-bottom: 25px;
         text-align: center;
     }
+}
 
-    .widgetForm {
+.widgetForm {
+    float: left;
+    gap: 20px;
+    position: relative;
+    width: 100%;
+
+    .formRow {
         float: left;
-        gap: 20px;
+        position: relative;
+        width: 100%;
+    }
+
+    .formGroup {
+        display: flex;
+        flex-direction: column;
+        float: left;
+        gap: 6px;
+        margin: 5px 0;
+        width: calc(50% - 10px);
+
+        &.fullWidth {
+            width: 100%;
+        }
+
+        label {
+            color: $primary;
+            float: left;
+            font-size: 14px;
+            font-weight: $weight-medium;
+            letter-spacing: 1px;
+            margin-bottom: auto;
+            position: relative;
+            width: 100%;
+
+            span {
+                float: left;
+                position: relative;
+                width: 100%;
+            }
+
+            .note {
+                color: #777;
+                font-size: 11px;
+            }
+        }
+
+        input, select {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            color: $text-main;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 16px;
+            outline: none;
+            padding: 5px 0;
+            transition: border-color $trans-slow;
+            width: 100%;
+
+            &:focus {
+                border-bottom-color: $primary;
+            }
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23999999%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 5px top 50%;
+            background-size: 10px auto;
+            padding-right: 20px;
+        }
+    }
+
+    .submitGroup {
+        float: left;
         position: relative;
         width: 100%;
 
-        .formRow {
-            float: left;
-            position: relative;
+        .generalButton {
             width: 100%;
-        }
-
-        .formGroup {
-            display: flex;
-            flex-direction: column;
-            float: left;
-            gap: 6px;
-            margin: 5px 0;
-            width: calc(50% - 10px);
-
-            &.fullWidth {
-                width: 100%;
-            }
-
-            label {
-                color: $primary;
-                float: left;
-                font-size: 14px;
-                font-weight: $weight-medium;
-                letter-spacing: 1px;
-                margin-bottom: auto;
-                position: relative;
-                width: 100%;
-
-                span {
-                    float: left;
-                    position: relative;
-                    width: 100%;
-                }
-
-                .note {
-                    color: #777;
-                    font-size: 11px;
-                }
-            }
-
-            input, select {
-                background: transparent;
-                border: none;
-                border-bottom: 1px solid #ddd;
-                color: $text-main;
-                cursor: pointer;
-                font-family: inherit;
-                font-size: 16px;
-                outline: none;
-                padding: 5px 0;
-                transition: border-color $trans-slow;
-                width: 100%;
-
-                &:focus {
-                    border-bottom-color: $primary;
-                }
-            }
-
-            select {
-                appearance: none;
-                background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23999999%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
-                background-repeat: no-repeat;
-                background-position: right 5px top 50%;
-                background-size: 10px auto;
-                padding-right: 20px;
-            }
-        }
-
-        .submitGroup {
-            float: left;
-            position: relative;
-            width: 100%;
-
-            .generalButton {
-                width: 100%;
-            }
         }
     }
 }

@@ -1,7 +1,7 @@
 @use "fonts" as *;
 @use "normalize";
 
-@use "../abstracts/generator";
+@use "../../abstracts/generator";
 @include generator.iterate('.paddingTop', 'padding-top');
 @include generator.iterate('.paddingBottom', 'padding-bottom');
 @include generator.iterate('.marginTop', 'margin-top');

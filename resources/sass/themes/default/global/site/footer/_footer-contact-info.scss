@@ -1,0 +1,65 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
+.modContactInfo.footer {
+    float: left;
+    position: relative;
+
+    @media (max-width: 980px) {
+        width: 100%;
+    }
+
+    .contactInfoMainContainer {
+        float: left;
+        position: relative;
+
+        @media (max-width: 980px) {
+            width: 100%;
+        }
+    }
+
+    .contactInfoList {
+        float: left;
+        position: relative;
+
+        @media (max-width: 980px) {
+            width: 100%;
+        }
+
+        .contactInfoListItem {
+            color: $text-inverse;
+            float: left;
+            font-weight: $weight-light;
+            margin: 5px 0;
+            gap: 5px;
+            position: relative;
+
+            @media (max-width: 980px) {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .contactInfoLabel {
+                float: left;
+                position: relative;
+            }
+
+            .contactInfoValue {
+                float: left;
+                line-height: $line-height-heading;
+                position: relative;
+
+                a {
+                    color: $text-inverse;
+
+                    &:hover {
+                        color: $secondary-hover;
+                    }
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

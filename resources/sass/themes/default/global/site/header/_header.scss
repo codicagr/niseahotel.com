@@ -1,3 +1,5 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
 #header {
     background-color: $bg-main;
     box-sizing: border-box;
@@ -7,7 +9,7 @@
     position: fixed;
     top: 0;
     transition: transform 0.3s ease 0s;
-    width: 100%;
+    width: 100vw;
     z-index: 1001;
     #headerMain {
         box-sizing: border-box;
@@ -15,7 +17,7 @@
         padding: 20px 0;
         position: relative;
         transition: $trans-slow;
-        width: 100%;
+        width: 100vw;
         z-index: 4;
         @media (max-width: 740px) {
             padding: 10px 0;

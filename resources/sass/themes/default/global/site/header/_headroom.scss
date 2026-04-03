@@ -1,3 +1,5 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
 .headroom {
     #header {
         top: 0;
@@ -5,8 +7,9 @@
 }
 body.headroom--not-top {
     #header {
-        background-color: $bg-main;
-        box-shadow: #0000001a 0px 0px 5px 2px;
+        background-color: rgba($bg-main, 0.7);
+        backdrop-filter: blur(12px);
+        box-shadow: #0000001a 0 0 5px 2px;
         #headerMain {
             padding: 10px 0;
             .headerMainInner {
@@ -71,7 +74,7 @@ body.headroom--not-top {
                 &:hover {
                     background-color: $secondary;
                     border-color: $secondary;
-                    color: $text-inverse;
+                    color: $text-main;
                 }
             }
 

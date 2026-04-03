@@ -1,3 +1,5 @@
+@use '../default/default-category' as *;
+
 .categoryViewContainer.stay {
 
     .categoryMainWrapper {
@@ -17,7 +19,10 @@
     .categoryItemsContainer {
 
         .categoryItems {
+            float: left;
             gap: 80px 15px;
+            position: relative;
+            width: 100%;
 
             @media (max-width: 980px) {
                 gap: 80px 10px;
@@ -27,14 +32,14 @@
                 justify-content: center;
             }
 
-            .categoryItem {
+            .item {
                 background-color: $bg-main;
                 /*border-radius: 20px;*/
                 overflow: hidden;
-                width: calc(33.33% - 20px);
+                width: calc(33.33% - 10px);
 
                 @media (max-width: 980px) {
-                    width: calc(50% - 10px);
+                    width: calc(50% - 5px);
                 }
 
                 @media (max-width: 580px) {
@@ -42,13 +47,13 @@
                     width: 100%;
                 }
 
-                .categoryItemImageContainer {
+                .itemImageContainer {
                     float: left;
                     position: relative;
                     width: 100%;
                     z-index: 1;
 
-                    .categoryItemImage {
+                    .itemImage {
                         aspect-ratio: 1;
                         /*border-radius: 20px;*/
                         float: left;
@@ -106,14 +111,14 @@
                     }
                 }
 
-                .categoryItemContentContainer {
+                .itemContentContainer {
                     float: left;
                     height: 100%;
                     position: relative;
                     width: 100%;
                     z-index: 3;
 
-                    .categoryItemContent {
+                    .itemContent {
                         box-sizing: border-box;
                         float: left;
                         height: 100%;
@@ -121,11 +126,11 @@
                         position: relative;
                         width: 100%;
 
-                        .categoryItemTitle {
+                        .itemTitle {
                             font-family: $font-family-serif;
                             float: left;
                             font-size: clamp-size(22,26,320,2000);
-                            font-weight: $weight-light;
+                            font-weight: $weight-regular;
                             line-height: $line-height-heading;
                             margin-bottom: 10px;
                             position: relative;
@@ -134,7 +139,7 @@
                             a {
                                 color: $text-main;
                                 font-family: $font-family-serif;
-                                font-weight: $weight-light;
+                                font-weight: $weight-regular;
                                 line-height: $line-height-heading;
 
                                 &:hover {
@@ -143,7 +148,7 @@
                             }
                         }
 
-                        .categoryItemDetailsWrapper {
+                        .itemDetailsWrapper {
                             box-sizing: border-box;
                             float: left;
                             margin-bottom: 50px;
@@ -151,7 +156,7 @@
                             position: relative;
                             width: 100%;
 
-                            .categoryItemDetailsContainer {
+                            .itemDetailsContainer {
                                 float: left;
                                 gap: 15px 10px;
                                 margin-left: -20px;
@@ -159,7 +164,7 @@
                                 width: calc(100% + 40px);
                             }
 
-                            .categoryItemDetails {
+                            .itemDetails {
                                 box-sizing: border-box;
                                 font-size: 14px;
                                 padding-left: 20px;
@@ -176,7 +181,7 @@
                             }
                         }
 
-                        .categoryItemButton {
+                        .itemButton {
                             float: left;
                             margin-top: auto;
                             position: relative;
@@ -186,7 +191,7 @@
                 }
 
                 &:hover {
-                    .categoryItemImage {
+                    .itemImage {
                         img {
                             transform: scale(1.08);
                         }

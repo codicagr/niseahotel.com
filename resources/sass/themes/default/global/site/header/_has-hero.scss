@@ -1,9 +1,11 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
 body.hasHero {
     #header {
         background-color: transparent;
         &:before {
-            background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0)));
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba($bg-inverse, 0.65)), to(rgba($bg-inverse, 0)));
+            background: linear-gradient(to bottom, rgba($bg-inverse, 0.65) 0%, rgba($bg-inverse, 0) 100%);
             content: '';
             height: 160px;
             left: 0;
@@ -52,8 +54,8 @@ body.hasHero {
         .logo {
             svg {
                 filter:
-                    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5))
-                    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+                    drop-shadow(0 2px 4px rgba($bg-inverse, 0.5))
+                    drop-shadow(0 8px 16px rgba($bg-inverse, 0.4));
                 polygon,
                 rect,
                 path {
@@ -72,7 +74,7 @@ body.hasHero {
                 &:hover {
                     background-color: $secondary;
                     border-color: $secondary;
-                    color: $text-inverse;
+                    color: $text-main;
                 }
             }
 

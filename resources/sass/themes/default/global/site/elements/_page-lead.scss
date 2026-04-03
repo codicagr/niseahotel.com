@@ -1,0 +1,58 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
+.pageLeadWrapper {
+    float: left;
+    position: relative;
+    width: 100%;
+
+    .pageLead {
+        float: left;
+        position: relative;
+        width: 100%;
+
+        .pageLeadTitle {
+            float: left;
+            font-family: $font-family-serif;
+            font-size: clamp-size(30, 42, 320, 2000);
+            font-weight: $weight-regular;
+            line-height: $line-height-heading;
+            margin: 10px 0 0;
+            max-width: 640px;
+            position: relative;
+            text-align: center;
+            width: 100%;
+
+            p:first-child {
+                margin-top: 0;
+            }
+
+            p:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .pageLeadTextContainer {
+            float: left;
+            position: relative;
+            width: 100%;
+
+            .pageLeadText {
+                float: left;
+                font-size: 18px;
+                font-weight: $weight-light;
+                max-width: 940px;
+                position: relative;
+                text-align: center;
+                width: 100%;
+
+                p:first-child {
+                    margin-top: 0;
+                }
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

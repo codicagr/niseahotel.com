@@ -1,0 +1,46 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
+.scrollIndicator {
+    bottom: 10px;
+    color: $text-inverse;
+    filter: drop-shadow(0 2px 4px rgba($bg-inverse, 0.5));
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    @media (max-width: 768px) {
+        bottom: 25px;
+        transform: translateX(-50%) scale(0.85);
+    }
+
+    .mouseIcon {
+        display: block;
+        filter: drop-shadow(0 2px 4px rgba($bg-inverse, 0.5)) drop-shadow(0 8px 16px rgba($bg-inverse, 0.4));
+        height: 40px;
+        width: 26px;
+    }
+
+    .scrollWheel {
+        animation: scrollUpDown 0.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes scrollUpDown {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(8px);
+        }
+    }
+
+    .scrollLabel {
+        float: left;
+        font-size: 12px;
+        font-weight: 300;
+        position: relative;
+        text-shadow:
+            0 2px 4px rgba($bg-inverse, 0.50),
+            0 8px 16px rgba($bg-inverse, 0.40);
+    }
+}

@@ -130,7 +130,7 @@
                 width: 100%;
             }
             .ccPopupNote {
-                color: rgba(0, 0, 0, 0.8);
+                color: rgba($text-inverse, 0.8);
                 float: left;
                 font-size: 14px;
                 position: relative;
@@ -164,7 +164,7 @@
         }
     }
     .ccPopupOverlay {
-        background-color: rgba(0,0,0,0.5);
+        background-color: rgba($bg-inverse,0.5);
         height: 100vh;
         inset: 0;
         position: fixed;

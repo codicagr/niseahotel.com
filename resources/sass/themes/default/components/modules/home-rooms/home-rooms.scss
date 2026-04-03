@@ -1,63 +1,77 @@
 .homeRooms {
-    background-color: $primary;
     float: left;
-    padding: 250px 0;
     position: relative;
     width: 100%;
 
-    @media(max-width: 1400px) {
-        padding: clamp-size(80,120,320,1400) 0;
+    @media (max-width: 860px) {
+        padding: 0;
     }
 
-    .homeRoomsWrapper {
+    .homeRoomsContainer {
+        background-color: $primary;
         float: left;
+        padding: 250px 0;
         position: relative;
         width: 100%;
 
-        .homeRoomsContentContainer {
-            box-sizing: border-box;
+        @media(max-width: 1400px) {
+            padding: clamp-size(80,120,320,1400) 0;
+        }
+
+        @media(max-width: 840px) {
+            padding: 0;
+        }
+    }
+
+    .homeRoomsContentContainer {
+        box-sizing: border-box;
+        float: left;
+        padding: 0 60px;
+        position: relative;
+        width: 50%;
+
+        @media (max-width: 860px) {
+            padding: clamp-size(40,80,320,1400) 20px;
+            width: 100%;
+        }
+
+        .homeRoomsTitle {
+            color: $secondary;
             float: left;
-            padding: 0 60px 0 0;
+            font-size: clamp-size(18,22,320,2000);
+            font-weight: $weight-regular;
+            line-height: $line-height-heading;
+            padding-left: 60px;
             position: relative;
-            width: 50%;
+            width: 100%;
 
-            .homeRoomsTitle {
-                color: $secondary;
-                float: left;
-                font-size: clamp-size(18,22,320,2000);
-                font-weight: $weight-regular;
-                line-height: $line-height-heading;
-                padding-left: 60px;
-                position: relative;
-                width: 100%;
+            &:before {
+                background-color: $secondary;
+                content: "";
+                height: 1px;
+                left: 0;
+                position: absolute;
+                top: clamp-size(10,13,320,2000);
+                width: 45px;
+            }
+        }
 
-                &:before {
-                    background-color: $secondary;
-                    content: "";
-                    height: 1px;
-                    left: 0;
-                    position: absolute;
-                    top: clamp-size(10,13,320,2000);
-                    width: 45px;
-                }
+        .homeRoomsText {
+            color: $text-inverse;
+            float: left;
+            font-family: $font-family-serif;
+            font-size: clamp-size(24,36,320,2000);
+            font-weight: $weight-regular;
+            line-height: $line-height-heading;
+            position: relative;
+            width: 100%;
+
+            p:first-child {
+                margin-top: 0;
             }
 
-            .homeRoomsText {
-                color: $text-inverse;
-                float: left;
-                font-family: $font-family-serif;
-                font-size: clamp-size(24,36,320,2000);
-                line-height: $line-height-heading;
-                position: relative;
-                width: 100%;
-
-                p:first-child {
-                    margin-top: 0;
-                }
-
-                p:last-child {
-                    margin-bottom: 0;
-                }
+            p:last-child {
+                margin-bottom: 0;
             }
         }
     }
@@ -68,23 +82,49 @@
         right: 0;
         width: 50%;
 
+        @media (max-width: 860px) {
+            aspect-ratio: 7/4;
+            float: left;
+            height: auto;
+            position: relative;
+            top: auto;
+            right: auto;
+            width: 100%;
+        }
+
+        @media (max-width: 560px) {
+            aspect-ratio: 1;
+        }
+
         .homeRoomsImage {
-            /*border-radius: 20px 0 0 20px;*/
             float: left;
             height: 100%;
             overflow: hidden;
             position: relative;
             width: 100%;
 
+            a {
+                float: left;
+                height: 100%;
+                position: relative;
+                width: 100%;
+
+                &:hover {
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
             img {
                 height: 100%;
                 object-fit: cover;
                 object-position: center;
                 pointer-events: none;
-                -webkit-user-select: none;
-                -moz-user-select: none;
+                transition: transform $trans-slow;
                 user-select: none;
                 width: 100%;
+                will-change: transform;
             }
         }
     }

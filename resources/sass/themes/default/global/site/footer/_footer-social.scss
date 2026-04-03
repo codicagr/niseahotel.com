@@ -1,0 +1,51 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
+.socialWrapper.footer {
+    float: left;
+    position: relative;
+
+    @media (max-width: 980px) {
+        width: 100%;
+    }
+
+    .socialList {
+        float: left;
+        gap: 15px;
+        margin: 8px 0 0;
+        position: relative;
+
+        @media (max-width: 980px) {
+            justify-content: center;
+            width: 100%;
+        }
+
+        .socialListItem {
+            float: left;
+            position: relative;
+
+            a {
+                background-color: $primary;
+                color: $text-inverse;
+                float: left;
+                font-size: 24px;
+                height: 50px;
+                position: relative;
+                width: 50px;
+
+                &:hover {
+                    background-color: $link-hover-color;
+                    color: $text-main !important;
+                }
+
+                svg {
+                    height: 30px;
+                    width: 30px;
+
+                    path {
+                        fill: $text-inverse;
+                    }
+                }
+            }
+        }
+    }
+}

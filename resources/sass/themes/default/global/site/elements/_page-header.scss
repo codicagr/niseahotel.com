@@ -1,0 +1,73 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
+.pageHeaderContainer {
+    background-color: $bg-inverse;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    .pageHeaderImage {
+        background-color: $bg-main;
+        float: left;
+        height: 100%;
+        position: relative;
+        transform: scale(1.05);
+        width: 100vw;
+        will-change: filter;
+
+        img {
+            float: left;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            width: 100vw;
+        }
+    }
+
+    .pageHeaderOverlay {
+        background-color: #000000;
+        opacity: 0.2;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        will-change: opacity;
+        z-index: 1;
+    }
+
+    .pageHeaderWrapper {
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        will-change: transform;
+        z-index: 2;
+
+        .pageHeader {
+            float: left;
+            position: relative;
+            width: 100%;
+
+            .pageHeaderInner {
+                float: left;
+                position: relative;
+                width: 100%;
+
+                .pageHeaderTitle {
+                    color: $text-inverse;
+                    font-family: $font-family-serif;
+                    float: left;
+                    font-size: clamp-size(32, 60, 320, 2000);
+                    font-weight: $weight-regular;
+                    line-height: $line-height-heading;
+                    text-shadow: 0 2px 4px rgba($bg-inverse, 0.50),
+                                 0 8px 16px rgba($bg-inverse, 0.40);
+                    position: relative;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,3 +1,5 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
 .mobileMenuWrapper {
     float: left;
     position: relative;
@@ -146,7 +148,6 @@
         position: fixed;
         top: 0;
         transition: $trans-slow;
-        /*transform: translateX(-250%);*/
         visibility: visible;
         width: 90vw;
         z-index: 15;
@@ -186,7 +187,7 @@
             float: left;
             font-family: $font-family-serif;
             font-size: clamp-size(22, 40, 320, 2000);
-            font-weight: $weight-light;
+            font-weight: $weight-regular;
             opacity: 0;
             position: relative;
             transform: translateY(40px);
@@ -202,76 +203,62 @@
                 color: $text-main;
                 font-family: $font-family-serif;
                 float: left;
-                font-weight: $weight-light;
+                font-weight: $weight-regular;
                 padding: 5px 0;
                 position: relative;
-                transition: $trans-fast;
+                transition: $trans-slow;
 
-                &:hover {
-                    color: $text-inverse;
+                &:hover,
+                &.active,
+                &.current {
+                    color: $primary;
                 }
             }
 
-            .mobileMenuItemSwitch {
+            .submenuContainer {
+                float: left;
+                position: relative;
+                width: 100%;
+
+                .submenuList {
+                    box-sizing: border-box;
+                    float: left;
+                    padding-left: 20px;
+                    position: relative;
+                    width: 100%;
+
+                    .menuItem {
+                        font-size: clamp-size(20, 34, 320, 2000);
+                    }
+                }
+            }
+
+            .submenuToggle {
+                background: transparent none;
+                border: none;
+                color: $text-main;
                 cursor: pointer;
-                font-size: 20px;
-                height: 100%;
-                position: absolute;
-                right: 0;
-                top: 0;
-                width: 60px;
-                z-index: 5;
-
-                .mobileMenuItemSwitchDown {
-                    display: block;
-                }
-
-                .mobileMenuItemSwitchUp {
-                    display: none;
-                }
-
-                &.open {
-                    .mobileMenuItemSwitchDown {
-                        display: none;
-                    }
-
-                    .mobileMenuItemSwitchUp {
-                        display: block;
-                    }
+                .rotate180 {
+                    transform: rotate(180deg);
                 }
             }
-
-            &.active > a {
-                color: $text-inverse;
-            }
-        }
-
-        .submenu {
-            box-sizing: border-box;
-            float: left;
-            gap: 5px;
-            padding: 0 0 10px 25px;
-            position: relative;
-            width: 100%;
         }
     }
+}
 
-    .mobileMenuOverlay {
-        /*background-color: rgba(0, 0, 0, 0.25);*/
-        /*backdrop-filter: blur(6px) contrast(60%);*/
-        backdrop-filter: blur(6px);
-        height: 100vh;
-        left: 0;
-        opacity: 0;
-        position: fixed;
-        top: 0;
-        transition: $trans-fast;
-        visibility: hidden;
-        width: 100vw;
-        z-index: 10;
-    }
+.mobileMenuOverlay {
+    backdrop-filter: blur(6px);
+    height: 100vh;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: $trans-fast;
+    visibility: hidden;
+    width: 100vw;
+    z-index: 10;
 
-    &.active .mobileMenuOverlay {
+    &.active {
         pointer-events: auto;
         opacity: 1;
         visibility: visible;

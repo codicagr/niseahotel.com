@@ -1,0 +1,187 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
+.showcaseItem {
+    float: left;
+    overflow: hidden;
+    padding: 80px 0;
+    position: relative;
+    width: 100%;
+
+    @media (max-width: 980px) {
+        padding: 0;
+    }
+
+    &.imageLeft {
+        .showcaseItemImageContainer {
+            left: 0;
+        }
+
+        .showcaseItemContent {
+            justify-content: flex-end;
+        }
+    }
+
+    &.imageRight {
+        .showcaseItemImageContainer {
+            right: 0;
+        }
+
+        .showcaseItemContent {
+            justify-content: flex-start;
+        }
+    }
+
+    .showcaseItemImageContainer {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 50%;
+        z-index: 1;
+
+        @media (max-width: 980px) {
+            aspect-ratio: 5/4;
+            height: auto;
+            left: auto;
+            position: relative;
+            right: auto;
+            top: auto;
+            width: 100%;
+        }
+
+        @media (max-width: 580px) {
+            aspect-ratio: 1;
+        }
+
+        .showcaseItemImage {
+            background-color: #e0e0e0;
+            float: left;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+
+            img {
+                align-items: center;
+                display: flex;
+                float: left;
+                height: 100%;
+                justify-content: center;
+                object-fit: cover;
+                position: relative;
+                width: 100%;
+            }
+        }
+    }
+
+    .showcaseItemContentContainer {
+        background-color: $bg-main;
+        float: left;
+        height: 100%;
+        position: relative;
+        width: 100%;
+
+        @media (max-width: 980px) {
+            height: auto;
+        }
+
+        .showcaseItemContent {
+            aspect-ratio: 7/3;
+            box-sizing: border-box;
+            float: left;
+            padding: 120px 0;
+            position: relative;
+            width: 100%;
+
+            @media (max-width: 980px) {
+                aspect-ratio: auto;
+                padding: clamp-size(40, 80, 320, 1400) 0;
+            }
+
+            .showcaseItemContentInner {
+                box-sizing: border-box;
+                float: left;
+                padding: 0 60px;
+                position: relative;
+                width: 50%;
+
+                @media (max-width: 1400px) {
+                    padding: 0 40px;
+                }
+
+                @media (max-width: 980px) {
+                    padding: 0 20px;
+                    width: 100%;
+                }
+
+                .showcaseItemTitle {
+                    font-family: $font-family-serif;
+                    float: left;
+                    font-size: clamp-size(26, 38, 320, 2000);
+                    font-weight: $weight-regular;
+                    line-height: $line-height-heading;
+                    margin-bottom: 10px;
+                    position: relative;
+                    width: 100%;
+
+                    a {
+                        color: $text-main;
+                        font-family: $font-family-serif;
+                        font-weight: $weight-regular;
+                        float: left;
+                        line-height: $line-height-heading;
+                        position: relative;
+
+                        &:hover {
+                            color: $link-hover-color;
+                        }
+                    }
+
+                    p:first-child {
+                        margin-top: 0;
+                    }
+
+                    p:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .showcaseItemText {
+                    float: left;
+                    font-size: 18px;
+                    position: relative;
+                    width: 100%;
+
+                    p:first-child {
+                        margin-top: 0;
+                    }
+
+                    p:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .showcaseItemSecondaryText {
+                    float: left;
+                    font-size: 18px;
+                    position: relative;
+                    width: 100%;
+
+                    p:first-child {
+                        margin-top: 0;
+                    }
+
+                    p:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .showcaseItemButton {
+                    float: left;
+                    margin-top: 50px;
+                    position: relative;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

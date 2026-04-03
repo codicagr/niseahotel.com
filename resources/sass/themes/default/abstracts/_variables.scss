@@ -32,10 +32,10 @@ $text-muted:            #707572;
 $text-inverse:          #ffffff;
 
 $primary:               #38624a;
-$primary-hover:         #21422f;
+$primary-hover:         #4b7c61;
 
-$secondary:             #ffc7a7;
-$secondary-hover:       #e5b095;
+$secondary:             #efe2c4;
+$secondary-hover:       #e8d0a8;
 
 /* --- UI ELEMENTS --- */
 $border-subtle:         rgba(26, 74, 62, 0.1);
@@ -85,8 +85,8 @@ $btn-font-family:       $font-family-sans;
 $btn-font-weight:       $weight-medium;
 $btn-transition:        all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-$link-color:            $secondary;
-$link-hover-color:      $secondary-hover;
+$link-color:            $primary;
+$link-hover-color:      $primary-hover;
 $link-transition:       color 0.5s ease-in-out 0s, background-color 0.5s ease-in-out 0s, border-color 0.5s ease-in-out 0s;
 
 /* --- STATUS COLORS --- */

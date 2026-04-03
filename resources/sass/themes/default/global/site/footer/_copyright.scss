@@ -1,9 +1,12 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
 #copyrights {
-    border-top: 1px solid #d0d2d9;
+    background-color: $bg-inverse;
+    border-top: 1px solid $text-inverse;
     float: left;
     font-size: 12px;
     font-weight: 400;
-    padding: 30px 0;
+    padding: 40px 0 0;
     position: relative;
     width: 100%;
 
@@ -35,11 +38,20 @@
         }
 
         .copyrightsText {
+            color: $text-inverse;
             float: left;
             position: relative;
 
             strong {
                 font-weight: 700;
+            }
+
+            a {
+                color: $text-inverse;
+
+                &:hover {
+                    color: $link-hover-color;
+                }
             }
         }
 

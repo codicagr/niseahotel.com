@@ -1,0 +1,66 @@
+.galleryMasonrySection {
+    float: left;
+    position: relative;
+    width: 100%;
+
+    .masonryGrid {
+        display: grid;
+        gap: clamp-size(15,20,320,2000);
+        grid-template-columns: repeat(auto-fit, minmax(clamp-size(180,360,320,2000), 1fr));
+        position: relative;
+        width: 100%;
+
+        .masonryItem {
+            aspect-ratio: 1;
+            opacity: 0;
+            position: relative;
+            visibility: hidden;
+
+            .masonryLink {
+                display: block;
+                overflow: hidden;
+                position: relative;
+                height: 100%;
+
+                .masonryImage {
+                    display: block;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+                    width: 100%;
+                }
+
+                .hoverOverlay {
+                    background-color: rgba($bg-inverse, 0.4);
+                    color: $text-inverse;
+                    height: 100%;
+                    left: 0;
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    transition: opacity 0.4s ease;
+                    width: 100%;
+
+                    svg {
+                        transform: scale(0.5);
+                        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+                    }
+                }
+
+                &:hover {
+                    .masonryImage {
+                        transform: scale(1.05);
+                    }
+                    .hoverOverlay {
+                        opacity: 1;
+
+                        svg {
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

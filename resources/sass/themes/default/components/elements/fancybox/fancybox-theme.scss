@@ -1,0 +1,96 @@
+$fancy-white-bg: rgba(255, 255, 255, 0.85);
+$fancy-dark-text: #333333;
+$toolbar-h: 64px;
+$toolbar-h-mobile: 50px;
+
+html body {
+    .fancybox__container {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+
+        .f-backdrop,
+        .fancybox__backdrop {
+            background: $fancy-white-bg !important;
+            opacity: 1 !important;
+        }
+
+        .f-carousel__toolbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: $toolbar-h;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            background: transparent !important;
+            z-index: 10;
+
+            &__column {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                height: 100%;
+
+                &.is-left { flex-wrap: nowrap; }
+            }
+        }
+
+        .f-button {
+            color: $fancy-dark-text !important;
+            background: rgba(0, 0, 0, 0.05) !important;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.1) !important;
+                color: #000 !important;
+            }
+
+            svg {
+                width: 20px;
+                height: 20px;
+                stroke: currentColor;
+            }
+        }
+
+        .f-counter {
+            color: $fancy-dark-text !important;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 0 5px;
+            text-shadow: none;
+        }
+
+        .f-nav,
+        .f-carousel__nav,
+        .is-arrow {
+            display: none !important;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    html body .fancybox__container {
+        .f-carousel__toolbar {
+            height: $toolbar-h-mobile;
+            padding: 0 8px;
+
+            &__column { gap: 4px; }
+        }
+
+        .f-button {
+            width: 34px;
+            height: 34px;
+            svg { width: 18px; height: 18px; }
+        }
+
+        .f-counter { font-size: 13px; }
+    }
+}

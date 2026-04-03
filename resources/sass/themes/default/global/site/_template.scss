@@ -1,3 +1,5 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
 html,
 body,
 a,
@@ -19,7 +21,7 @@ html {
     -webkit-font-smoothing: subpixel-antialiased;
 }
 body {
-    background-color: $bg-main;
+    background-color: $bg-inverse;
     box-sizing: border-box;
     color: $text-main;
     font-size: 16px;
@@ -111,7 +113,7 @@ img {
         margin: 0;
     }
     @media (max-width: 1400px) {
-    margin: 0 0 clamp-size(80,120,320,1400);
+        margin: 0 0 clamp-size(80,120,320,1400);
     }
 }
 .ccPage {
@@ -236,10 +238,9 @@ img {
     appearance: none;
     align-items: center;
     background-color: $secondary;
-    /*border-radius: 30px;*/
     border: 1px solid transparent;
     box-sizing: border-box;
-    color: $text-inverse;
+    color: $text-main;
     cursor: pointer;
     display: inline-flex;
     font-family: $font-family-sans !important;
@@ -252,11 +253,12 @@ img {
     padding: $btn-padding-y $btn-padding-x;
     transition: $link-transition;
     text-decoration: none;
+    text-align: center;
 
 
     &:hover {
         background-color: $secondary-hover;
-        color: $text-inverse;
+        color: $text-main;
         transform: none;
     }
     &.bigButton {
@@ -301,6 +303,11 @@ img {
         }
     }
 }
+.plainButton {
+    float: left;
+    font-weight: $weight-medium;
+    position: relative;
+}
 #pageContent,
 #top1,
 #top2,
@@ -335,6 +342,7 @@ body.altBg #pageContent {
     background-color: $bg-alt;
 }
 #pageContent {
+    background-color: $bg-main;
     margin-top: 160px;
 }
 .generalTitle {
@@ -388,11 +396,12 @@ body.altBg #pageContent {
 [data-stagger-child] {
     opacity: 0;
     transform: translateY(50px);
+    visibility: hidden;
 }
 .anchorTarget {
     left: 0;
     position: absolute;
-    top: -200px;
+    top: -100px;
 }
 .noItemsContainer {
     float: left;
@@ -441,40 +450,55 @@ body.altBg #pageContent {
 
 .cookieConsentButtonWrapper {
     float: left;
-    position: relative;
-    width: 100%;
-}
-.cookieConsentButton {
-    float: left;
+    margin-top: 50px;
     position: relative;
     width: 100%;
 
-    a,
-    button {
-        -webkit-align-items: center;
-        align-items: center;
-        background-color: transparent;
-        border: none;
-        color: $primary;
-        cursor: pointer;
-        display: -webkit-inline-flex;
-        display: inline-flex;
+    .cookieConsentButton {
         float: left;
-        font-size: 13px;
-        font-weight: 400;
-        gap: 0 10px;
-        line-height: $line-height-solid;
-        padding: 7px;
-        -webkit-transition: color 0.3s ease 0s;
-        -moz-transition: color 0.3s ease 0s;
-        transition: color 0.3s ease 0s;
+        position: relative;
+        width: 100%;
 
-        &:hover {
-            color: $text-main;
-        }
+        a,
+        button {
+            -webkit-align-items: center;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            color: $secondary;
+            cursor: pointer;
+            display: -webkit-inline-flex;
+            display: inline-flex;
+            float: left;
+            font-size: 13px;
+            font-weight: 400;
+            gap: 0 10px;
+            line-height: $line-height-solid;
+            padding: 7px;
+            transition: color $trans-slow;
 
-        .icon {
-            font-size: 20px;
+            &:hover {
+                color: $secondary-hover;
+                .icon {
+                    svg {
+                        path {
+                            fill: $secondary-hover;
+                        }
+                    }
+                }
+            }
+
+            .icon {
+                svg {
+                    height: auto;
+                    width: 20px;
+
+                    path {
+                        fill: $secondary;
+                        transition: all $trans-slow;
+                    }
+                }
+            }
         }
     }
 }

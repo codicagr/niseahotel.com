@@ -1,574 +1,453 @@
-.lcc-modal.cookiesModal {
-    padding: 0;
-    width: 730px;
+html.lcc-safe-scroll-lock,
+html.lcc-safe-scroll-lock body {
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+}
 
-    &.fullPage {
-        height: 100vh;
-        max-height: 100vh;
-        max-width: 100vw;
-        width: 100vw;
-    }
+.cookie-consent-root {
+    .lcc-accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
 
-    &.lcc-modal--alert {
-        border-radius: 0.5rem;
-        bottom: 20px;
-        left: auto;
-        max-width: 440px;
-        right: 20px;
-        top: auto;
-        transform: none;
-        width: calc(100vw - 40px);
-
-        &.hidden {
-            display: none;
+        &__header {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 16px;
+            gap: 16px;
         }
-    }
 
-    .cookiesModalAlertBodyContainer {
-        box-sizing: border-box;
-        float: left;
-        padding: 30px;
-        position: relative;
-        width: 100%;
+        &__item {
+            background: #f7f7f7;
+            border: 1px solid #eeeeee;
+            border-radius: 8px;
+            font-size: .9375rem;
+            overflow: hidden;
+            transition: all 0.2s;
 
-        .cookiesModalAlertBodyContainerInner {
-            float: left;
-            position: relative;
-            width: 100%;
+            &.is-open {
+                background: #fff;
+                border-color: #d0d0d0;
+            }
+        }
 
-            .cookiesModalAlertBody {
-                width: 100%;
+        &__item.is-open .lcc-chevron {
+            color: #1a1a1a;
+            transform: rotate(180deg);
+        }
 
-                .cookiesModalHeader {
-                    float: left;
-                    margin: 0 0 15px;
-                    position: relative;
-                    width: 100%;
+        &__controls {
+            align-items: center;
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
 
-                    .cookiesModalTitle {
-                        -webkit-box-sizing: border-box;
-                        -moz-box-sizing: border-box;
-                        box-sizing: border-box;
-                        float: left;
-                        font-size: 16px;
-                        font-weight: 600;
-                        margin: 0;
-                        padding: 0;
-                        position: relative;
-                    }
-                }
+        &__trigger {
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            gap: 12px;
+            flex: 1;
+            min-width: 0;
 
-                .cookiesModalContent {
-                    float: left;
-                    position: relative;
-                    width: 100%;
+            .lcc-chevron {
+                color: #aaaaaa;
+                flex-shrink: 0;
+                transition: transform 0.3s;
+            }
 
-                    .cookiesModalContentText {
-                        box-sizing: border-box;
-                        color: $text-muted;
-                        float: left;
-                        font-size: 14px;
-                        position: relative;
-                        width: 100%;
-
-                        p:first-child {
-                            margin-top: 0;
-                        }
-
-                        p:last-child {
-                            margin-bottom: 0;
-                        }
-                    }
-                }
+            .lcc-type-name {
+                color: #1a1a1a;
+                font-size: 0.9375rem;
+                font-weight: 600;
+                word-wrap: break-word;
             }
         }
     }
 
-    .cookiesModalAlertButtons {
-        float: left;
-        position: relative;
+    .lcc-backdrop {
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        background: rgba(15, 23, 42, 0.45);
+        cursor: pointer;
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        -webkit-tap-highlight-color: transparent;
         width: 100%;
-
-        .cookiesModalAlertActions {
-            display: flex;
-            flex-direction: column;
-            float: left;
-            gap: 5px;
-            margin: 25px 0 0;
-            position: relative;
-            width: 100%;
-        }
+        z-index: 10000;
     }
 
-    .cookiesModalAlertButtons .lcc-button,
-    .cookiesModalActions .lcc-button,
-    .cookiesModalDetailsActions .lcc-button {
-        appearance: none;
-        align-items: center;
-        background-color: #eaeff2;
-        border-radius: $radius-md;
-        border: 2px solid transparent;
-        box-sizing: border-box;
-        color: $text-main;
+    .lcc-badge {
+        background: #eeeeee;
+        border-radius: 4px;
+        color: #888888;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        padding: 4px 8px;
+    }
+
+    .lcc-button {
+        border: none;
+        border-radius: 8px;
         cursor: pointer;
-        display: inline-flex;
-        font-family: $font-family-sans !important;
-        font-weight: $weight-medium;
         font-size: 13px;
-        justify-content: center;
-        letter-spacing: 0.02em;
-        margin: 0;
-        padding: 8px 20px;
-        transition: $btn-transition;
-        text-decoration: none;
-        width: 100%;
+        font-weight: 700;
+        padding: 12px 18px;
+        text-align: center;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
-        &:focus,
-        &:hover {
-            background: #d4dae0;
-        }
-
-        &.js-lcc-accept {
-            background-color: $secondary;
-            color: $text-inverse;
+        &--primary {
+            background-color: #3d3d3d;
+            color: #ffffff;
 
             &:hover {
-                background-color: $secondary-hover;
-                transform: none;
+                background-color: #1a1a1a;
+            }
+        }
+
+        &--save {
+            background-color: #f0f0f0;
+            color: #3d3d3d;
+
+            &:hover {
+                background-color: #e0e0e0;
+            }
+        }
+
+        &--secondary {
+            background-color: #f0f0f0;
+            color: #3d3d3d;
+
+            &:hover {
+                background-color: #e0e0e0;
             }
         }
     }
-}
 
-.lcc-modal.cookiesModal .cookiesModalHeaderContainer {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    float: left;
-    padding: 10px 10px;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .lcc-modal__close {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 30px;
-    line-height: $line-height-solid;
-    position: absolute;
-    right: 7px;
-    top: 15px;
-    -webkit-transition: color 0.3s ease 0s;
-    -moz-transition: color 0.3s ease 0s;
-    transition: color 0.3s ease 0s;
-    width: 30px;
-    z-index: 2;
-}
-.lcc-button.lcc-u-sr-only {
-    font-size: 0;
-}
-.lcc-modal.cookiesModal .cookiesLogo {
-    float: left;
-    position: relative;
-    width: 80px;
-}
-.lcc-modal.cookiesModal.lcc-modal--alert .cookiesLogo {
-    width: 80px;
-}
-.lcc-modal.cookiesModal .cookiesModalMainContainer {
-    float: left;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeTabs {
-    float: left;
-    position: relative;
-    width: 220px;
-    @media (max-width: 680px) {
-        display: none;
-    }
-}
-.lcc-modal.cookiesModal .cookiesModalTypeTab {
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #d7d7d7;
-    border-left: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    cursor: pointer;
-    float: left;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 12px 15px;
-    position: relative;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeTab.active {
-    background-color: #fff;
-    border-left: 10px solid $primary;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCards {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    float: left;
-    padding: 0 10px 0 30px;
-    position: relative;
-    width: calc(100% - 220px);
-    @media (max-width: 680px) {
-        padding: 0 15px;
-        width: 100%;
-    }
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCard {
-    float: left;
-    position: relative;
-    width: 100%;
-    @media (max-width: 680px) {
-        margin: 20px 0;
-    }
-}
-.lcc-modal.cookiesModal .cookiesModalTypeMobileTab {
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #d7d7d7;
-    border-left: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    cursor: pointer;
-    display: none;
-    float: left;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 12px 15px;
-    position: relative;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    width: 100%;
-    @media (max-width: 680px) {
-        display: block;
-    }
-}
-.lcc-modal.cookiesModal .cookiesModalTypeMobileTab.active {
-    background-color: #fff;
-    border-left: 10px solid $primary;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardHeader {
-    float: left;
-    position: relative;
-    width: 100%;
-    @media (max-width: 680px) {
-        display: none;
-    }
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardContent {
-    float: left;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardContent p {
-    margin: 10px 0;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardTitle {
-    float: left;
-    font-size: 17px;
-    font-weight: 700;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardToggle {
-    float: left;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardToggle * {
-    backface-visibility: hidden;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: all 0.3s ease-in-out 0.1s;
-    -moz-transition: all 0.3s ease-in-out 0.1s;
-    transition: all 0.3s ease-in-out 0.1s;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardToggle input[type="checkbox"] {
-    display: none;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardToggle div {
-    float: left;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardToggle label {
-    background: #999;
-    border-radius: 55px;
-    cursor: pointer;
-    display: block;
-    height: 24px;
-    position: relative;
-    width: 45px;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardToggle label::before {
-    background: #eee;
-    border: 2px solid #d7d7d7;
-    border-radius: 50px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    content: '';
-    height: 20px;
-    left: 2px;
-    position: absolute;
-    top: 2px;
-    -webkit-transition: all 0.3s ease-in-out 0.1s;
-    -moz-transition: all 0.3s ease-in-out 0.1s;
-    transition: all 0.3s ease-in-out 0.1s;
-    width: 20px;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardToggle input[disabled] ~ div label {
-    cursor: default;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardToggle input[type="checkbox"]:checked ~ div label {
-    background: #49a844;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardToggle input[type="checkbox"]:checked ~ div label::before {
-    left: 23px;
-}
-.lcc-modal.cookiesModal .cookiesModalTypeCardContent {
-    float: left;
-    font-size: 14px;
-    line-height: $line-height-heading;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalSettingsTitle {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    float: left;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: $line-height-heading;
-    padding: 15px 15px 0;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalSettingsText,
-.lcc-modal.cookiesModal .cookiesModalSettingsDescription {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    float: left;
-    font-size: 14px;
-    line-height: $line-height-heading;
-    padding: 0 15px;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalSettingsTitle p,
-.lcc-modal.cookiesModal .cookiesModalSettingsText p,
-.lcc-modal.cookiesModal .cookiesModalSettingsDescription p {
-    margin: 5px 0;
-}
-.lcc-modal.cookiesModal .cookiesModalSettingsText p .link,
-.lcc-modal.cookiesModal .cookiesModalSettingsDescription p .link {
-    cursor: pointer;
-    font-weight: 700;
-    text-decoration: underline;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-}
-.lcc-modal.cookiesModal .cookiesModalSettingsText p .link:hover,
-.lcc-modal.cookiesModal .cookiesModalSettingsDescription p .link:hover {
-    color: $primary;
-}
-.lcc-modal.cookiesModal .cookiesModalSettingsButtonContainer {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    float: left;
-    font-size: 14px;
-    line-height: $line-height-heading;
-    padding: 5px 15px;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalSettingsButton {
-    cursor: pointer;
-    font-weight: 700;
-    text-decoration: underline;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-}
-.lcc-modal.cookiesModal .cookiesModalSettingsButton:hover {
-    color: $primary;
-}
-.lcc-modal.cookiesModal .cookiesModalActions,
-.lcc-modal.cookiesModal .cookiesModalDetailsActions {
-    border-top: 1px solid #d7d7d7;
-    box-sizing: border-box;
-    float: left;
-    gap: 15px;
-    margin: 15px 0 0;
-    padding: 15px;
-    position: relative;
-    width: 100%;
-}
+    .lcc-info-box {
+        background: transparent;
+        margin-top: 20px;
+        padding: 0;
 
+        .lcc-info-text {
+            color: #555555;
+            font-size: 0.9375rem;
+            line-height: 1.6;
 
-.lcc-modal.cookiesModal .cookiesModalDetails {
-    float: left;
-    padding: 50px 0;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsContainer {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    float: left;
-    padding: 0 15px;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsMainContainer {
-    float: left;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsMainTitle {
-    float: left;
-    font-size: 18px;
-    font-weight: 700;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsMainText {
-    float: left;
-    font-size: 14px;
-    line-height: $line-height-heading;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsMainText p {
-    margin: 5px 0;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsList {
-    float: left;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItem {
-    border-top: 1px solid #d7d7d7;
-    float: left;
-    padding: 15px 0;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItem:first-child {
-    border: none;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItemTitleContainer {
-    cursor: pointer;
-    float: left;
-    font-weight: 700;
-    padding: 10px 0;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItemTitle {
-    float: left;
-    font-size: 16px;
-    font-weight: 700;
-    position: relative;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItemToggle {
-    float: left;
-    font-size: 18px;
-    line-height: $line-height-solid;
-    margin: 3px 10px 0 0;
-    position: relative;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItem .cookiesModalDetailsListItemToggle .close{
-    display: none;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItem .cookiesModalDetailsListItemToggle .open{
-    display: block;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItem.opened .cookiesModalDetailsListItemToggle .close{
-    display: block;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItem.opened .cookiesModalDetailsListItemToggle .open{
-    display: none;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItemText {
-    float: left;
-    font-size: 14px;
-    line-height: $line-height-heading;
-    position: relative;
-    width: 100%;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItemText p {
-    margin: 5px 0;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItemText table {
-    margin: 20px 0;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItemText a {
-    cursor: pointer;
-    text-decoration: underline;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItemText a:hover {
-    color: $primary;
-}
-.lcc-modal.cookiesModal .cookiesModalDetailsListItemText table {
-    display: block!important;
-    -webkit-overflow-scrolling:touch;
-    max-width: 100% !important;
-    overflow: auto;
-}
+            p {
+                margin-bottom: 0;
+            }
+        }
 
-.lcc-modal.cookiesModal .cookiesModalDetailsListItemText table tbody,
-.lcc-modal.cookiesModal .cookiesModalDetailsListItemText table thead,
-.lcc-modal.cookiesModal .cookiesModalDetailsListItemText table tfoot {
-    @media (max-width: 680px) {
-        display: table;
-        width: 680px!important;
+        .lcc-info-title {
+            color: #1a1a1a;
+            font-size: 0.9375rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .lcc-link {
+            color: #1a1a1a;
+            font-weight: 700;
+            text-decoration: underline;
+        }
     }
-}
 
-.lcc-modal.cookiesModal .cookiesModalActions,
-.lcc-modal.cookiesModal .cookiesModalDetailsActions {
-    gap: 15px;
-    @media (max-width: 980px) {
-        -webkit-justify-content: center;
-        justify-content: center;
+    .lcc-modal--alert {
+        bottom: 30px;
+        left: auto;
+        position: fixed;
+        right: 30px;
+        top: auto;
+        transform: none;
+        width: 420px;
+        z-index: 9999;
+
+        @media (max-width: 640px) {
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+            right: 0;
+            width: 100%;
+        }
+
+        .lcc-modal__actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .lcc-button {
+                width: 100%;
+            }
+        }
+
+        .lcc-modal__card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+
+        .lcc-modal__text {
+            color: #555555;
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .lcc-modal__title {
+            color: #1a1a1a;
+            font-size: 1.125rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
     }
-    @media (max-width: 680px) {
-        -webkit-align-items: center;
-        align-items: center;
-        -webkit-flex-direction: column;
+
+    /* Κεντρικό Modal (Περιέχει Settings & Details) */
+    .lcc-modal--settings {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        display: flex;
         flex-direction: column;
+        left: 50%;
+        max-height: 90vh;
+        max-width: 680px;
+        overflow: hidden;
+        position: fixed;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        z-index: 10001;
+
+        @media (max-width: 640px) {
+            border-radius: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100dvh;
+            max-height: 100dvh;
+            transform: none;
+            width: 100%;
+        }
+
+        .lcc-modal__container {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 auto;
+            height: 100%;
+            max-height: 100%;
+            min-height: 0;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .lcc-modal__header {
+            align-items: center;
+            border-bottom: 1px solid #eeeeee;
+            display: flex;
+            flex-shrink: 0;
+            justify-content: space-between;
+            padding: 16px 24px;
+
+            .lcc-modal__close {
+                align-items: center;
+                background: transparent;
+                border: none;
+                color: #999999;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                padding: 6px;
+                transition: 0.2s;
+
+                &:hover {
+                    color: #1a1a1a;
+                }
+
+                svg {
+                    display: block;
+                }
+            }
+
+            .lcc-modal__title {
+                color: #1a1a1a;
+                font-size: 1.125rem;
+                font-weight: 700;
+                margin: 0;
+            }
+        }
+
+        .lcc-modal__body {
+            flex: 1 1 auto;
+            min-height: 0;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            padding: 24px;
+            position: relative;
+            touch-action: pan-y;
+
+            @media (max-width: 640px) {
+                padding: 16px;
+            }
+
+            .lcc-intro-text,
+            .lcc-modal__intro .lcc-intro-text {
+                color: #555555;
+                font-size: 0.9375rem;
+                line-height: 1.6;
+                margin-bottom: 24px;
+            }
+
+            .lcc-intro-title,
+            .lcc-modal__intro .lcc-intro-title {
+                color: #1a1a1a;
+                font-size: 0.9375rem;
+                font-weight: 700;
+                margin-bottom: 8px;
+            }
+
+            .lcc-modal__intro {
+                border-bottom: 1px solid #eeeeee;
+                margin-bottom: 24px;
+                padding-bottom: 8px;
+            }
+        }
+
+        .lcc-modal__footer {
+            align-items: center;
+            background: #fff;
+            border-top: 1px solid #eeeeee;
+            display: flex;
+            flex-shrink: 0; /* Δεν συμπιέζεται ποτέ */
+            justify-content: space-between;
+            padding: 20px 24px;
+
+            @media (max-width: 640px) {
+                flex-direction: column;
+                gap: 16px;
+                padding: 16px;
+            }
+
+            .lcc-footer-actions {
+                display: flex;
+                gap: 10px;
+
+                @media (max-width: 640px) {
+                    flex-direction: column;
+                    width: 100%;
+                }
+
+                .lcc-button {
+                    @media (min-width: 641px) {
+                        width: max-content;
+                    }
+                }
+            }
+
+            .lcc-button {
+                @media (max-width: 640px) {
+                    width: 100%;
+                }
+            }
+        }
     }
-}
-.lcc-modal.cookiesModal .cookiesModalActions .lcc-button,
-.lcc-modal.cookiesModal .cookiesModalActions .lcc-button:first-child,
-.lcc-modal.cookiesModal .cookiesModalActions .lcc-button:last-child,
-.lcc-modal.cookiesModal .cookiesModalDetailsActions .lcc-button,
-.lcc-modal.cookiesModal .cookiesModalDetailsActions .lcc-button:first-child,
-.lcc-modal.cookiesModal .cookiesModalDetailsActions .lcc-button:last-child {
-    @media (max-width: 680px) {
-        min-width: 250px;
+
+    .lcc-switch {
+        display: inline-block;
+        height: 22px;
+        position: relative;
+        width: 44px;
+
+        input {
+            height: 0;
+            opacity: 0;
+            width: 0;
+
+            &:checked + .lcc-slider {
+                background-color: #3d3d3d;
+
+                &:before {
+                    transform: translateX(22px);
+                }
+            }
+
+            &:disabled + .lcc-slider {
+                cursor: not-allowed;
+                opacity: 0.6;
+            }
+        }
+
+        .lcc-slider {
+            background-color: #c8c8c8;
+            border-radius: 20px;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+
+            &:before {
+                background-color: white;
+                border-radius: 50%;
+                bottom: 2px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+                content: '';
+                height: 18px;
+                left: 2px;
+                position: absolute;
+                transition: .4s;
+                width: 18px;
+            }
+        }
     }
-    @media (max-width: 400px) {
-        min-width: 220px;
+
+    .lcc-table-wrapper {
+        margin-top: 10px;
+        overflow-x: auto; /* Ενεργοποιεί το οριζόντιο scroll */
+        -webkit-overflow-scrolling: touch; /* Ομαλό οριζόντιο scroll στο iPhone */
+        padding-bottom: 5px; /* Λίγος χώρος για τη μπάρα κύλισης */
+
+        table {
+            background: #f7f7f7;
+            border: 1px solid #e5e5e5;
+            border-collapse: collapse;
+            border-radius: 8px;
+            color: #555555;
+            font-size: 0.9375rem;
+            width: 100%;
+            min-width: 500px;
+
+            td, th {
+                border-bottom: 1px solid #eeeeee;
+                line-height: 1.5;
+                padding: 12px;
+                vertical-align: top;
+            }
+
+            th {
+                background: #f7f7f7;
+                border-bottom: 2px solid #e5e5e5;
+                color: #1a1a1a;
+                font-weight: 700;
+                text-align: left;
+                white-space: nowrap;
+            }
+
+            tr {
+                &:last-child td {
+                    border-bottom: none;
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,22 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
+.modPlain.footerLogo {
+    float: left;
+    position: relative;
+
+    @media (max-width: 980px) {
+        width: 100%;
+    }
+
+    .logo {
+        float: left;
+        max-width: 120px;
+        position: relative;
+
+        svg {
+            height: auto;
+            width: 100%;
+        }
+
+    }
+}

@@ -1,0 +1,79 @@
+.textSliderSection {
+    background-color: $secondary;
+    float: left;
+    padding: 120px 0;
+    position: relative;
+    width: 100%;
+
+    @media (max-width: 980px) {
+        padding: clamp-size(40, 80, 320, 1400) 0;
+    }
+
+    .textSliderWrapper {
+        float: left;
+        position: relative;
+        width: 100%;
+    }
+
+    .textSliderMainTitle {
+        float: left;
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+        position: relative;
+        width: 100%;
+    }
+
+    .textSliderMainWrapper {
+        float: left;
+        position: relative;
+        width: 100%;
+
+        .textSliderMain {
+            float: left;
+            position: relative;
+            width: 100%;
+
+            .slideContent {
+                float: left;
+                margin: 0 auto;
+                opacity: 0;
+                position: relative;
+                visibility: hidden;
+                width: 100%;
+
+                .slideTitle {
+                    color: $text-main;
+                    font-family: $font-family-serif;
+                    font-size: clamp-size(30,42,320,2000);
+                    font-weight: $weight-regular;
+                    line-height: $line-height-heading;
+                    margin: 0;
+                    width: 100%;
+                }
+
+                .slideText {
+                    color: $text-main;
+                    font-size: 18px;
+                    font-weight: 300;
+                    margin-top: 20px;
+                    max-width: 700px;
+
+                    p:first-child {
+                        margin-top: 0;
+                    }
+
+                    p:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .textSliderMainButtonWrapper {
+        float: left;
+        position: relative;
+        width: 100%;
+    }
+}

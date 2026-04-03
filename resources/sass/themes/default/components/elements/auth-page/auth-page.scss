@@ -1,4 +1,3 @@
-/* Auth */
 .authPage {
     float: left;
     position: relative;
@@ -17,7 +16,7 @@
     }
 
     .authBackgroundOverlay {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba($bg-inverse, 0.2);
         height: 100%;
         left: 0;
         position: absolute;
@@ -71,6 +70,8 @@
 
         .authFormTitle {
             font-family: $font-family-serif;
+            font-weight: $weight-regular;
+            line-height: $line-height-heading;
             float: left;
             position: relative;
             width: 100%;

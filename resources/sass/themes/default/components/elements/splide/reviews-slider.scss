@@ -1,0 +1,286 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+.reviewsSection {
+    float: left;
+    position: relative;
+    padding: 0 0 120px;
+    width: 100%;
+
+    @media(max-width: 1400px) {
+        padding: 0 0 clamp-size(80, 120, 320, 1400);
+    }
+
+    // ─── Header ───────────────────────────────────────────────
+    .reviewsHeaderContainer {
+        float: left;
+        position: relative;
+        width: 100%;
+
+        .reviewsHeader {
+            float: left;
+            margin-bottom: 50px;
+            position: relative;
+            width: 100%;
+
+            .reviewsMainTitle {
+                color: $text-main;
+                float: left;
+                font-family: $font-family-serif;
+                font-size: clamp-size(30, 42, 320, 2000);
+                font-weight: $weight-regular;
+                line-height: $line-height-heading;
+                max-width: 640px;
+                position: relative;
+                width: 100%;
+            }
+
+            .reviewsMainText {
+                float: left;
+                font-size: 18px;
+                font-weight: $weight-light;
+                max-width: 940px;
+                position: relative;
+                text-align: center;
+                width: 100%;
+
+                p:first-child {
+                    margin-top: 0;
+                }
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    // ─── Slider wrapper ───────────────────────────────────────
+    .reviewsSliderMainWrapper {
+        float: left;
+        position: relative;
+        width: 100%;
+    }
+
+    // ─── Splide / slides ──────────────────────────────────────
+    .reviewsSplide {
+        .splide__slide {
+            width: clamp(280px, 32vw, 480px);
+            @media (max-width: $bp-lg) {
+                width: clamp(280px, 45vw, 480px);
+            }
+            @media (max-width: $bp-md) {
+                width: clamp(280px, 80vw, 480px);
+            }
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════
+    // CARD — Editorial (default)
+    // No box. Serif italic quote. Accent line separator.
+    // ═══════════════════════════════════════════════════════════
+    .reviewSlideInner {
+        background-color: $bg-alt;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        float: left;
+        gap: $space-xl;
+        height: 100%;
+        opacity: 0;
+        padding: $space-3xl $space-2xl $space-2xl;
+        position: relative;
+        visibility: hidden;
+        // Oversized decorative opening quote
+        &::before {
+            color: $primary;
+            content: '\201C';
+            font-family: $font-family-serif;
+            font-size: 160px;
+            left: $space-xl;
+            line-height: 1;
+            opacity: 0.08;
+            pointer-events: none;
+            position: absolute;
+            top: -10px;
+        }
+
+        // ─── Top row: platform + stars ─────────────────────
+        .reviewTop {
+            display: flex;
+            float: left;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+            z-index: 1;
+
+            .reviewPlatformLogo {
+                img {
+                    display: block;
+                    height: 20px;
+                    object-fit: contain;
+                    opacity: 0.7;
+                    width: auto;
+                }
+            }
+
+            .reviewPlatformName {
+                color: $text-muted;
+                font-family: $font-family-sans;
+                font-size: 11px;
+                font-weight: $weight-medium;
+                letter-spacing: 1.5px;
+            }
+
+            .reviewStars {
+                display: flex;
+                gap: 3px;
+
+                .reviewStar {
+                    display: flex;
+
+                    &.is-filled {
+                        color: $secondary-hover;
+                    }
+
+                    &.is-empty {
+                        color: $border-default;
+                    }
+                }
+            }
+        }
+
+        // ─── Review text ───────────────────────────────────
+        .reviewText {
+            color: $text-main;
+            flex: 1;
+            font-family: $font-family-serif;
+            font-size: clamp-size(16, 18, 320, 2000);
+            font-style: italic;
+            font-weight: $weight-light;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+
+            p:first-child {
+                margin-top: 0;
+            }
+
+            p:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        // ─── Meta: name + date ─────────────────────────────
+        .reviewMeta {
+            padding-top: $space-lg;
+            position: relative;
+            // Salmon accent line
+            &::before {
+                background-color: $secondary;
+                content: '';
+                display: block;
+                height: 1px;
+                margin-bottom: $space-lg;
+                width: 40px;
+            }
+
+            .reviewMetaInner {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .reviewerName {
+                color: $text-main;
+                font-family: $font-family-sans;
+                font-size: 13px;
+                font-weight: $weight-medium;
+                letter-spacing: 0.5px;
+            }
+
+            .reviewDate {
+                color: $text-muted;
+                font-family: $font-family-sans;
+                font-size: 12px;
+                font-weight: $weight-light;
+            }
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════
+    // VARIANT — Dark
+    // Usage: <x-blocks.reviews-slider ... customClass="is-dark" />
+    // ═══════════════════════════════════════════════════════════
+    &.is-dark {
+        background-color: $bg-inverse;
+        padding: 120px 0;
+        @media(max-width: 1400px) {
+            padding: clamp-size(80, 120, 320, 1400) 0;
+        }
+
+        .reviewsHeaderContainer .reviewsHeader {
+            .reviewsMainTitle {
+                color: $text-inverse;
+            }
+
+            .reviewsMainText {
+                color: rgba($text-inverse, 0.65);
+            }
+        }
+
+        .reviewSlideInner {
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 2px;
+
+            &::before {
+                color: $secondary;
+                opacity: 0.2;
+            }
+
+            .reviewTop {
+                .reviewPlatformLogo img {
+                    opacity: 0.6;
+                    filter: brightness(0) invert(1);
+                }
+
+                .reviewPlatformName {
+                    color: rgba(255, 255, 255, 0.4);
+                }
+
+                .reviewStar {
+                    &.is-filled {
+                        color: $secondary;
+                    }
+
+                    &.is-empty {
+                        color: rgba(255, 255, 255, 0.15);
+                    }
+                }
+            }
+
+            .reviewText {
+                color: rgba(255, 255, 255, 0.85);
+            }
+
+            .reviewMeta {
+                .reviewerName {
+                    color: $text-inverse;
+                }
+
+                .reviewDate {
+                    color: rgba(255, 255, 255, 0.4);
+                }
+            }
+        }
+
+        // Slider controls in dark context
+        .customSliderArrows {
+            .sliderBtn {
+                color: rgba(255, 255, 255, 0.6);
+
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}

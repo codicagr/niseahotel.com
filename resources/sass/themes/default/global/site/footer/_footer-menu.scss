@@ -1,0 +1,49 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
+.footerMenuContainer {
+    float: left;
+    position: relative;
+
+    @media (max-width: 980px) {
+        width: 100%;
+    }
+
+    .footerMenu {
+        float: left;
+        position: relative;
+
+        @media (max-width: 980px) {
+            width: 100%;
+        }
+
+        .menuItem {
+            float: left;
+            font-weight: $weight-light;
+            line-height: $line-height-heading;
+            margin: 5px 0;
+            position: relative;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            a {
+                color: $text-inverse;
+
+                &:hover {
+                    color: $secondary-hover;
+                }
+            }
+
+            &.active {
+                a {
+                    color: $secondary-hover;
+                }
+            }
+
+            span {
+                color: $text-inverse;
+            }
+        }
+    }
+}

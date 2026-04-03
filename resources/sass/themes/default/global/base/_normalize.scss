@@ -1,3 +1,5 @@
+@use "@styles/themes/default/abstracts/abstracts" as *;
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -16,6 +18,9 @@ img, picture, video, canvas, svg {
 }
 input, button, textarea, select {
     font: inherit;
+}
+a, button, [role="button"] {
+    touch-action: manipulation;
 }
 p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;

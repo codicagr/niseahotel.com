@@ -1,0 +1,156 @@
+.collectionsSection {
+    float: left;
+    position: relative;
+    width: 100%;
+
+    .collectionsHeaderContainer {
+        float: left;
+        position: relative;
+        width: 100%;
+
+        .collectionsHeader {
+            float: left;
+            margin-bottom: 50px;
+            position: relative;
+            width: 100%;
+
+            .collectionsMainTitle {
+                float: left;
+                color: $text-main;
+                font-family: $font-family-serif;
+                font-size: clamp-size(30, 42, 320, 2000);
+                font-weight: $weight-regular;
+                line-height: $line-height-heading;
+                max-width: 640px;
+                position: relative;
+                width: 100%;
+            }
+
+            .collectionsMainText {
+                float: left;
+                font-size: 18px;
+                font-weight: 300;
+                max-width: 940px;
+                position: relative;
+                text-align: center;
+                width: 100%;
+
+                p:first-child {
+                    margin-top: 0;
+                }
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .collectionsSliderMainWrapper {
+        float: left;
+        position: relative;
+        width: 100%;
+    }
+
+    .collectionsSplide {
+        .auto-width-slide {
+
+            &.is-portrait {
+                max-width: 450px;
+                min-width: 300px;
+                width: 30vw;
+            }
+
+            &.is-landscape {
+                max-width: 700px;
+                min-width: 400px;
+                width: 45vw;
+            }
+
+            @media (max-width: 780px) {
+                &.is-portrait,
+                &.is-landscape {
+                    max-width: 100%;
+                    min-width: 280px;
+                    width: 85vw;
+                }
+            }
+
+            .slideInner {
+                display: flex;
+                flex-direction: column;
+                visibility: hidden;
+                opacity: 0;
+
+                .imageWrapper {
+                    height: clamp(280px, 60vh, 750px);
+                    overflow: hidden;
+                    width: 100%;
+
+                    @media (max-width: 580px) {
+                        aspect-ratio: 1;
+                        height: auto;
+                    }
+
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                        width: 100%;
+                    }
+                }
+
+                .contentWrapper {
+                    box-sizing: border-box;
+                    float: left;
+                    padding: 20px 20px 0;
+                    position: relative;
+                    text-align: left;
+                    width: 100%;
+
+                    .slideTitle {
+                        color: $text-main;
+                        font-family: $font-family-serif;
+                        font-size: clamp-size(22,26,320,2000);
+                        font-weight: $weight-regular;
+                        line-height: $line-height-heading;
+                        position: relative;
+                        width: 100%;
+
+                        a {
+                            color: $text-main;
+                            font-family: $font-family-serif;
+
+                            &:hover {
+                                color: $secondary-hover;
+                            }
+                        }
+                    }
+
+                    .slideText {
+                        color: $text-main;
+                        float: left;
+                        font-size: 16px;
+                        position: relative;
+                        width: 100%;
+
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .collectionsSliderMainButtonContainer {
+        float: left;
+        position: relative;
+        width: 100%;
+        
+        .collectionsSliderMainButtonWrapper {
+            float: left;
+            position: relative;
+            width: 100%;
+        }
+    }
+}
