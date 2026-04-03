@@ -5,7 +5,7 @@
     $popups = data_get($data, 'popups', []);
 @endphp
 
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('themes.default.partials.head', ['metadata' => $metadata])
@@ -13,90 +13,31 @@
 </head>
 <body class="{{ $menuPageClass }} @stack('bodyClasses')">
 <div class="floatBox">
-    <section id="header" @if(ModuleFacade::moduleExists($modules, 'breadcrumb')) class="nobreadcrumb" @endif>
-        <div id="headerTop">
-            <div class="ccPage">
-                <div class="ccPageInner x-large">
-                    <div class="headerTopContainer flex flexWrap justifySpaceBetween itemsCenter">
-                        <div class="headerTopLeft flex itemsCenter">
-                            @if(ModuleFacade::moduleExists($modules, 'top-info'))
-                                {!!  ModuleFacade::getModules($modules, 'top-info') !!}
-                            @endif
-                        </div>
-                        <div class="headerTopRight flex itemsCenter">
-                            @if(ModuleFacade::moduleExists($modules, ['account', 'wishlist', 'notifications']))
-                                <div class="headerButtonsContainer flex justifyEnd itemsCenter">
-                                    @if(ModuleFacade::moduleExists($modules, 'wishlist'))
-                                        {!! ModuleFacade::getModules($modules, 'wishlist') !!}
-                                    @endif
-                                    @if(ModuleFacade::moduleExists($modules, 'notifications'))
-                                        {!! ModuleFacade::getModules($modules, 'notifications') !!}
-                                    @endif
-                                </div>
-                            @endif
-                            @if(ModuleFacade::moduleExists($modules, 'lang'))
-                                <div id="lang">
-                                    {!!  ModuleFacade::getModules($modules, 'lang') !!}
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        @if(ModuleFacade::moduleExists($modules, 'top-menu'))
-            <div id="headerTopMenu">
-                {!!  ModuleFacade::getModules($modules, 'top-menu') !!}
-            </div>
-        @endif
-
+    <section id="header">
         <div id="headerMain">
             <div class="ccPage">
-                <div class="ccPageInner x-large">
+                <div class="ccPageInner fullWidth">
                     <div class="headerMainInner flex flexWrap itemsCenter">
-                        <div id="mobileMenuContainer" class="mobileMenuContainer"></div>
-                        @if(ModuleFacade::moduleExists($modules, 'mobile-info'))
-                            <div id="mobileInfo">
-                                {!! ModuleFacade::getModules($modules, 'mobile-info') !!}
+                        @if(ModuleFacade::moduleExists($modules, 'mobile-menu'))
+                            <div id="mobileMenu">
+                                {!! ModuleFacade::getModules($modules, 'mobile-menu') !!}
                             </div>
                         @endif
-                        @if (View::exists('site._partials.logo.main'))
-                            @include('site._partials.logo.main')
-                        @else
-                            <div id="headerLogo" class="logoContainer">
-                                <a class="logo" href="{{ URL::to(app('laravellocalization')->getCurrentLocale()) }}">
-                                    <img
-                                            style="filter: brightness(0) saturate(100%) invert(34%) sepia(98%) saturate(723%) hue-rotate(180deg) brightness(98%) contrast(96%);"
-                                            src="{{ asset('vendor/cms-core/themes/images/logo/codica.png') }}"/>
-                                </a>
+                        @if(ModuleFacade::moduleExists($modules, 'lang'))
+                            <div id="lang">
+                                {!!  ModuleFacade::getModules($modules, 'lang') !!}
                             </div>
                         @endif
-                        @if(ModuleFacade::moduleExists($modules, 'search'))
-                            <div id="searchContainer">
-                                {!! ModuleFacade::getModules($modules, 'search') !!}
-                            </div>
-                        @endif
-                        @if(ModuleFacade::moduleExists($modules, 'account'))
-                            <div id="accountContainer">
-                                {!! ModuleFacade::getModules($modules, 'account') !!}
-                            </div>
-                        @endif
-                        @if(ModuleFacade::moduleExists($modules, 'cart'))
-                            <div id="cart">
-                                {!!  ModuleFacade::getModules($modules, 'cart') !!}
+
+                        <x-layout.logo />
+
+                        @if(ModuleFacade::moduleExists($modules, 'header-right'))
+                            <div id="headerRight">
+                                {!!  ModuleFacade::getModules($modules, 'header-right') !!}
                             </div>
                         @endif
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div id="headerNav" class="ccPage">
-            <div class="ccPageInner x-large">
-                @if(ModuleFacade::moduleExists($modules, 'header-nav'))
-                    {!!  ModuleFacade::getModules($modules, 'header-nav') !!}
-                @endif
             </div>
         </div>
     </section>
@@ -266,50 +207,61 @@
         @endif
     </div>
 
-    <section id="footer" class="paddingTop20 paddingBottom20">
-        <div class="footerContainer">
-            @if(ModuleFacade::moduleExists($modules, ['footer-1', 'footer-2', 'footer-3', 'footer-4']))
+    <section id="footer">
+        @if(ModuleFacade::moduleExists($modules, ['footer-1', 'footer-2', 'footer-3', 'footer-4']))
+            <div class="footerContainer">
                 <div class="footerRow borderBottom footerRow1 ccPage marginTop30">
-                    <div class="ccPageInner">
-                        <div class="footerRowInner flex flexWrap">
+                    <div class="ccPageInner x-large">
+                        <div class="footerRowInner flex flexWrap justifySpaceBetween">
                             @if(ModuleFacade::moduleExists($modules, 'footer-1'))
-                                <div class="footerColumn footer1 marginBottom50">
+                                <div class="footerColumn footer1">
                                     {!!  ModuleFacade::getModules($modules, 'footer-1') !!}
                                 </div>
                             @endif
                             @if(ModuleFacade::moduleExists($modules, 'footer-2'))
-                                <div class="footerColumn footer2 marginBottom50">
+                                <div class="footerColumn footer2">
                                     {!!  ModuleFacade::getModules($modules, 'footer-2') !!}
                                 </div>
                             @endif
                             @if(ModuleFacade::moduleExists($modules, 'footer-3'))
-                                <div class="footerColumn footer3 marginBottom50">
+                                <div class="footerColumn footer3">
                                     {!!  ModuleFacade::getModules($modules, 'footer-3') !!}
                                 </div>
                             @endif
                             @if(ModuleFacade::moduleExists($modules, 'footer-4'))
-                                <div class="footerColumn footer4 marginBottom50">
+                                <div class="footerColumn footer4">
                                     {!!  ModuleFacade::getModules($modules, 'footer-4') !!}
                                 </div>
                             @endif
                         </div>
                     </div>
                 </div>
-            @endif
-        </div>
-    </section>
+            </div>
+        @endif
 
-    @if(ModuleFacade::moduleExists($modules, 'copyrights'))
-        <div id="copyrights">
-            <div class="ccPage">
-                <div class="ccPageInner x-large">
-                    {!!  ModuleFacade::getModules($modules, 'copyrights') !!}
+        <div class="cookieConsentButtonWrapper ccPage">
+            <div class="ccPageInner">
+                <div class="cookieConsentButton flex justifyCenter textCenter">
+                    <button class="js-lcc-settings-toggle">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc.--><path d="M182 185.7L130 293.1L150.6 410.8L236 493.7L353.3 510.3L458 454.3L510 346.9L489.4 229.2L404 146.3L286.7 129.7L182 185.7zM277.9 80L426.2 101L534 205.6L560 353.9L494.3 489.3L362.1 560L213.8 539L106 434.4L80 286.1L145.7 150.7L277.9 80zM272 208C289.7 208 304 222.3 304 240C304 257.7 289.7 272 272 272C254.3 272 240 257.7 240 240C240 222.3 254.3 208 272 208zM240 368C257.7 368 272 382.3 272 400C272 417.7 257.7 432 240 432C222.3 432 208 417.7 208 400C208 382.3 222.3 368 240 368zM368 368C368 350.3 382.3 336 400 336C417.7 336 432 350.3 432 368C432 385.7 417.7 400 400 400C382.3 400 368 385.7 368 368z"/></svg>
+                        </span>
+                        <span class="text">{{ __('cookie-consent::texts.cookies_button') }}</span>
+                    </button>
                 </div>
             </div>
         </div>
-    @endif
 
-    @include('cms-core::site.cookie-consent.partials.layout-button')
+        @if(ModuleFacade::moduleExists($modules, 'copyrights'))
+            <div id="copyrights">
+                <div class="ccPage">
+                    <div class="ccPageInner fullWidth">
+                        {!!  ModuleFacade::getModules($modules, 'copyrights') !!}
+                    </div>
+                </div>
+            </div>
+        @endif
+    </section>
 
     {!! PopupFacade::getPopupsHtml($popups) !!}
 
