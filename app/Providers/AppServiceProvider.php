@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Vite;
+use Livewire\Blaze\Blaze;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Vite::useBuildDirectory('themes/default');
+
+        Blaze::optimize()
+            ->in(resource_path('views/components/layout'))
+            ->in(resource_path('views/components/ui'))
+            ->in(resource_path('views/components/blocks'));
+
+        /*Blaze::debug();*/
     }
 }
