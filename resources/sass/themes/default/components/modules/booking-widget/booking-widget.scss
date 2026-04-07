@@ -157,9 +157,29 @@
             float: left;
             position: relative;
 
-            .desktop {
+            .bookNowBtn {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 0.575rem 2.5rem;
+
                 @media (max-width: 780px) {
                     display: none;
+                }
+
+                .btnMain {
+                    display: block;
+                    line-height: 1;
+                }
+
+                .btnSub {
+                    display: block;
+                    font-size: 9px;
+                    font-weight: $weight-medium;
+                    letter-spacing: 1.5px;
+                    line-height: 1;
+                    opacity: 0.8;
                 }
             }
 

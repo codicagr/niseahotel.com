@@ -41,8 +41,9 @@
      x-cloak>
 
     <div class="bookingPopupTriggers">
-        <a class="generalButton outlineButton desktop" href="#" @click.prevent="openPopup()" aria-label="{{ BaseFacade::UpperCase($mainLinkLabel) }}">
-            {{ BaseFacade::UpperCase(__('site/general.book_now')) }}
+        <a class="generalButton outlineButton bookNowBtn desktop" href="#" @click.prevent="openPopup()" aria-label="{{ BaseFacade::UpperCase($mainLinkLabel) }}">
+            <span class="btnMain">{{ BaseFacade::UpperCase(__('site/general.book_now')) }}</span>
+            <span class="btnSub">* {{ BaseFacade::UpperCase(__('site/general.best_price_guarantee')) }} *</span>
         </a>
         <a class="mobile" href="#" @click.prevent="openPopup()" aria-label="{{ BaseFacade::UpperCase($mainLinkLabel) }}">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc.--><path d="M224 64L224 128L416 128L416 64L448 64L448 128L544 128L544 544L96 544L96 128L192 128L192 64L224 64zM512 160L128 160L128 224L512 224L512 160zM512 256L128 256L128 512L512 512L512 256z"/></svg>
