@@ -10,6 +10,7 @@ return [
     'contact_info_title' => 'Kontaktinformationen',
     'good_to_know' => 'Gut zu wissen',
     'book_now' => 'Jetzt Bucher',
+    'best_price_guarantee' => 'Beste Preis Garantie',
     'ideal_for' => 'Ideal für',
     'upgrade_your_stay' => 'Werten Sie Ihren Aufenthalt auf',
     'from_the_airport' => 'Vom Flughafen',

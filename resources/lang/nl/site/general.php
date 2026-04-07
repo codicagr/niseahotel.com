@@ -10,6 +10,7 @@ return [
     'contact_info_title' => 'Contactgegevens',
     'good_to_know' => 'Goed om te weten',
     'book_now' => 'Boek Nu',
+    'best_price_guarantee' => 'Beste Prijs Garantie',
     'ideal_for' => 'Ideaal voor',
     'upgrade_your_stay' => 'Upgrade uw verblijf',
     'from_the_airport' => 'Vanaf de Luchthaven',

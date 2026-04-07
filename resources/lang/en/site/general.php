@@ -10,6 +10,7 @@ return [
     'contact_info_title' => 'Contact Information',
     'good_to_know' => 'Good to Know',
     'book_now' => 'Book Now',
+    'best_price_guarantee' => 'Best Price Guarantee',
     'ideal_for' => 'Ideal for',
     'upgrade_your_stay' => 'Upgrade Your Stay',
     'from_the_airport' => 'From the Airport',

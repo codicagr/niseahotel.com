@@ -10,6 +10,7 @@ return [
     'contact_info_title' => 'Στοιχεία Επικοινωνίας',
     'good_to_know' => 'Χρήσιμες Πληροφορίες',
     'book_now' => 'Κάντε Κράτηση',
+    'best_price_guarantee' => 'Εγγύηση Καλύτερης Τιμής',
     'ideal_for' => 'Ιδανικό για',
     'upgrade_your_stay' => 'Αναβαθμίστε τη Διαμονή σας',
     'from_the_airport' => 'Από το Αεροδρόμιο',
