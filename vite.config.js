@@ -71,6 +71,7 @@ export default defineConfig({
                 'resources/sass/themes/default/components/content/amenities/amenities-category.scss',
                 'resources/sass/themes/default/components/content/locations/locations-category.scss',
                 'resources/sass/themes/default/components/content/locations/locations-item.scss',
+                'resources/sass/themes/default/components/content/experiences/experiences-category.scss',
                 'resources/sass/themes/default/components/content/pages/pages-item.scss',
                 'resources/sass/themes/default/components/content/general/general-item.scss',
 
@@ -91,6 +92,8 @@ export default defineConfig({
                 'resources/sass/themes/default/components/modules/booking-widget/booking-widget.scss',
                 'resources/sass/themes/default/components/modules/full-page-video/full-page-video.scss',
                 'resources/sass/themes/default/components/modules/related-items/related-items.scss',
+                'resources/sass/themes/default/components/elements/new-slider/new-slider.scss',
+                'resources/sass/themes/default/components/elements/new-slider-splide/new-slider-splide.scss',
             ],
             refresh: true,
         }),
