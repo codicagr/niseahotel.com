@@ -72,9 +72,9 @@ body.hasHero {
                 color: $text-inverse;
 
                 &:hover {
-                    background-color: $secondary;
-                    border-color: $secondary;
-                    color: $text-main;
+                    background-color: $bg-inverse;
+                    border-color: $bg-inverse;
+                    color: $text-inverse;
                 }
             }
 

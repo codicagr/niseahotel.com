@@ -123,9 +123,9 @@
             }
 
             .reviewPlatformName {
-                color: $text-muted;
+                color: $primary;
                 font-family: $font-family-sans;
-                font-size: 11px;
+                font-size: 13px;
                 font-weight: $weight-medium;
                 letter-spacing: 1.5px;
             }
@@ -143,6 +143,11 @@
 
                     &.is-empty {
                         color: $border-default;
+                    }
+
+                    svg {
+                        height: 20px;
+                        width: 20px;
                     }
                 }
             }
@@ -191,15 +196,15 @@
             .reviewerName {
                 color: $text-main;
                 font-family: $font-family-sans;
-                font-size: 13px;
+                font-size: 15px;
                 font-weight: $weight-medium;
                 letter-spacing: 0.5px;
             }
 
             .reviewDate {
-                color: $text-muted;
+                color: $primary;
                 font-family: $font-family-sans;
-                font-size: 12px;
+                font-size: 13px;
                 font-weight: $weight-light;
             }
         }
@@ -243,7 +248,7 @@
                 }
 
                 .reviewPlatformName {
-                    color: rgba(255, 255, 255, 0.4);
+                    color: $primary;
                 }
 
                 .reviewStar {

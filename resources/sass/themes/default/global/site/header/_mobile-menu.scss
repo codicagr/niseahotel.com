@@ -139,7 +139,7 @@
         float: left;
         height: 100vh;
         left: 0;
-        max-width: 50vw;
+        max-width: 650px;
         min-width: 300px;
         opacity: 0;
         overflow: hidden;
@@ -247,13 +247,13 @@
 }
 
 .mobileMenuOverlay {
-    backdrop-filter: blur(6px);
+    background-color: rgba($bg-inverse, 0.35);
     height: 100vh;
     left: 0;
     opacity: 0;
     position: fixed;
     top: 0;
-    transition: $trans-fast;
+    transition: opacity $trans-base;
     visibility: hidden;
     width: 100vw;
     z-index: 10;
@@ -262,5 +262,21 @@
         pointer-events: auto;
         opacity: 1;
         visibility: visible;
+    }
+}
+
+body.burgerMenuOpen {
+    #headerLogo,
+    #headerRight {
+        filter: blur(5px);
+        pointer-events: none;
+        transition: filter $trans-base;
+    }
+
+    #pageContent,
+    #footer {
+        filter: blur(5px);
+        pointer-events: none;
+        transition: filter $trans-base;
     }
 }

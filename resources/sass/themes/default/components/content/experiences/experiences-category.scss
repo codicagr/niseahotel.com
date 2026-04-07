@@ -1,0 +1,31 @@
+@use '../default/default-category' as *;
+
+.categoryViewContainer.experiences {
+
+    .categoryMainWrapper {
+        background-color: $bg-alt;
+        float: left;
+        position: relative;
+        width: 100%;
+
+        .categoryItemsContainer {
+            background-color: $bg-alt;
+            float: left;
+            position: relative;
+            width: 100%;
+
+            .categoryItems {
+                float: left;
+                gap: 120px 0;
+                padding: 120px 0;
+                position: relative;
+                width: 100%;
+
+                @media(max-width: 1400px) {
+                    gap: clamp-size(80, 120, 320, 1400) 0;
+                    padding: clamp-size(80, 120, 320, 1400) 0;
+                }
+            }
+        }
+    }
+}
