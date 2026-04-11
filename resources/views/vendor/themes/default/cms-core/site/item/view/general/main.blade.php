@@ -17,7 +17,7 @@
 @endphp
 
 @section('mainContent')
-    <div class="itemViewContainer general item{{ $id }} paddingTop80">
+    <article class="itemViewContainer general item{{ $id }} paddingTop80">
 
         <x-blocks.page-lead
             :title="$leadTitle"
@@ -33,7 +33,7 @@
                 </div>
             </div>
         @endif
-    </div>
+    </article>
 @endsection
 
 @pushonce('header_styles_stack','generalItem')

@@ -22,7 +22,7 @@
 @endphp
 
 @section('mainContent')
-    <div class="itemViewContainer location item{{ $id }} paddingBottom120"
+    <article class="itemViewContainer location item{{ $id }} paddingBottom120"
          x-data="{
             scrollY: 0,
             get blurAmount() {
@@ -75,7 +75,7 @@
             @endif
         @endforeach
 
-    </div>
+    </article>
 @endsection
 
 @pushonce('header_styles_stack','locationItem')

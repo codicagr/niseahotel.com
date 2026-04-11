@@ -38,7 +38,7 @@
 @endphp
 
 @section('mainContent')
-    <div class="itemViewContainer stay item{{ $id }} paddingBottom120"
+    <article class="itemViewContainer stay item{{ $id }} paddingBottom120"
          x-data="{
             scrollY: 0,
             get blurAmount() {
@@ -111,7 +111,7 @@
             :guests="$numberOfGuests"
         />--}}
 
-    </div>
+    </article>
 @endsection
 
 @pushonce('header_styles_stack','stayItem')

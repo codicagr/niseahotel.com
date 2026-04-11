@@ -7,16 +7,16 @@
 @endphp
 
 @if ($mode == 2 || $type == 0)
-    <div class="mod{{ $moduleId }} footerElement footerMenuContainer flex flexColumn">
+    <nav class="mod{{ $moduleId }} footerElement footerMenuContainer flex flexColumn">
         @if($mainTitle != '')
             <div class="footerTitle" data-stagger-child>
                 {{ $mainTitle }}
             </div>
         @endif
-        <div class="footerMenu flex flexColumn">
+        <ul class="footerMenu flex flexColumn">
             @foreach ($menus as $menu)
                 <x-layout.footer-menu.item :menu="$menu" />
             @endforeach
-        </div>
-    </div>
+        </ul>
+    </nav>
 @endif

@@ -45,7 +45,7 @@
 @endphp
 
 @section('mainContent')
-    <div class="itemViewContainer location item{{ $id }} paddingBottom120"
+    <article class="itemViewContainer location item{{ $id }} paddingBottom120"
          x-data="{
             scrollY: 0,
             get blurAmount() {
@@ -88,10 +88,9 @@
 
         <x-blocks.gallery-masonry.main
             :images="$galleryImages"
-            title="Η Συλλογή Μας"
         />
 
-    </div>
+    </article>
 @endsection
 
 @pushonce('header_styles_stack','locationItem')

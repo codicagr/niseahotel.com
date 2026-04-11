@@ -18,7 +18,7 @@
 @endphp
 
 @section('mainContent')
-    <div class="categoryViewContainer location category-{{ $id }}"
+    <section class="categoryViewContainer location category-{{ $id }}"
          x-data="{
             scrollY: 0,
             get blurAmount() {
@@ -91,7 +91,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
 
 @pushonce('header_styles_stack','locationsCategory')

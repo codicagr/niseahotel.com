@@ -22,7 +22,7 @@
 @endphp
 
 @section('mainContent')
-    <div class="categoryViewContainer stay category-{{ $id }}"
+    <section class="categoryViewContainer stay category-{{ $id }}"
          x-data="{
             scrollY: 0,
             get blurAmount() {
@@ -83,7 +83,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
 
 @pushonce('header_styles_stack','stayCategory')
