@@ -220,6 +220,14 @@ document.addEventListener('alpine:init', () => {
 
                 this.slider.mount()
 
+                // Strip data-fancybox from Splide clones (loop mode duplicates slides)
+                // so Fancybox only counts real slides in the gallery.
+                if (config.fancyboxSelector) {
+                    const sliderEl = document.querySelector(config.sliderSelector)
+                    sliderEl?.querySelectorAll('.splide__slide--clone [data-fancybox]')
+                             .forEach(el => el.removeAttribute('data-fancybox'))
+                }
+
                 if (config.fancyboxSelector && typeof window.fancyboxInit === 'function') {
                     window.fancyboxInit(config.fancyboxSelector)
                 }
