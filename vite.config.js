@@ -87,9 +87,13 @@ export default defineConfig({
                 'resources/sass/themes/default/components/elements/gallery-mansory/gallery-mansory.scss',
                 'resources/sass/themes/default/components/elements/fancybox/fancybox-theme.scss',
 
+                'resources/sass/themes/default/components/modules/plain/plain-default.scss',
+                'resources/sass/themes/default/components/modules/plain/plain-telephone.scss',
                 'resources/sass/themes/default/components/modules/home-intro/home-intro.scss',
                 'resources/sass/themes/default/components/modules/home-rooms/home-rooms.scss',
+                'resources/sass/themes/default/components/modules/galleries/galleries.scss',
                 'resources/sass/themes/default/components/modules/booking-widget/booking-widget.scss',
+                'resources/sass/themes/default/components/modules/plain/plain-booking.scss',
                 'resources/sass/themes/default/components/modules/full-page-video/full-page-video.scss',
                 'resources/sass/themes/default/components/modules/related-items/related-items.scss',
                 'resources/sass/themes/default/components/elements/new-slider/new-slider.scss',
