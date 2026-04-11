@@ -38,6 +38,7 @@
         infants: {{ $minInfants }},
         arrivalError: '{{ addslashes($arrivalError) }}'
      })"
+     @open-booking-popup.window="openPopup()"
      x-cloak>
 
     <div class="bookingPopupTriggers">

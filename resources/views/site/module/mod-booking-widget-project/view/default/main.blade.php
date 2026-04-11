@@ -27,8 +27,8 @@
     $maxInfants = (int) data_get($module, 'data.max_infants', 1);
 
     $link = data_get($module, 'data.link', '');
-    $linkLabel = data_get($module, 'data.link_label', '_self');
-    $target = data_get($module, 'data.target', '');
+    $linkLabel = data_get($module, 'data.link_label', '');
+    $target = data_get($module, 'data.target', '_self');
 @endphp
 
 <div class="mod{{ $moduleId }} modBookingWidget inlineMode"
@@ -41,12 +41,12 @@
      })"
      x-cloak>
 
-    <div class="bookingInlineContainer ccPage">
+    <div class="bookingInlineContainer">
         <div class="bgImage">
             <img src="{{ $mainImage }}" alt="" />
         </div>
-        <div class="ccPageInner medium">
-            <div class="bookingInlineWrapper">
+        <div class="bookingInlineWrapper ccPage">
+            <div class="ccPageInner medium">
                 <div class="bookingInline flex flexWrap justifyCenter">
                     @if ($mainTitle || $mainText)
                         <div class="bookingContentContainer flex flexColumn gap30" data-stagger-child>
