@@ -5,8 +5,6 @@
     'itemTitle' => ''
 ])
 
-{{-- roomGallery: gsap.rootSelector defaults to sliderSelector, no @php block needed --}}
-
 @if (count($slides) > 0)
     @if ($title || $text)
         <div class="itemPreGalleryContainer">

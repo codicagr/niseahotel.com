@@ -1,12 +1,13 @@
 @props([
     'imgUrl' => '',
     'alt' => '',
-    'caption' => ''
+    'caption' => '',
+    'fancyboxGroup' => 'masonry-gallery',
 ])
 
 <div class="masonryItem" data-masonry-item>
     <a href="{{ $imgUrl }}"
-       data-fancybox="masonry-gallery"
+       data-fancybox="{{ $fancyboxGroup }}"
        data-caption="{{ $caption ?: $alt }}"
        class="masonryLink">
 

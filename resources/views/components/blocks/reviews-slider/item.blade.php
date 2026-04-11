@@ -48,7 +48,7 @@
                     <span class="reviewerName">{{ $reviewerName }}</span>
                 @endif
                 @if($date)
-                    <span class="reviewDate">{{ $date }}</span>
+                    <date class="reviewDate">{{ $date }}</date>
                 @endif
             </div>
         </div>

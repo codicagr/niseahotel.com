@@ -18,7 +18,7 @@
     $title = data_get($item, 'title');
 @endphp
 
-<div {{ $attributes->merge(['class' => 'item item-' . $itemId . ' flex flexColumn']) }} data-stagger-child>
+<article {{ $attributes->merge(['class' => 'item item-' . $itemId . ' flex flexColumn']) }} data-stagger-child>
     <div class="itemImageContainer">
         <div class="itemImage">
             <a href="{{ $link }}">
@@ -68,4 +68,4 @@
             </div>
         </div>
     </div>
-</div>
+</article>

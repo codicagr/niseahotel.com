@@ -1,13 +1,18 @@
 @props([
     'images' => [],
     'customClass' => '',
+    'fancyboxGroup' => 'masonry-gallery',
 ])
 
+@php
+    $gridId = 'masonry-grid-' . uniqid();
+@endphp
+
 @if(count($images) > 0)
-    <section class="galleryMasonrySection {{ $customClass }}" x-data="masonryGalleryInit()">
+    <section class="galleryMasonrySection {{ $customClass }}" x-data="masonryGalleryInit('{{ $gridId }}')">
         <div class="ccPage">
             <div class="ccPageInner fullWidth">
-                <div class="masonryGrid" id="masonry-grid-container">
+                <div class="masonryGrid" id="{{ $gridId }}">
                     @foreach($images as $image)
                         @php
                             $imgUrl = \BaseFacade::getImage(data_get($image, 'image', ''));
@@ -19,6 +24,7 @@
                                 :imgUrl="$imgUrl"
                                 :alt="$imgTitle"
                                 :caption="$imgTitle"
+                                :fancyboxGroup="$fancyboxGroup"
                             />
                         @endif
                     @endforeach
@@ -29,24 +35,28 @@
     </section>
 @endif
 
-@pushonce('header_scripts_stack', 'fancyboxJS')
+@pushonce('footer_scripts_stack', 'fancyboxJS')
     @vite([
         'resources/js/utils/fancybox.js'
     ])
 @endpushonce
 
+@pushonce('footer_scripts_stack', 'fancyboxMasonryInit')
+    <script>
+        window.addEventListener('load', function () {
+            if (typeof window.fancyboxInit === 'function') {
+                window.fancyboxInit('[data-fancybox^="masonry-gallery"]');
+            }
+        });
+    </script>
+@endpushonce
+
 @pushonce('footer_scripts_stack', 'galleryMasonryJS')
     <script>
         document.addEventListener('alpine:init', () => {
-            Alpine.data('masonryGalleryInit', () => ({
+            Alpine.data('masonryGalleryInit', (gridId) => ({
                 init() {
-                    // Fancybox
-                    if(typeof window.fancyboxInit === 'function') {
-                        window.fancyboxInit('[data-fancybox="masonry-gallery"]');
-                    }
-
-                    // GSAP
-                    const container = document.getElementById('masonry-grid-container');
+                    const container = document.getElementById(gridId);
                     if (!container) return;
 
                     const items = container.querySelectorAll('[data-masonry-item]');

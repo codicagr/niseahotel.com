@@ -17,7 +17,7 @@
     $baseClasses = 'showcaseItem ' . ($itemId ? 'item-'.$itemId : '') . ' ' . $direction;
 @endphp
 
-<div {{ $attributes->merge(['class' => $baseClasses]) }}>
+<article {{ $attributes->merge(['class' => $baseClasses]) }}>
     <div class="showcaseItemImageContainer">
         <div class="showcaseItemImage">
             @if ($image)
@@ -69,4 +69,4 @@
             </div>
         </div>
     </div>
-</div>
+</article>
