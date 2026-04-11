@@ -8,7 +8,7 @@
     $stateClass = data_get($menu, 'active') ? 'active' : (data_get($menu, 'current') ? 'current' : '');
 @endphp
 
-<div {{ $attributes->merge(['class' => "menuItem menu-{$id} {$stateClass}"]) }} data-stagger-child>
+<li {{ $attributes->merge(['class' => "menuItem menu-{$id} {$stateClass}"]) }} data-stagger-child>
     @if ($isSeparator)
         <span class="{{ $customClass }}">
             {{ $title }}
@@ -20,4 +20,4 @@
             {{ $title }}
         </a>
     @endif
-</div>
+</li>

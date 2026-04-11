@@ -12,7 +12,7 @@
     $isOpenInitially = ($isActive || $isCurrent) ? 'true' : 'false';
 @endphp
 
-<div class="menuItem menu-{{ data_get($menu, 'id') }}"
+<li class="menuItem menu-{{ data_get($menu, 'id') }}"
      style="--item-delay: {{ 0.2 + ($index * 0.1) }}s;"
      @if($hasChildren) x-data="{ submenuOpen: {{ $isOpenInitially }} }" @endif>
 
@@ -41,12 +41,12 @@
     </div>
 
     @if($hasChildren)
-        <div class="submenuContainer" x-show="submenuOpen" x-collapse x-cloak>
-            <div class="submenuList flex flexColumn">
+        <nav class="submenuContainer" x-show="submenuOpen" x-collapse x-cloak>
+            <ul class="submenuList flex flexColumn">
                 @foreach ($children as $child)
                     <x-layout.burger-menu.item :menu="$child" :index="$loop->index" />
                 @endforeach
-            </div>
-        </div>
+            </ul>
+        </nav>
     @endif
-</div>
+</li>
