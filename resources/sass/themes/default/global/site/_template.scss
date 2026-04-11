@@ -308,40 +308,40 @@ img {
     font-weight: $weight-medium;
     position: relative;
 }
-#pageContent,
-#top1,
-#top2,
-#top3,
-#top4,
-#top5,
-#top6,
-#top7,
-#top8,
-#top9,
-#top10,
-#bottom1,
-#bottom2,
-#bottom3,
-#bottom4,
-#bottom5,
-#bottom6,
-#bottom7,
-#bottom8,
-#bottom9,
-#bottom10,
+#page-content,
+#top-1,
+#top-2,
+#top-3,
+#top-4,
+#top-5,
+#top-6,
+#top-7,
+#top-8,
+#top-9,
+#top-10,
+#bottom-1,
+#bottom-2,
+#bottom-3,
+#bottom-4,
+#bottom-5,
+#bottom-6,
+#bottom-7,
+#bottom-8,
+#bottom-9,
+#bottom-10,
 #breadcrumbs,
-#pageMainContent,
-#mainContentContainer,
-#mainContent,
+#page-main-content,
+#main-content-container,
+#main-content,
 #footer {
     float: left;
     position: relative;
     width: 100%;
 }
-body.altBg #pageContent {
+body.altBg #page-content {
     background-color: $bg-alt;
 }
-#pageContent {
+#page-content {
     background-color: $bg-main;
     margin-top: 160px;
 }

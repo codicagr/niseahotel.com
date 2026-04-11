@@ -16,7 +16,7 @@ body.hasHero {
         }
     }
 
-    #pageContent {
+    #page-content {
         margin-top: 0;
     }
 
@@ -65,7 +65,7 @@ body.hasHero {
         }
     }
 
-    #headerRight {
+    #header-right {
         .modBookingWidget .bookingPopupTriggers {
             a {
                 border-color: $text-inverse;
@@ -84,6 +84,23 @@ body.hasHero {
                         fill: $text-inverse;
                     }
                 }
+            }
+        }
+
+        .modPlain.telephone {
+            .telephoneButton {
+                a {
+                    color: $text-inverse;
+
+                    svg {
+                        path {
+                            fill: $text-inverse;
+                        }
+                    }
+                }
+            }
+            &:after {
+                background-color: $text-inverse;
             }
         }
     }

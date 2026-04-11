@@ -42,25 +42,25 @@
                 width: 100%;
             }
 
-            &.footer1 {
+            &.footer-1 {
                 @media (max-width: 980px) {
                     order: 1;
                 }
             }
 
-            &.footer2 {
+            &.footer-2 {
                 @media (max-width: 980px) {
                     order: 3;
                 }
             }
 
-            &.footer3 {
+            &.footer-3 {
                 @media (max-width: 980px) {
                     order: 4;
                 }
             }
 
-            &.footer4 {
+            &.footer-4 {
                 @media (max-width: 980px) {
                     order: 2;
                 }

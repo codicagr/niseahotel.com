@@ -10,6 +10,8 @@
 
     .footerMenu {
         float: left;
+        list-style: none;
+        padding: 0;
         position: relative;
 
         @media (max-width: 980px) {

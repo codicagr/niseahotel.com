@@ -32,6 +32,7 @@
             }
 
             .bookingInlineWrapper {
+                background-color: rgba($bg-main,0.6);
                 float: left;
                 padding: 120px 0;
                 position: relative;
@@ -43,20 +44,10 @@
             }
 
             .bookingInline {
-                background-color: rgba($bg-main,0.6);
                 box-sizing: border-box;
                 float: left;
-                padding: 60px 0;
                 position: relative;
                 width: 100%;
-
-                @media (max-width: 980px) {
-                    padding: 30px 0;
-                }
-
-                @media (max-width: 840px) {
-                    padding: 0;
-                }
 
                 .bookingContentContainer {
                     border-right: 1px solid $text-main;
@@ -162,9 +153,9 @@
                 display: flex;
                 flex-direction: column;
                 gap: 5px;
-                padding: 0.575rem 2.5rem;
+                padding: 0.575rem 1.5rem;
 
-                @media (max-width: 780px) {
+                @media (max-width: 980px) {
                     display: none;
                 }
 
@@ -187,7 +178,7 @@
                 box-sizing: border-box;
                 display: none;
                 float: left;
-                padding: 5px;
+                padding: 0;
                 @media (max-width: 780px) {
                     display: block;
                 }
@@ -195,7 +186,7 @@
                 svg {
                     float: left;
                     height: 34px;
-                    width: 44px;
+                    width: 34px;
 
                     path {
                         fill: $text-main;

@@ -10,7 +10,7 @@ body.headroom--not-top {
         background-color: rgba($bg-main, 0.7);
         backdrop-filter: blur(12px);
         box-shadow: #0000001a 0 0 5px 2px;
-        #headerMain {
+        #header-main {
             padding: 10px 0;
             .headerMainInner {
                 height: 55px;
@@ -65,7 +65,7 @@ body.headroom--not-top {
         }
     }
 
-    #headerRight {
+    #header-right {
         .modBookingWidget .bookingPopupTriggers {
             a {
                 border-color: $text-main;
@@ -84,6 +84,23 @@ body.headroom--not-top {
                         fill: $text-main;
                     }
                 }
+            }
+        }
+
+        .modPlain.telephone {
+            .telephoneButton {
+                a {
+                    color: $text-main;
+
+                    svg {
+                        path {
+                            fill: $text-main;
+                        }
+                    }
+                }
+            }
+            &:after {
+                background-color: $text-main;
             }
         }
     }

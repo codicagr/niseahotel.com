@@ -1,0 +1,154 @@
+.modPlain.booking {
+    float: left;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    .bookingInlineContainer {
+        float: left;
+        position: relative;
+        width: 100%;
+
+        .bgImage {
+            background-color: $bg-inverse;
+            height: calc(100% + 20px);
+            left: -10px;
+            pointer-events: none;
+            position: absolute;
+            top: -10px;
+            width: calc(100% + 20px);
+
+            img {
+                filter: blur(15px);
+                float: left;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0.7;
+                position: relative;
+                width: 100%;
+            }
+        }
+
+        .bookingInlineWrapper {
+            background-color: rgba($bg-main,0.6);
+            float: left;
+            position: relative;
+            width: 100%;
+        }
+
+        .bookingInline {
+            box-sizing: border-box;
+            float: left;
+            padding: 80px 0;
+            position: relative;
+            width: 100%;
+
+            .bookingContentContainer {
+                border-right: 1px solid $text-main;
+                box-sizing: border-box;
+                float: left;
+                padding: 10px 80px;
+                position: relative;
+                width: 50%;
+
+                @media (max-width: 980px) {
+                    padding: 10px 20px;
+                }
+
+                @media (max-width: 740px) {
+                    border-right: none;
+                    padding: 0;
+                    width: 100%;
+                }
+
+                .bookingTitle {
+                    float: left;
+                    font-family: $font-family-serif;
+                    font-size: clamp-size(24,34,320,2000);
+                    font-weight: $weight-regular;
+                    line-height: $line-height-heading;
+                    position: relative;
+                    width: 100%;
+
+                    @media (max-width: 740px) {
+                        text-align: center;
+                    }
+
+                    p:first-child {
+                        margin-top: 0;
+                    }
+
+                    p:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .bookingSubtitle {
+                    float: left;
+                    font-size: 18px;
+                    position: relative;
+                    width: 100%;
+
+                    @media (max-width: 740px) {
+                        text-align: center;
+                    }
+
+                    p:first-child {
+                        margin-top: 0;
+                    }
+
+                    p:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .bookingDetailsContainer {
+                float: left;
+                padding: 10px 80px;
+                position: relative;
+                width: 50%;
+
+                @media (max-width: 980px) {
+                    padding: 10px 20px;
+                }
+
+                @media (max-width: 740px) {
+                    padding: 0;
+                    width: 100%;
+                }
+
+                .bookingText {
+                    float: left;
+                    font-size: 18px;
+                    position: relative;
+                    width: 100%;
+
+                    @media (max-width: 740px) {
+                        margin-top: 20px;
+                        text-align: center;
+                    }
+
+                    p:first-child {
+                        margin-top: 0;
+                    }
+
+                    p:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .bookingButton {
+                    float: left;
+                    margin-top: 30px;
+                    position: relative;
+                    width: 100%;
+
+                    @media (max-width: 740px) {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}

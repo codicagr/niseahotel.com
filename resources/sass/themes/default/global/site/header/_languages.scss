@@ -63,6 +63,7 @@
                 position: relative;
 
                 .modLanguagesListItem {
+                    cursor: default;
                     font-weight: $weight-regular;
                     padding: 0 12px;
 
@@ -90,7 +91,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        transition: $trans-slow;
+        transition: background $trans-slow;
         width: 1px;
     }
 }

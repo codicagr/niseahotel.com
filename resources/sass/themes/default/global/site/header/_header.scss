@@ -11,7 +11,7 @@
     transition: transform 0.3s ease 0s;
     width: 100vw;
     z-index: 1001;
-    #headerMain {
+    #header-main {
         box-sizing: border-box;
         float: left;
         padding: 20px 0;
@@ -71,7 +71,7 @@
         }
     }
 }
-#headerRight {
+#header-right {
     float: left;
     margin-left: auto;
     position: relative;

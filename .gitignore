@@ -5,7 +5,10 @@
 /public_html/storage
 /public_html/uploads
 /storage/*.key
-/vendor
+# Composer vendor — ignore all packages except codicagr (CMS) for tools that follow .gitignore (e.g. Cursor indexing)
+/vendor/*
+!/vendor/codicagr/
+!/vendor/codicagr/**
 .env
 .env.backup
 .env.production
